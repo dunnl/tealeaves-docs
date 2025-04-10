@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="alectryon-standalone" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
+<title>TraversableFunctor2.v</title>
+<link rel="stylesheet" href="alectryon.css" type="text/css" />
+<link rel="stylesheet" href="docutils_basic.css" type="text/css" />
+<link rel="stylesheet" href="pygments.css" type="text/css" />
+<script type="text/javascript" src="alectryon.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/IBM-type/0.5.4/css/ibm-type.min.css" integrity="sha512-sky5cf9Ts6FY1kstGOBHSybfKqdHR41M0Ldb0BjNiv3ifltoQIsg0zIaQ+wwdwgQ0w9vKFW7Js50lxH9vqNSSw==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/5.2.0/fira_code.min.css" integrity="sha512-MbysAYimH1hH2xYzkkMHB6MqxBqfP0megxsCLknbYqHVwXTCg9IqHbk+ZP/vnhO8UEW6PaXAkKe2vQ+SWACxxA==" crossorigin="anonymous" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="alectryon-root alectryon-centered"><div class="alectryon-banner">Built with <a href="https://github.com/cpitclaudel/alectryon/">Alectryon</a>, running Coq+SerAPI v8.16.0+0.16.3. Bubbles (<span class="alectryon-bubble"></span>) indicate interactive fragments: hover for details, tap to reveal contents. Use <kbd>Ctrl+↑</kbd> <kbd>Ctrl+↓</kbd> to navigate, <kbd>Ctrl+🖱️</kbd> to focus. On Mac, use <kbd>⌘</kbd> instead of <kbd>Ctrl</kbd>.</div><div class="document">
+
+
+<pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">From</span> Tealeaves <span class="kn">Require Export</span>
+  Functors.Compose
+  Classes.Functor2
+  Classes.Categorical.Applicative
+  Classes.Categorical.TraversableFunctor.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Import</span> Functor2.Notations.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-sentence"><span class="alectryon-input">#[local] <span class="kn">Generalizable Variable</span> <span class="nf">T</span> G ϕ A B.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input">#[local] <span class="kn">Arguments</span> map F%function_scope {Map} {A B}%type_scope f%function_scope _.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+<span class="sd">(** * Traversable Functors of Two Arguments *)</span>
+<span class="sd">(**********************************************************************)</span>
+
+<span class="sd">(** ** Operations *)</span>
+<span class="sd">(**********************************************************************)</span>
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Class</span> <span class="nf">ApplicativeDist2</span> (<span class="nv">T</span>: <span class="kt">Type</span> -&gt; <span class="kt">Type</span> -&gt; <span class="kt">Type</span>) :=
+  dist2: <span class="kr">forall</span> (<span class="nv">G</span>: <span class="kt">Type</span> -&gt; <span class="kt">Type</span>)
+           `{Map_G: Map G} `{Pure_G: Pure G} `{Mult_G: Mult G},
+      T ○<span class="mi">21</span> G ⇒<span class="mi">2</span> G ○<span class="mi">12</span> T.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-sentence"><span class="alectryon-input">#[<span class="kn">global</span>] <span class="kn">Arguments</span> dist2 {T}%function_scope {ApplicativeDist2}
+  {G}%function_scope {Map_G Pure_G Mult_G} {B A}%type_scope.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+
+</span><span class="alectryon-sentence"><span class="alectryon-input">#[local] <span class="kn">Arguments</span> dist2 T%function_scope {ApplicativeDist2}
+  G%function_scope {Map_G Pure_G Mult_G} {B A}%type_scope.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+
+<span class="sd">(** ** Typeclass *)</span>
+<span class="sd">(**********************************************************************)</span>
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Class</span> <span class="nf">TraversableFunctor2</span>
+  (<span class="nv">T</span>: <span class="kt">Type</span> -&gt; <span class="kt">Type</span> -&gt; <span class="kt">Type</span>)
+  `{Map2_F: Map2 T}
+  `{dist2_F: ApplicativeDist2 T} :=
+  { trav2_functor :&gt; Functor2 T;
+    dist2_natural :&gt; <span class="kr">forall</span> `{Applicative G},
+        @Natural2 (T ○<span class="mi">21</span> G) _ (G ○<span class="mi">12</span> T) _ (@dist2 T dist2_F G _ _ _);
+    dist2_morph: <span class="kr">forall</span> `{ApplicativeMorphism G1 G2 ϕ},
+      `(dist2 T G2 ∘ map2 (ϕ B) (ϕ A) = ϕ (T B A) ∘ dist2 T G1);
+    dist2_unit:
+    `(dist2 T (<span class="kr">fun</span> <span class="nv">A</span> =&gt; A) = id (A := T B A));
+    dist2_linear: <span class="kr">forall</span> `{Applicative G1} `{Applicative G2},
+      `(dist2 T (G1 ∘ G2) = map G1 (dist2 T G2) ∘
+                              dist2 T G1 (B := G2 B) (A := G2 A));
+  }.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+<span class="sd">(** ** Other rules for &lt;&lt;pure&gt;&gt; *)</span>
+<span class="sd">(**********************************************************************)</span>
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Section</span> <span class="nf">purity_law</span>.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Context</span>
+    `{TraversableFunctor2 T}.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+<span class="c">(*</span>
+<span class="c">  Corollary map_purity_1: forall `{Applicative G},</span>
+<span class="c">  `(dist2 T G ∘ map2 T ((pure G) = pure G (A := T A)).</span>
+<span class="c">  Proof.</span>
+<span class="c">  intros. rewrite (dist_morph (ϕ := @pure G _)).</span>
+<span class="c">  now rewrite (dist_unit).</span>
+<span class="c">  Qed.</span>
+
+<span class="c">  Corollary map_purity_2:</span>
+<span class="c">  forall `{Applicative G1} `{Applicative G2} `(f: A -&gt; G1 B),</span>
+<span class="c">  dist T (G2 ∘ G1) ∘ map T (pure G2 ∘ f) = pure G2 ∘ dist T G1 ∘ map T f.</span>
+<span class="c">  Proof.</span>
+<span class="c">  intros. rewrite &lt;- (fun_map_map).</span>
+<span class="c">  reassociate &lt;-. rewrite dist_linear.</span>
+<span class="c">  reassociate -&gt; near (map T (pure G2)).</span>
+<span class="c">  rewrite map_purity_1.</span>
+<span class="c">  fequal. ext t. unfold compose.</span>
+<span class="c">  now rewrite app_pure_natural.</span>
+<span class="c">  Qed.</span>
+<span class="c"> *)</span>
+
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">purity_law</span>.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+<span class="sd">(** * Notations *)</span>
+<span class="sd">(**********************************************************************)</span>
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Module</span> <span class="nf">Notations</span>.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Notation</span> <span class="s2">&quot;&#39;δ2&#39;&quot;</span> := dist2: tealeaves_scope.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">Notations</span>.</span></span></pre>
+</div>
+</div></body>
+</html>

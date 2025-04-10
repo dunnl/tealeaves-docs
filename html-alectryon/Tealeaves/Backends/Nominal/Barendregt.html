@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="alectryon-standalone" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
+<title>Barendregt.v</title>
+<link rel="stylesheet" href="alectryon.css" type="text/css" />
+<link rel="stylesheet" href="docutils_basic.css" type="text/css" />
+<link rel="stylesheet" href="pygments.css" type="text/css" />
+<script type="text/javascript" src="alectryon.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/IBM-type/0.5.4/css/ibm-type.min.css" integrity="sha512-sky5cf9Ts6FY1kstGOBHSybfKqdHR41M0Ldb0BjNiv3ifltoQIsg0zIaQ+wwdwgQ0w9vKFW7Js50lxH9vqNSSw==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/5.2.0/fira_code.min.css" integrity="sha512-MbysAYimH1hH2xYzkkMHB6MqxBqfP0megxsCLknbYqHVwXTCg9IqHbk+ZP/vnhO8UEW6PaXAkKe2vQ+SWACxxA==" crossorigin="anonymous" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="alectryon-root alectryon-centered"><div class="alectryon-banner">Built with <a href="https://github.com/cpitclaudel/alectryon/">Alectryon</a>, running Coq+SerAPI v8.16.0+0.16.3. Bubbles (<span class="alectryon-bubble"></span>) indicate interactive fragments: hover for details, tap to reveal contents. Use <kbd>Ctrl+↑</kbd> <kbd>Ctrl+↓</kbd> to navigate, <kbd>Ctrl+🖱️</kbd> to focus. On Mac, use <kbd>⌘</kbd> instead of <kbd>Ctrl</kbd>.</div><div class="document">
+
+
+<pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">From</span> Tealeaves <span class="kn">Require Import</span>
+  Classes.EqDec_eq
+  Classes.Kleisli.DecoratedTraversableMonadPoly
+  Functors.List_Telescoping_General
+  Backends.Common.Names
+  Backends.Nominal.Common
+  Backends.Nominal.FV
+  Functors.Constant
+  Functors.Subset.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Export</span> Backends.Common.Names.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Export</span> Backends.Nominal.Common.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Import</span> Subset.Notations.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Import</span> Monoid.Notations.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Import</span> Applicative.Notations.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Import</span> List.ListNotations.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Import</span> Product.Notations.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Import</span> ContainerFunctor.Notations.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-sentence"><input class="alectryon-toggle" id="barendregt-v-chk0" style="display: none" type="checkbox"><label class="alectryon-input" for="barendregt-v-chk0"><span class="kn">Lemma</span> <span class="nf">destruct_in</span>: <span class="kr">forall</span> (<span class="nv">a</span>: name) (<span class="nv">l</span>: list name),
+    a ∈ l \/ ~ (a ∈ l).</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> (<span class="nv">a</span> : atom) (<span class="nv">l</span> : list atom), a ∈ l \/ ~ a ∈ l</div></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><input class="alectryon-toggle" id="barendregt-v-chk1" style="display: none" type="checkbox"><label class="alectryon-input" for="barendregt-v-chk1"><span class="kn">Proof</span>.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><span class="goal-separator"><hr></span><div class="goal-conclusion"><span class="kr">forall</span> (<span class="nv">a</span> : atom) (<span class="nv">l</span> : list atom), a ∈ l \/ ~ a ∈ l</div></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input class="alectryon-toggle" id="barendregt-v-chk2" style="display: none" type="checkbox"><label class="alectryon-input" for="barendregt-v-chk2"><span class="nb">intros</span>.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a</var><span class="hyp-type"><b>: </b><span>atom</span></span></span><br><span><var>l</var><span class="hyp-type"><b>: </b><span>list atom</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">a ∈ l \/ ~ a ∈ l</div></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><input class="alectryon-toggle" id="barendregt-v-chk3" style="display: none" type="checkbox"><label class="alectryon-input" for="barendregt-v-chk3"><span class="nb">rewrite</span> &lt;- Name.name_inb_iff.</label><small class="alectryon-output"><div><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span><var>a</var><span class="hyp-type"><b>: </b><span>atom</span></span></span><br><span><var>l</var><span class="hyp-type"><b>: </b><span>list atom</span></span></span><br></div><span class="goal-separator"><hr></span><div class="goal-conclusion">Name.name_inb a l = true \/ Name.name_inb a l &lt;&gt; true</div></blockquote></div></div></small><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="nb">destruct</span> (Name.name_inb a l); <span class="nb">auto</span>.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Qed</span>.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Ltac</span> <span class="nf">step_set_test</span> :=
+  <span class="kr">match goal with</span>
+  | H: ~ <span class="nl">?x</span> ∈ <span class="nl">?t</span> |- _ =&gt;
+      <span class="kr">let</span> <span class="nv">Hf</span> := <span class="kp">fresh</span> <span class="s2">&quot;H&quot;</span> <span class="kr">in</span>
+      <span class="nb">pose</span> H <span class="kr">as</span> Hf;
+      <span class="nb">rewrite</span> &lt;- Name.name_inb_iff_false <span class="kr">in</span> Hf;
+      <span class="kp">progress</span> (<span class="kp">repeat</span> <span class="nb">rewrite</span> Hf)
+  | H: <span class="nl">?x</span> ∈ <span class="nl">?t</span> |- _ =&gt;
+      <span class="kr">let</span> <span class="nv">Hf</span> := <span class="kp">fresh</span> <span class="s2">&quot;H&quot;</span> <span class="kr">in</span>
+      <span class="nb">pose</span> H <span class="kr">as</span> Hf;
+      <span class="nb">rewrite</span> &lt;- Name.name_inb_iff <span class="kr">in</span> Hf;
+      <span class="kp">progress</span> (<span class="kp">repeat</span> <span class="nb">rewrite</span> Hf)
+  <span class="kr">end</span>.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Section</span> <span class="nf">ops</span>.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Context</span>
+    {<span class="nv">T</span>: <span class="kt">Type</span> -&gt; <span class="kt">Type</span> -&gt; <span class="kt">Type</span>}
+    `{<span class="kr">forall</span> <span class="nv">W</span>, Return (T W)}
+    `{Mapdt (list name) (T name)}
+    `{Substitute T T}.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Section</span> <span class="nf">rename_local</span>.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">    </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Context</span>
+      (<span class="nv">x</span>: name)
+      (<span class="nv">u</span>: T name name).</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">    </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Context</span>
+      (<span class="nv">conflicts</span>: list name)  (* Top level conflicts, intuitively {{x}} \cup FV t \cup FV u *).</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">    </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Definition</span> <span class="nf">rename_binder_from_history</span> {<span class="nv">A</span>}: list name * A -&gt; name :=
+      <span class="kr">fun</span> &#39;(history, _) =&gt; <span class="kp">fresh</span> (conflicts ++ history).</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">    </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Definition</span> <span class="nf">context_to_history</span> {<span class="nv">A</span>} (<span class="nv">ctx</span> : list A): list name :=
+      fold_with_history rename_binder_from_history ctx.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">    </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Definition</span> <span class="nf">rename_binder_from_context</span> {<span class="nv">B</span> <span class="nv">C</span>}: list B * C -&gt; name :=
+      <span class="kr">fun</span> &#39;(ctx, v) =&gt; rename_binder_from_history (context_to_history ctx, v).</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">    </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Definition</span> <span class="nf">subst_from_ctx</span>:
+      list name * name -&gt; T name name :=
+      <span class="kr">fun</span> &#39;(ctx, v) =&gt;
+        <span class="kr">match</span> get_binding ctx v <span class="kr">with</span>
+        | Unbound _ _ =&gt;
+            <span class="c">(* v is a free variable *)</span>
+            <span class="kr">if</span> v == x
+            <span class="kr">then</span> u
+            <span class="kr">else</span> ret v
+        | Bound prefix _ post =&gt;
+            <span class="c">(* v is a bound variable, give it the name of whatever it was bound to *)</span>
+            ret (rename_binder_from_context (prefix, v))
+        <span class="kr">end</span>.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">rename_local</span>.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Definition</span> <span class="nf">subst_top</span>
+    (<span class="nv">x</span>: name) (<span class="nv">u</span>: T name name)
+    (<span class="nv">conflicts</span>: list name)
+    (<span class="nv">t</span>: T name name): T name name :=
+   substitute (G := <span class="kr">fun</span> <span class="nv">A</span> =&gt; A) (U := T)
+     (rename_binder_from_context conflicts)
+     (subst_from_ctx x u conflicts) t.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Definition</span> <span class="nf">subst</span>
+    (<span class="nv">x</span>: name) (<span class="nv">u</span>: T name name)
+    (<span class="nv">t</span>: T name name): T name name :=
+
+    subst_top x u ([x] ++ FV t ++ FV u) t.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">ops</span>.</span></span></pre>
+</div>
+</div></body>
+</html>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="alectryon-standalone" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
+<title>DecoratedTraversableMonadPoly.v</title>
+<link rel="stylesheet" href="alectryon.css" type="text/css" />
+<link rel="stylesheet" href="docutils_basic.css" type="text/css" />
+<link rel="stylesheet" href="pygments.css" type="text/css" />
+<script type="text/javascript" src="alectryon.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/IBM-type/0.5.4/css/ibm-type.min.css" integrity="sha512-sky5cf9Ts6FY1kstGOBHSybfKqdHR41M0Ldb0BjNiv3ifltoQIsg0zIaQ+wwdwgQ0w9vKFW7Js50lxH9vqNSSw==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/5.2.0/fira_code.min.css" integrity="sha512-MbysAYimH1hH2xYzkkMHB6MqxBqfP0megxsCLknbYqHVwXTCg9IqHbk+ZP/vnhO8UEW6PaXAkKe2vQ+SWACxxA==" crossorigin="anonymous" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="alectryon-root alectryon-centered"><div class="alectryon-banner">Built with <a href="https://github.com/cpitclaudel/alectryon/">Alectryon</a>, running Coq+SerAPI v8.16.0+0.16.3. Bubbles (<span class="alectryon-bubble"></span>) indicate interactive fragments: hover for details, tap to reveal contents. Use <kbd>Ctrl+↑</kbd> <kbd>Ctrl+↓</kbd> to navigate, <kbd>Ctrl+🖱️</kbd> to focus. On Mac, use <kbd>⌘</kbd> instead of <kbd>Ctrl</kbd>.</div><div class="document">
+
+
+<pre class="alectryon-io highlight"><!-- Generator: Alectryon --><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">From</span> Tealeaves <span class="kn">Require Export</span>
+  Classes.Categorical.DecoratedFunctorPoly
+  Classes.Categorical.TraversableFunctor2
+  Classes.Categorical.DecoratedMonadPoly
+  Classes.Categorical.ApplicativeCommutativeIdempotent
+  Classes.Categorical.Monad
+  Classes.Categorical.DecoratedTraversableFunctorPoly
+  Functors.List
+  Functors.Writer.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-sentence"><span class="alectryon-input">#[local] <span class="kn">Generalizable Variables</span> <span class="nf">T</span> F G W A B C.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Section</span> <span class="nf">laws</span>.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Context</span> (<span class="nv">T</span>: <span class="kt">Type</span> -&gt; <span class="kt">Type</span> -&gt; <span class="kt">Type</span>).</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Context</span>
+    `{Map2 T} `{DecoratePoly T} `{ApplicativeDist2 T}
+    `{<span class="kr">forall</span> <span class="nv">B</span>, Return (T B)}
+    `{<span class="kr">forall</span> <span class="nv">B</span>, Join (T B)}.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Definition</span> <span class="nf">decpoly_ret</span>: <span class="kt">Prop</span> :=
+    <span class="kr">forall</span> (<span class="nv">B</span> <span class="nv">V</span>: <span class="kt">Type</span>),
+      decp ∘ ret (T := T B) (A := V) =
+        ret (T := T (Z B)) (A := Z2 B V) ∘ ret (T := prod (list B)).</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Definition</span> <span class="nf">decpoly_join</span>: <span class="kt">Prop</span> :=
+    <span class="kr">forall</span> (<span class="nv">B</span> <span class="nv">V</span>: <span class="kt">Type</span>),
+      decp ∘ join (T := T B) (A := V) =
+        join (T := T (Z B)) ∘ map2 id (shift2 ∘ map_snd decp)
+          ∘ decp (B := B) (V := T B V).</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Definition</span> <span class="nf">dist2_join</span> `{Applicative G}: <span class="kt">Prop</span> :=
+    <span class="kr">forall</span> (<span class="nv">B</span> <span class="nv">V</span>: <span class="kt">Type</span>),
+      dist2 ∘ join (T := T (G B)) (A := (G V)) =
+        map (F := G) (join (T := T B)) ∘
+          dist2 (T := T) (G := G) ∘
+          map2 (F := T) id (dist2).</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Definition</span> <span class="nf">dist2_ret</span> `{Applicative G}: <span class="kt">Prop</span> :=
+    <span class="kr">forall</span> (<span class="nv">B</span> <span class="nv">V</span>: <span class="kt">Type</span>),
+      dist2 ∘ ret (T := T (G B)) (A := G V) =
+        map (F := G) (ret (T := T B) (A := V)).</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+
+</span><span class="alectryon-wsp">  </span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Definition</span> <span class="nf">dist2_decpoly_ci</span>
+     `{ApplicativeCommutativeIdempotent G}: <span class="kt">Prop</span> :=
+    <span class="kr">forall</span> (<span class="nv">B</span> <span class="nv">V</span>: <span class="kt">Type</span>),
+      dist2 (G := G) ∘ map2 (dist Z G) (dist2 (T := Z2)) ∘ (decp (B := G B) (V := G V)) =
+        map (F := G) (decp (B := B) (V := V)) ∘ dist2 (T := T) (G := G).</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">End</span> <span class="nf">laws</span>.</span><span class="alectryon-wsp">
+</span></span><span class="alectryon-wsp">
+<span class="sd">(** * Decorated-traversable monads *)</span>
+<span class="sd">(**********************************************************************)</span>
+</span><span class="alectryon-sentence"><span class="alectryon-input"><span class="kn">Class</span> <span class="nf">DecoratedTraversableMonadPoly</span>
+  (<span class="nv">T</span>: <span class="kt">Type</span> -&gt; <span class="kt">Type</span> -&gt; <span class="kt">Type</span>)
+  `{Map2 T} `{DecoratePoly T} `{ApplicativeDist2 T}
+  `{<span class="kr">forall</span> <span class="nv">B</span>, Return (T B)}
+  `{<span class="kr">forall</span> <span class="nv">B</span>, Join (T B)} :=
+  {
+    xxx_functor :&gt; Functor2 T;
+    xxx_decorated :&gt; DecoratedFunctorPoly T;
+    xxx_traversable :&gt; TraversableFunctor2 T;
+    xxx_decoratedtraversable :&gt; DecoratedTraversableFunctorPoly T;
+    xxx_decoratedmonad :&gt; DecoratedMonadPoly T;
+    xxx_dist2_ret:
+    <span class="kr">forall</span> (<span class="nv">B</span> <span class="nv">V</span>: <span class="kt">Type</span>) `{Applicative G},
+      dist2 ∘ ret (T := T (G B)) (A := G V) =
+        map (F := G) (ret (T := T B) (A := V));
+    xxx_dist2_join:
+    <span class="kr">forall</span> (<span class="nv">B</span> <span class="nv">V</span>: <span class="kt">Type</span>) `{Applicative G},
+      dist2 ∘ join (T := T (G B)) (A := (G V)) =
+        map (F := G) (join (T := T B)) ∘
+          dist2 (T := T) (G := G) ∘
+          map2 (F := T) id (dist2);
+  }.</span></span></pre>
+</div>
+</div></body>
+</html>
