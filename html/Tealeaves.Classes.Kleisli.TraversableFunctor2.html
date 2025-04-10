@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span> <img class="logo" src="./logo_96.png"> </span>
+      <span class="projectname"> Tealeaves </span>
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+      <a href="../html-alectryon/toc.html"> Switch to Alectryon Docs </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<h1 class="libtitle">Tealeaves.Classes.Kleisli.TraversableFunctor2</h1>
+
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#"><span class="id" title="library">Classes.Categorical.Applicative</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab1203"></a><h2 class="section">Traverse Poly operation</h2>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Class</span> <a id="TraversePoly" class="idref" href="#TraversePoly"><span class="id" title="record">TraversePoly</span></a> (<a id="T:1" class="idref" href="#T:1"><span class="id" title="binder">T</span></a>: <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span>) :=<br/>
+&nbsp;&nbsp;<a id="traversep" class="idref" href="#traversep"><span class="id" title="projection">traversep</span></a>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<a id="A1:3" class="idref" href="#A1:3"><span class="id" title="binder">A1</span></a> <a id="A2:4" class="idref" href="#A2:4"><span class="id" title="binder">A2</span></a> <a id="B1:5" class="idref" href="#B1:5"><span class="id" title="binder">B1</span></a> <a id="B2:6" class="idref" href="#B2:6"><span class="id" title="binder">B2</span></a>: <span class="id" title="keyword">Type</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a id="G:7" class="idref" href="#G:7"><span class="id" title="binder">G</span></a> : <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="Gmap:8" class="idref" href="#Gmap:8"><span class="id" title="binder">Gmap</span></a>: <a class="idref" href="Tealeaves.Classes.Functor.html#Map"><span class="id" title="class">Map</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#G:7"><span class="id" title="variable">G</span></a>} `{<a id="Gpure:9" class="idref" href="#Gpure:9"><span class="id" title="binder">Gpure</span></a>: <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#Pure"><span class="id" title="class">Pure</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#G:7"><span class="id" title="variable">G</span></a>} `{<a id="Gmult:10" class="idref" href="#Gmult:10"><span class="id" title="binder">Gmult</span></a>: <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#Mult"><span class="id" title="class">Mult</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#G:7"><span class="id" title="variable">G</span></a>},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#B1:5"><span class="id" title="variable">B1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#G:7"><span class="id" title="variable">G</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#B2:6"><span class="id" title="variable">B2</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#A1:3"><span class="id" title="variable">A1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#G:7"><span class="id" title="variable">G</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#A2:4"><span class="id" title="variable">A2</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#T:1"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#B1:5"><span class="id" title="variable">B1</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#A1:3"><span class="id" title="variable">A1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#G:7"><span class="id" title="variable">G</span></a> (<a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#T:1"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#B2:6"><span class="id" title="variable">B2</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#A2:4"><span class="id" title="variable">A2</span></a>).<br/>
+
+<br/>
+<span class="id" title="keyword">Arguments</span> <a class="idref" href="Tealeaves.Classes.Kleisli.TraversableFunctor2.html#traversep"><span class="id" title="definition">traversep</span></a> {<span class="id" title="var">T</span>}%<span class="id" title="var">function_scope</span> {<span class="id" title="var">TraversePoly</span>} {<span class="id" title="var">A1</span> <span class="id" title="var">A2</span> <span class="id" title="var">B1</span> <span class="id" title="var">B2</span>}%<span class="id" title="var">type_scope</span><br/>
+&nbsp;&nbsp;{<span class="id" title="var">G</span>}%<span class="id" title="var">function_scope</span> {<span class="id" title="var">Gmap</span> <span class="id" title="var">Gpure</span> <span class="id" title="var">Gmult</span>} (<span class="id" title="var">_</span> <span class="id" title="var">_</span>)%<span class="id" title="var">function_scope</span> <span class="id" title="var">_</span>.<br/>
+
+<br/>
+<span class="comment">(*<br/>
+[export] Instance TraversePoly_MapdtPoly {T} `{MapdtPoly T}: TraversePoly T :=
+  fun A1 A2 B1 B2 G Gmap Gpure Gmult ρ σ =>
+    mapdtp
+      (ρ ∘ extract (W := prod (list B1)))
+      (σ ∘ extract (W := prod (list B1))).
+*)</span><br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>

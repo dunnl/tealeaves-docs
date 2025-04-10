@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span> <img class="logo" src="./logo_96.png"> </span>
+      <span class="projectname"> Tealeaves </span>
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+      <a href="../html-alectryon/toc.html"> Switch to Alectryon Docs </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<h1 class="libtitle">Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad</h1>
+
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.DecoratedTraversableMonad.html#"><span class="id" title="library">Classes.Categorical.DecoratedTraversableMonad</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.DecoratedTraversableMonadPoly.html#"><span class="id" title="library">Classes.Categorical.DecoratedTraversableMonadPoly</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedFunctor.html#"><span class="id" title="library">Adapters.PolyToMono.Categorical.DecoratedFunctor</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="ToMono1" class="idref" href="#ToMono1"><span class="id" title="module">ToMono1</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Section</span> <a id="ToMono1.ctx" class="idref" href="#ToMono1.ctx"><span class="id" title="section">ctx</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Context</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<a id="T:1" class="idref" href="#T:1"><span class="id" title="binder">T</span></a>: <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="H3:6" class="idref" href="#H3:6"><span class="id" title="binder">DecoratedMonadPoly</span></a> <a id="H3:6" class="idref" href="#H3:6"><span class="id" title="binder">T</span></a>}.<br/>
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedFunctor.html#ToMono1"><span class="id" title="module">DecoratedFunctor.ToMono1</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#[<span class="id" title="var">export</span>] <span class="id" title="keyword">Instance</span> <a id="ToMono1.Bmap_Monad_Hom" class="idref" href="#ToMono1.Bmap_Monad_Hom"><span class="id" title="instance">Bmap_Monad_Hom</span></a>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<a id="B1:7" class="idref" href="#B1:7"><span class="id" title="binder">B1</span></a> <a id="B2:8" class="idref" href="#B2:8"><span class="id" title="binder">B2</span></a>: <span class="id" title="keyword">Type</span>) (<a id="f:9" class="idref" href="#f:9"><span class="id" title="binder">f</span></a>: <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#B1:7"><span class="id" title="variable">B1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#B2:8"><span class="id" title="variable">B2</span></a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.Monad.html#Monad_Hom"><span class="id" title="class">Monad_Hom</span></a> (<a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#ToMono1.ctx.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#B1:7"><span class="id" title="variable">B1</span></a>) (<a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#ToMono1.ctx.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#B2:8"><span class="id" title="variable">B2</span></a>) (<span class="id" title="keyword">fun</span> <a id="V:10" class="idref" href="#V:10"><span class="id" title="binder">V</span></a> ⇒ @<a class="idref" href="Tealeaves.Classes.Functor2.html#bmap"><span class="id" title="definition">bmap</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#ToMono1.ctx.T"><span class="id" title="variable">T</span></a> <span class="id" title="var">_</span> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#V:10"><span class="id" title="variable">V</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#B1:7"><span class="id" title="variable">B1</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#B2:8"><span class="id" title="variable">B2</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#f:9"><span class="id" title="variable">f</span></a>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">constructor</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">typeclasses</span> <span class="id" title="tactic">eauto</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">typeclasses</span> <span class="id" title="tactic">eauto</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Functor2.html#bmap"><span class="id" title="definition">bmap</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Classes.Functor2.html#Map2_2"><span class="id" title="instance">Map2_2</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">typeclasses</span> <span class="id" title="tactic">eauto</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Functor2.html#bmap"><span class="id" title="definition">bmap</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Classes.Functor2.html#Map2_2"><span class="id" title="instance">Map2_2</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedMonadPoly.html#dmp_map_ret"><span class="id" title="method">dmp_map_ret</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Functor2.html#bmap"><span class="id" title="definition">bmap</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Classes.Functor2.html#Map2_2"><span class="id" title="instance">Map2_2</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedMonadPoly.html#dmp_map_join"><span class="id" title="method">dmp_map_join</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> → <span class="id" title="var">on</span> <span class="id" title="tactic">right</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">setoid_rewrite</span> (<a class="idref" href="Tealeaves.Classes.Functor2.html#fun2_map2_map21"><span class="id" title="lemma">fun2_map2_map21</span></a> (<span class="id" title="var">B1</span> := <span class="id" title="var">B1</span>) (<span class="id" title="var">F</span> := <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#ToMono1.ctx.T"><span class="id" title="variable">T</span></a>)).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#[<span class="id" title="var">export</span>] <span class="id" title="keyword">Instance</span> <a id="ToMono1.DecoratedMonad_PolyVar" class="idref" href="#ToMono1.DecoratedMonad_PolyVar"><span class="id" title="instance">DecoratedMonad_PolyVar</span></a>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<a id="B:11" class="idref" href="#B:11"><span class="id" title="binder">B</span></a>: <span class="id" title="keyword">Type</span>), <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedMonad.html#DecoratedMonad"><span class="id" title="class">DecoratedMonad</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#B:11"><span class="id" title="variable">B</span></a>) (<a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#ToMono1.ctx.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#B:11"><span class="id" title="variable">B</span></a>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">constructor</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">typeclasses</span> <span class="id" title="tactic">eauto</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">typeclasses</span> <span class="id" title="tactic">eauto</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">typeclasses</span> <span class="id" title="tactic">eauto</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedFunctor.html#ToMono1.Decorate_PolyVar"><span class="id" title="instance">Decorate_PolyVar</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> → <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedMonadPoly.html#dmp_dec_ret"><span class="id" title="method">dmp_dec_ret</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> &lt;- <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedMonadPoly.html#dmp_map_ret"><span class="id" title="method">dmp_map_ret</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedFunctor.html#ToMono1.Decorate_PolyVar"><span class="id" title="instance">Decorate_PolyVar</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> → <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedMonadPoly.html#dmp_dec_join"><span class="id" title="method">dmp_dec_join</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> &lt;- <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> &lt;- <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedMonadPoly.html#dmp_map_join"><span class="id" title="method">dmp_map_join</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> → <span class="id" title="var">near</span> (<a class="idref" href="Tealeaves.Classes.Functor2.html#map2"><span class="id" title="definition">map2</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#id"><span class="id" title="definition">id</span></a> (<a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#shift2"><span class="id" title="definition">shift2</span></a> <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> <a class="idref" href="Tealeaves.Misc.Product.html#map_snd"><span class="id" title="definition">map_snd</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#decp"><span class="id" title="definition">decp</span></a>)).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Functor2.html#fun2_map_map"><span class="id" title="method">fun2_map_map</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> &lt;- <span class="id" title="var">on</span> <span class="id" title="tactic">right</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">reassociate</span> → <span class="id" title="var">on</span> <span class="id" title="tactic">right</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">reassociate</span> → <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">fequal</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">reassociate</span> &lt;- <span class="id" title="var">on</span> <span class="id" title="tactic">right</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">setoid_rewrite</span> (<a class="idref" href="Tealeaves.Classes.Functor2.html#fun2_map21_map2"><span class="id" title="lemma">fun2_map21_map2</span></a> (<span class="id" title="var">F</span> := <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#ToMono1.ctx.T"><span class="id" title="variable">T</span></a>)).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedMonad.html#shift"><span class="id" title="definition">shift</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Misc.Strength.html#strength"><span class="id" title="definition">strength</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Classes.Functor2.html#Map2_1"><span class="id" title="instance">Map2_1</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> → <span class="id" title="var">on</span> <span class="id" title="tactic">right</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#polydecnat"><span class="id" title="definition">polydecnat</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> &lt;- <span class="id" title="var">on</span> <span class="id" title="tactic">right</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">setoid_rewrite</span> (<a class="idref" href="Tealeaves.Classes.Functor2.html#fun2_map_map"><span class="id" title="method">fun2_map_map</span></a> (<span class="id" title="var">F</span> := <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#ToMono1.ctx.T"><span class="id" title="variable">T</span></a>)).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Functor.html#fun_map_id"><span class="id" title="method">fun_map_id</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> (?<span class="id" title="var">x</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#id"><span class="id" title="definition">id</span></a>) <span class="id" title="keyword">with</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">fequal</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">fequal</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedMonad.html#shift"><span class="id" title="definition">shift</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Functor.html#map"><span class="id" title="definition">map</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Misc.Strength.html#strength"><span class="id" title="definition">strength</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ext</span> [<span class="id" title="var">l</span> <span class="id" title="var">t</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">cbn</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">compose</span> <span class="id" title="var">near</span> (<a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#decp"><span class="id" title="definition">decp</span></a> <span class="id" title="var">t</span>) <span class="id" title="var">on</span> <span class="id" title="tactic">right</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Functor2.html#fun2_map_map"><span class="id" title="method">fun2_map_map</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">compose</span> <span class="id" title="var">near</span> (<a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#decp"><span class="id" title="definition">decp</span></a> <span class="id" title="var">t</span>) <span class="id" title="var">on</span> <span class="id" title="tactic">right</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Functor2.html#fun2_map_map"><span class="id" title="method">fun2_map_map</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> (?<span class="id" title="var">x</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#id"><span class="id" title="definition">id</span></a>) <span class="id" title="keyword">with</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">change</span> (<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#id"><span class="id" title="definition">id</span></a> <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> ?<span class="id" title="var">x</span>) <span class="id" title="keyword">with</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> (<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#id"><span class="id" title="definition">id</span></a> ?<span class="id" title="var">x</span>) <span class="id" title="keyword">with</span> <span class="id" title="var">x</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#shift2"><span class="id" title="definition">shift2</span></a>, <a class="idref" href="Tealeaves.Classes.Functor2.html#strength2"><span class="id" title="definition">strength2</span></a>, <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">compose</span> <span class="id" title="var">near</span> (<a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#decp"><span class="id" title="definition">decp</span></a> <span class="id" title="var">t</span>) <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Functor2.html#fun2_map_map"><span class="id" title="method">fun2_map_map</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">compose</span> <span class="id" title="var">near</span> (<a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#decp"><span class="id" title="definition">decp</span></a> <span class="id" title="var">t</span>) <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Functor2.html#fun2_map_map"><span class="id" title="method">fun2_map_map</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">fequal</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="var">now</span> <span class="id" title="var">ext</span> [<span class="id" title="var">l'</span> <span class="id" title="var">b</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Functor.html#fun_map_id"><span class="id" title="method">fun_map_id</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#ToMono1.ctx"><span class="id" title="section">ctx</span></a>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedMonad.html#ToMono1"><span class="id" title="module">ToMono1</span></a>.<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>

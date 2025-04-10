@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span> <img class="logo" src="./logo_96.png"> </span>
+      <span class="projectname"> Tealeaves </span>
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+      <a href="../html-alectryon/toc.html"> Switch to Alectryon Docs </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<h1 class="libtitle">Tealeaves.Classes.Full.DecoratedFunctor</h1>
+
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctor.html#"><span class="id" title="library">Classes.Kleisli.DecoratedFunctor</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#Notations"><span class="id" title="module">Monoid.Notations</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Misc.Product.html#Notations"><span class="id" title="module">Product.Notations</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Comonad.html#Notations"><span class="id" title="module">Kleisli.Comonad.Notations</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">local</span>] <span class="id" title="keyword">Generalizable</span> <span class="id" title="keyword">Variables</span> <span class="id" title="var">E</span> <span class="id" title="var">T</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab1384"></a><h2 class="section">Full typeclasses</h2>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Class</span> <a id="DecoratedFunctorFull" class="idref" href="#DecoratedFunctorFull"><span class="id" title="record">DecoratedFunctorFull</span></a> (<a id="E:1" class="idref" href="#E:1"><span class="id" title="binder">E</span></a>: <span class="id" title="keyword">Type</span>) (<a id="T:2" class="idref" href="#T:2"><span class="id" title="binder">T</span></a>: <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span>)<br/>
+&nbsp;&nbsp;`{<a id="Mapd_ET:3" class="idref" href="#Mapd_ET:3"><span class="id" title="binder">Mapd_ET</span></a>: <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctor.html#Mapd"><span class="id" title="class">Mapd</span></a> <a class="idref" href="Tealeaves.Classes.Full.DecoratedFunctor.html#E:1"><span class="id" title="variable">E</span></a> <a class="idref" href="Tealeaves.Classes.Full.DecoratedFunctor.html#T:2"><span class="id" title="variable">T</span></a>} `{<a id="Map_T:4" class="idref" href="#Map_T:4"><span class="id" title="binder">Map_T</span></a>: <a class="idref" href="Tealeaves.Classes.Functor.html#Map"><span class="id" title="class">Map</span></a> <a class="idref" href="Tealeaves.Classes.Full.DecoratedFunctor.html#T:2"><span class="id" title="variable">T</span></a>} :=<br/>
+&nbsp;&nbsp;{ <a id="kdff_df" class="idref" href="#kdff_df"><span class="id" title="projection">kdff_df</span></a> :&gt; <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctor.html#DecoratedFunctor"><span class="id" title="class">DecoratedFunctor</span></a> <a class="idref" href="Tealeaves.Classes.Full.DecoratedFunctor.html#E:1"><span class="id" title="variable">E</span></a> <a class="idref" href="Tealeaves.Classes.Full.DecoratedFunctor.html#T:2"><span class="id" title="variable">T</span></a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a id="kdff_map_compat" class="idref" href="#kdff_map_compat"><span class="id" title="projection">kdff_map_compat</span></a> :&gt; <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctor.html#Compat_Map_Mapd"><span class="id" title="class">Compat_Map_Mapd</span></a> <a class="idref" href="Tealeaves.Classes.Full.DecoratedFunctor.html#E:1"><span class="id" title="variable">E</span></a> <a class="idref" href="Tealeaves.Classes.Full.DecoratedFunctor.html#T:2"><span class="id" title="variable">T</span></a>;<br/>
+&nbsp;&nbsp;}.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <a id="DecoratedFunctorFull_DecoratedFunctor" class="idref" href="#DecoratedFunctorFull_DecoratedFunctor"><span class="id" title="definition">DecoratedFunctorFull_DecoratedFunctor</span></a><br/>
+&nbsp;&nbsp;`{<a id="H0:11" class="idref" href="#H0:11"><span class="id" title="binder">DecoratedFunctor</span></a> <a id="H0:11" class="idref" href="#H0:11"><span class="id" title="binder">E</span></a> <a id="H0:11" class="idref" href="#H0:11"><span class="id" title="binder">T</span></a>}:<br/>
+&nbsp;&nbsp;`{<a class="idref" href="Tealeaves.Classes.Full.DecoratedFunctor.html#DecoratedFunctorFull"><span class="id" title="class">DecoratedFunctorFull</span></a> <a class="idref" href="Tealeaves.Classes.Full.DecoratedFunctor.html#E:8"><span class="id" title="variable">E</span></a> <a class="idref" href="Tealeaves.Classes.Full.DecoratedFunctor.html#T:9"><span class="id" title="variable">T</span></a>} :=<br/>
+&nbsp;&nbsp;{| <a class="idref" href="Tealeaves.Classes.Full.DecoratedFunctor.html#kdff_df"><span class="id" title="method">kdff_df</span></a> := <span class="id" title="var">_</span> |}.<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>

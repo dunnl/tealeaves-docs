@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span> <img class="logo" src="./logo_96.png"> </span>
+      <span class="projectname"> Tealeaves </span>
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+      <a href="../html-alectryon/toc.html"> Switch to Alectryon Docs </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<h1 class="libtitle">Tealeaves.Backends.Common.Names</h1>
+
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.EqDec_eq.html#"><span class="id" title="library">Classes.EqDec_eq</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Misc.NaturalNumbers.html#"><span class="id" title="library">Misc.NaturalNumbers</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Theory.TraversableFunctor.html#"><span class="id" title="library">Theory.TraversableFunctor</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ListNotations"><span class="id" title="module">List.ListNotations</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#Notations"><span class="id" title="module">ContainerFunctor.Notations</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#Notations"><span class="id" title="module">Monoid.Notations</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab1569"></a><h1 class="section">Transparent atoms</h1>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Module</span> <span class="id" title="keyword">Type</span> <a id="AtomModule" class="idref" href="#AtomModule"><span class="id" title="module">AtomModule</span></a>  &lt;: <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Structures.Equalities.html#UsualDecidableType"><span class="id" title="module">UsualDecidableType</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Parameter</span> <a id="AtomModule.name" class="idref" href="#AtomModule.name"><span class="id" title="axiom">name</span></a> : <span class="id" title="keyword">Type</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="AtomModule.t" class="idref" href="#AtomModule.t"><span class="id" title="definition">t</span></a> := <a class="idref" href="Tealeaves.Backends.Common.Names.html#AtomModule.name"><span class="id" title="axiom">name</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Parameter</span> <a id="AtomModule.eq_dec" class="idref" href="#AtomModule.eq_dec"><span class="id" title="axiom">eq_dec</span></a> : <span class="id" title="keyword">∀</span> <a id="x:2" class="idref" href="#x:2"><span class="id" title="binder">x</span></a> <a id="y:3" class="idref" href="#y:3"><span class="id" title="binder">y</span></a> : <a class="idref" href="Tealeaves.Backends.Common.Names.html#AtomModule.name"><span class="id" title="axiom">name</span></a>, <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Specif.html#87727981cdc1579fef00b9d9c1d3b9da"><span class="id" title="notation">{</span></a><a class="idref" href="Tealeaves.Backends.Common.Names.html#x:2"><span class="id" title="variable">x</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#y:3"><span class="id" title="variable">y</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Specif.html#87727981cdc1579fef00b9d9c1d3b9da"><span class="id" title="notation">}</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Specif.html#87727981cdc1579fef00b9d9c1d3b9da"><span class="id" title="notation">+</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Specif.html#87727981cdc1579fef00b9d9c1d3b9da"><span class="id" title="notation">{</span></a><a class="idref" href="Tealeaves.Backends.Common.Names.html#x:2"><span class="id" title="variable">x</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'&lt;&gt;'_x"><span class="id" title="notation">≠</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#y:3"><span class="id" title="variable">y</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Specif.html#87727981cdc1579fef00b9d9c1d3b9da"><span class="id" title="notation">}</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Parameter</span> <a id="AtomModule.fresh" class="idref" href="#AtomModule.fresh"><span class="id" title="axiom">fresh</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#AtomModule.name"><span class="id" title="axiom">name</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#AtomModule.name"><span class="id" title="axiom">name</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Parameter</span> <a id="AtomModule.fresh_not_in" class="idref" href="#AtomModule.fresh_not_in"><span class="id" title="axiom">fresh_not_in</span></a> : <span class="id" title="keyword">∀</span> <a id="l:6" class="idref" href="#l:6"><span class="id" title="binder">l</span></a>, <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">¬</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#AtomModule.fresh"><span class="id" title="axiom">fresh</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:6"><span class="id" title="variable">l</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">∈</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:6"><span class="id" title="variable">l</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Parameter</span> <a id="AtomModule.nat_of" class="idref" href="#AtomModule.nat_of"><span class="id" title="axiom">nat_of</span></a> : <a class="idref" href="Tealeaves.Backends.Common.Names.html#AtomModule.name"><span class="id" title="axiom">name</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;#[<span class="id" title="var">export</span>] <span class="id" title="keyword">Hint</span> <span class="id" title="keyword">Resolve</span> <span class="id" title="var">eq_dec</span> : <span class="id" title="var">core</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Include</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Structures.Equalities.html#HasUsualEq"><span class="id" title="module">HasUsualEq</span></a> &lt;+ <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Structures.Equalities.html#UsualIsEq"><span class="id" title="module">UsualIsEq</span></a> &lt;+ <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Structures.Equalities.html#UsualIsEqOrig"><span class="id" title="module">UsualIsEqOrig</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#AtomModule"><span class="id" title="module">AtomModule</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab1570"></a><h2 class="section">Alternate implementation of atoms</h2>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Module</span> <a id="Name" class="idref" href="#Name"><span class="id" title="module">Name</span></a> &lt;: <a class="idref" href="Tealeaves.Backends.Common.Names.html#AtomModule"><span class="id" title="module">AtomModule</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="Name.name" class="idref" href="#Name.name"><span class="id" title="definition">name</span></a>: <span class="id" title="keyword">Type</span> := <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="Name.t" class="idref" href="#Name.t"><span class="id" title="definition">t</span></a> := <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="Name.eq_dec" class="idref" href="#Name.eq_dec"><span class="id" title="definition">eq_dec</span></a> := <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Arith.PeanoNat.html#Nat.eq_dec"><span class="id" title="lemma">PeanoNat.Nat.eq_dec</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Include</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Structures.Equalities.html#HasUsualEq"><span class="id" title="module">HasUsualEq</span></a> &lt;+ <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Structures.Equalities.html#UsualIsEq"><span class="id" title="module">UsualIsEq</span></a> &lt;+ <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Structures.Equalities.html#UsualIsEqOrig"><span class="id" title="module">UsualIsEqOrig</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="comment">(*&nbsp;Test&nbsp;if&nbsp;x&nbsp;is&nbsp;an&nbsp;element&nbsp;of&nbsp;l,&nbsp;returning&nbsp;a&nbsp;boolean&nbsp;*)</span><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Fixpoint</span> <a id="Name.list_in" class="idref" href="#Name.list_in"><span class="id" title="definition">list_in</span></a> (<a id="x:9" class="idref" href="#x:9"><span class="id" title="binder">x</span></a> : <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a>) (<a id="l:10" class="idref" href="#l:10"><span class="id" title="binder">l</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a>) : <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#bool"><span class="id" title="inductive">bool</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">match</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:10"><span class="id" title="variable">l</span></a> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#nil"><span class="id" title="constructor">nil</span></a> ⇒ <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#false"><span class="id" title="constructor">false</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">y</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#::list_scope:x_'::'_x"><span class="id" title="notation">::</span></a> <span class="id" title="var">rest</span> ⇒ <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#081ff67d3116402bb680e8692aa39185"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Backends.Common.Names.html#x:9"><span class="id" title="variable">x</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Classes.EquivDec.html#58441418485b21d10af6cf44c2752986"><span class="id" title="notation">==</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Classes.EquivDec.html#58441418485b21d10af6cf44c2752986"><span class="id" title="notation">b</span></a> <span class="id" title="var">y</span><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#081ff67d3116402bb680e8692aa39185"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#081ff67d3116402bb680e8692aa39185"><span class="id" title="notation">||</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#list_in:11"><span class="id" title="definition">list_in</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#x:9"><span class="id" title="variable">x</span></a> <span class="id" title="var">rest</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="comment">(*<br/>
+&nbsp;&nbsp;Lemma&nbsp;name_fresh_for_list&nbsp;:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(xs&nbsp;:&nbsp;list&nbsp;nat),&nbsp;{&nbsp;n&nbsp;:&nbsp;nat&nbsp;|&nbsp;~&nbsp;n&nbsp;∈&nbsp;xs&nbsp;}.<br/>
+&nbsp;&nbsp;Proof.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;intros&nbsp;xs.&nbsp;destruct&nbsp;(nat_list_max&nbsp;xs)&nbsp;as&nbsp;<span class="inlinecode"><span class="id" title="var">x</span></span> <span class="inlinecode"><span class="id" title="var">H</span></span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;exists&nbsp;(S&nbsp;x).&nbsp;intros&nbsp;J.&nbsp;lapply&nbsp;(H&nbsp;(S&nbsp;x)).&nbsp;lia.&nbsp;trivial.<br/>
+&nbsp;&nbsp;Defined.<br/>
+&nbsp;&nbsp;*)</span><br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Fixpoint</span> <a id="Name.name_inb" class="idref" href="#Name.name_inb"><span class="id" title="definition">name_inb</span></a> (<a id="x:13" class="idref" href="#x:13"><span class="id" title="binder">x</span></a> : <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a>) (<a id="l:14" class="idref" href="#l:14"><span class="id" title="binder">l</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a>) : <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#bool"><span class="id" title="inductive">bool</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">match</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:14"><span class="id" title="variable">l</span></a> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#nil"><span class="id" title="constructor">nil</span></a> ⇒ <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#false"><span class="id" title="constructor">false</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">y</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#::list_scope:x_'::'_x"><span class="id" title="notation">::</span></a> <span class="id" title="var">rest</span> ⇒ <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#081ff67d3116402bb680e8692aa39185"><span class="id" title="notation">(</span></a><span class="id" title="keyword">if</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#x:13"><span class="id" title="variable">x</span></a> <a class="idref" href="Tealeaves.Classes.EqDec_eq.html#a6e843c62e1ac2a74737b7a9f636e026"><span class="id" title="notation">==</span></a> <span class="id" title="var">y</span> <span class="id" title="keyword">then</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#true"><span class="id" title="constructor">true</span></a> <span class="id" title="keyword">else</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#false"><span class="id" title="constructor">false</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#081ff67d3116402bb680e8692aa39185"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#081ff67d3116402bb680e8692aa39185"><span class="id" title="notation">||</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name_inb:15"><span class="id" title="definition">name_inb</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#x:13"><span class="id" title="variable">x</span></a> <span class="id" title="var">rest</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="Name.name_inb_iff" class="idref" href="#Name.name_inb_iff"><span class="id" title="lemma">name_inb_iff</span></a>: <span class="id" title="keyword">∀</span> <a id="x:17" class="idref" href="#x:17"><span class="id" title="binder">x</span></a> <a id="l:18" class="idref" href="#l:18"><span class="id" title="binder">l</span></a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name_inb"><span class="id" title="definition">name_inb</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#x:17"><span class="id" title="variable">x</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:18"><span class="id" title="variable">l</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#true"><span class="id" title="constructor">true</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"><span class="id" title="notation">↔</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#x:17"><span class="id" title="variable">x</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">∈</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:18"><span class="id" title="variable">l</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>. <span class="id" title="tactic">induction</span> <span class="id" title="var">l</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">cbn</span>. <span class="id" title="tactic">intuition</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">cbn</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">IHl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">clear</span> <span class="id" title="var">IHl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name_inb"><span class="id" title="definition">name_inb</span></a> <span class="id" title="var">x</span> <span class="id" title="var">l</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">rewrite</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Bool.Bool.html#orb_true_r"><span class="id" title="lemma">Bool.orb_true_r</span></a>. <span class="id" title="tactic">intuition</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+  <span class="id" title="tactic">rewrite</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Bool.Bool.html#orb_false_r"><span class="id" title="lemma">Bool.orb_false_r</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">destruct_eq_args</span> <span class="id" title="var">x</span> <span class="id" title="var">a</span>; <span class="id" title="tactic">intuition</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="Name.name_inb_iff_false" class="idref" href="#Name.name_inb_iff_false"><span class="id" title="lemma">name_inb_iff_false</span></a>: <span class="id" title="keyword">∀</span> <a id="x:19" class="idref" href="#x:19"><span class="id" title="binder">x</span></a> <a id="l:20" class="idref" href="#l:20"><span class="id" title="binder">l</span></a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name_inb"><span class="id" title="definition">name_inb</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#x:19"><span class="id" title="variable">x</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:20"><span class="id" title="variable">l</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#false"><span class="id" title="constructor">false</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"><span class="id" title="notation">↔</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">¬</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Backends.Common.Names.html#x:19"><span class="id" title="variable">x</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">∈</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:20"><span class="id" title="variable">l</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">)</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name_inb_iff"><span class="id" title="lemma">name_inb_iff</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name_inb"><span class="id" title="definition">name_inb</span></a> <span class="id" title="var">x</span> <span class="id" title="var">l</span>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intuition</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Fixpoint</span> <a id="Name.max_not_in_list_rec" class="idref" href="#Name.max_not_in_list_rec"><span class="id" title="definition">max_not_in_list_rec</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<a id="candidate:21" class="idref" href="#candidate:21"><span class="id" title="binder">candidate</span></a>: <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a>) (<a id="current_min:22" class="idref" href="#current_min:22"><span class="id" title="binder">current_min</span></a>: <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<a id="l:23" class="idref" href="#l:23"><span class="id" title="binder">l</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a>) : <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">match</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#candidate:21"><span class="id" title="variable">candidate</span></a> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| 0 ⇒ <span class="id" title="keyword">if</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name_inb"><span class="id" title="definition">name_inb</span></a> 0 <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:23"><span class="id" title="variable">l</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">then</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#current_min:22"><span class="id" title="variable">current_min</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">else</span> 0<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#S"><span class="id" title="constructor">S</span></a> <span class="id" title="var">next_candidate</span> ⇒ <span class="id" title="keyword">if</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name_inb"><span class="id" title="definition">name_inb</span></a> <span class="id" title="var">next_candidate</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:23"><span class="id" title="variable">l</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">then</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#max_not_in_list_rec:24"><span class="id" title="definition">max_not_in_list_rec</span></a> <span class="id" title="var">next_candidate</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#current_min:22"><span class="id" title="variable">current_min</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:23"><span class="id" title="variable">l</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">else</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#max_not_in_list_rec:24"><span class="id" title="definition">max_not_in_list_rec</span></a> <span class="id" title="var">next_candidate</span> <span class="id" title="var">next_candidate</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:23"><span class="id" title="variable">l</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="Name.max_not_in_list_rec_invariant" class="idref" href="#Name.max_not_in_list_rec_invariant"><span class="id" title="lemma">max_not_in_list_rec_invariant</span></a>: <span class="id" title="keyword">∀</span> <a id="candidate:26" class="idref" href="#candidate:26"><span class="id" title="binder">candidate</span></a> <a id="current_min:27" class="idref" href="#current_min:27"><span class="id" title="binder">current_min</span></a> <a id="l:28" class="idref" href="#l:28"><span class="id" title="binder">l</span></a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">¬</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Backends.Common.Names.html#current_min:27"><span class="id" title="variable">current_min</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">∈</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:28"><span class="id" title="variable">l</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">¬</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.max_not_in_list_rec"><span class="id" title="definition">max_not_in_list_rec</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#candidate:26"><span class="id" title="variable">candidate</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#current_min:27"><span class="id" title="variable">current_min</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:28"><span class="id" title="variable">l</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">∈</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:28"><span class="id" title="variable">l</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">generalize</span> <span class="id" title="tactic">dependent</span> <span class="id" title="var">current_min</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">candidate</span>; <span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">cbn</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">remember</span> (<a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name_inb"><span class="id" title="definition">name_inb</span></a> 0 <span class="id" title="var">l</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">symmetry</span> <span class="id" title="tactic">in</span> <span class="id" title="var">Heqb</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">apply</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name_inb_iff"><span class="id" title="lemma">name_inb_iff</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">Heqb</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">auto</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">apply</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name_inb_iff_false"><span class="id" title="lemma">name_inb_iff_false</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">Heqb</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">assumption</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">cbn</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">remember</span> (<a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name_inb"><span class="id" title="definition">name_inb</span></a> <span class="id" title="var">candidate</span> <span class="id" title="var">l</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">symmetry</span> <span class="id" title="tactic">in</span> <span class="id" title="var">Heqb</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">b</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">apply</span> <span class="id" title="var">IHcandidate</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">assumption</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">apply</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name_inb_iff_false"><span class="id" title="lemma">name_inb_iff_false</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">Heqb</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <span class="id" title="var">IHcandidate</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">auto</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="Name.Smax" class="idref" href="#Name.Smax"><span class="id" title="definition">Smax</span></a> (<a id="l:29" class="idref" href="#l:29"><span class="id" title="binder">l</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a>): <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#S"><span class="id" title="constructor">S</span></a> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> (<span class="id" title="var">op</span> := <a class="idref" href="Tealeaves.Misc.NaturalNumbers.html#Monoid_op_max"><span class="id" title="instance">Monoid_op_max</span></a>) (<span class="id" title="var">unit</span> := <a class="idref" href="Tealeaves.Misc.NaturalNumbers.html#Monoid_unit_max"><span class="id" title="instance">Monoid_unit_max</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#id"><span class="id" title="definition">id</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:29"><span class="id" title="variable">l</span></a>).<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="Name.Smax_gt" class="idref" href="#Name.Smax_gt"><span class="id" title="lemma">Smax_gt</span></a>: <span class="id" title="keyword">∀</span> <a id="l:30" class="idref" href="#l:30"><span class="id" title="binder">l</span></a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<a id="a:31" class="idref" href="#a:31"><span class="id" title="binder">a</span></a>: <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a>), <a class="idref" href="Tealeaves.Backends.Common.Names.html#a:31"><span class="id" title="variable">a</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">∈</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:30"><span class="id" title="variable">l</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#a:31"><span class="id" title="variable">a</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Peano.html#::nat_scope:x_'&lt;'_x"><span class="id" title="notation">&lt;</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.Smax"><span class="id" title="definition">Smax</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:30"><span class="id" title="variable">l</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">l</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">inversion</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Early.List.html#element_of_list_cons"><span class="id" title="lemma">element_of_list_cons</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.Smax"><span class="id" title="definition">Smax</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap_eq_foldMap_list"><span class="id" title="lemma">foldMap_eq_foldMap_list</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Early.List.html#foldMap_list_cons"><span class="id" title="lemma">foldMap_list_cons</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <span class="id" title="var">transparent</span> <span class="id" title="var">tcs</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap_eq_foldMap_list"><span class="id" title="lemma">foldMap_eq_foldMap_list</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#id"><span class="id" title="definition">id</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span> <span class="id" title="keyword">as</span> [<span class="id" title="var">Case1</span> | <span class="id" title="var">Case2</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">subst</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">lia</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">apply</span> <span class="id" title="var">IHl</span> <span class="id" title="tactic">in</span> <span class="id" title="var">Case2</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Arith.PeanoNat.html#Nat.succ_max_distr"><span class="id" title="lemma">PeanoNat.Nat.succ_max_distr</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> ((<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#S"><span class="id" title="constructor">S</span></a> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> (<span class="id" title="keyword">fun</span> <a id="x:33" class="idref" href="#x:33"><span class="id" title="binder">x</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a> ⇒ <a class="idref" href="Tealeaves.Backends.Common.Names.html#x:32"><span class="id" title="variable">x</span></a>) <span class="id" title="var">l</span>))) <span class="id" title="keyword">with</span> (<a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.Smax"><span class="id" title="definition">Smax</span></a> <span class="id" title="var">l</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">lia</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="Name.Smax_not_in" class="idref" href="#Name.Smax_not_in"><span class="id" title="lemma">Smax_not_in</span></a>: <span class="id" title="keyword">∀</span> <a id="l:34" class="idref" href="#l:34"><span class="id" title="binder">l</span></a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">¬</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.Smax"><span class="id" title="definition">Smax</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:34"><span class="id" title="variable">l</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">∈</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:34"><span class="id" title="variable">l</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">contra</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.Smax_gt"><span class="id" title="lemma">Smax_gt</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">contra</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">lia</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="Name.fresh" class="idref" href="#Name.fresh"><span class="id" title="definition">fresh</span></a> (<a id="l:35" class="idref" href="#l:35"><span class="id" title="binder">l</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a>) : <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.max_not_in_list_rec"><span class="id" title="definition">max_not_in_list_rec</span></a> (<a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.Smax"><span class="id" title="definition">Smax</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:35"><span class="id" title="variable">l</span></a>) (<a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.Smax"><span class="id" title="definition">Smax</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:35"><span class="id" title="variable">l</span></a>) <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:35"><span class="id" title="variable">l</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.max_not_in_list_rec"><span class="id" title="definition">max_not_in_list_rec</span></a> 100 5 <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">[</span></a>0<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 1<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 2<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">]</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.max_not_in_list_rec"><span class="id" title="definition">max_not_in_list_rec</span></a> 100 5 <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">[</span></a>0<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 1<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 3<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 4<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">]</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.max_not_in_list_rec"><span class="id" title="definition">max_not_in_list_rec</span></a> 100 5 <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">[</span></a>1<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 2<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 4<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 6<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 8<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">]</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.max_not_in_list_rec"><span class="id" title="definition">max_not_in_list_rec</span></a> 100 5 <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">[</span></a>0<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 1<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 2<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 4<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 6<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 8<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">]</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.fresh"><span class="id" title="definition">fresh</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ae9a5e1034e143b218b09d8e454472bd"><span class="id" title="notation">[]</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.fresh"><span class="id" title="definition">fresh</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ddd65c2f7ee73ecec433744948d846bb"><span class="id" title="notation">[</span></a>0<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ddd65c2f7ee73ecec433744948d846bb"><span class="id" title="notation">]</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.fresh"><span class="id" title="definition">fresh</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">[</span></a>0<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 1<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">]</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.fresh"><span class="id" title="definition">fresh</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">[</span></a>0<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">;</span></a> 2<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#e76c6291366b599375c28eba0aae94bb"><span class="id" title="notation">]</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="comment">(*<br/>
+&nbsp;&nbsp;Lemma&nbsp;max_not_in_list_spec:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;forall&nbsp;(candidate:&nbsp;name)&nbsp;(current_min:&nbsp;name)&nbsp;(l:&nbsp;list&nbsp;name),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;current_min<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_not_in_list_rec&nbsp;candidate&nbsp;current_min&nbsp;l<br/>
+<br/>
+<br/>
+&nbsp;&nbsp;Fixpoint&nbsp;max_not_in_list_rec<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(candidate:&nbsp;name)&nbsp;(current_min:&nbsp;name)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(l&nbsp;:&nbsp;list&nbsp;name)&nbsp;:&nbsp;name&nbsp;:=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;*)</span><br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="Name.fresh_not_in" class="idref" href="#Name.fresh_not_in"><span class="id" title="lemma">fresh_not_in</span></a> : <span class="id" title="keyword">∀</span> <a id="l:36" class="idref" href="#l:36"><span class="id" title="binder">l</span></a>, <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">¬</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.fresh"><span class="id" title="definition">fresh</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:36"><span class="id" title="variable">l</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">∈</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#l:36"><span class="id" title="variable">l</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intro</span> <span class="id" title="var">l</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.fresh"><span class="id" title="definition">fresh</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.max_not_in_list_rec_invariant"><span class="id" title="lemma">max_not_in_list_rec_invariant</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.Smax_not_in"><span class="id" title="lemma">Smax_not_in</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="Name.nat_of" class="idref" href="#Name.nat_of"><span class="id" title="definition">nat_of</span></a> := <span class="id" title="keyword">fun</span> (<a id="x:37" class="idref" href="#x:37"><span class="id" title="binder">x</span></a> : <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name.name"><span class="id" title="definition">name</span></a>) ⇒ (<a class="idref" href="Tealeaves.Backends.Common.Names.html#x:37"><span class="id" title="variable">x</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>).<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#Name"><span class="id" title="module">Name</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab1571"></a><h2 class="section">Shorthands and notations</h2>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Notation</span> <a id="name" class="idref" href="#name"><span class="id" title="abbreviation">name</span></a> := <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="definition">Name.name</span></a>.<br/>
+<span class="id" title="keyword">Notation</span> <a id="atom" class="idref" href="#atom"><span class="id" title="abbreviation">atom</span></a> := <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="definition">Name.name</span></a>.<br/>
+<span class="id" title="keyword">Notation</span> <a id="fresh" class="idref" href="#fresh"><span class="id" title="abbreviation">fresh</span></a> := <a class="idref" href="Tealeaves.Backends.Common.Names.html#fresh"><span class="id" title="definition">Name.fresh</span></a>.<br/>
+<span class="id" title="keyword">Notation</span> <a id="fresh_not_in" class="idref" href="#fresh_not_in"><span class="id" title="abbreviation">fresh_not_in</span></a> := <a class="idref" href="Tealeaves.Backends.Common.Names.html#fresh_not_in"><span class="id" title="lemma">Name.fresh_not_in</span></a>.<br/>
+
+<br/>
+<span class="comment">(*&nbsp;Automatically&nbsp;unfold&nbsp;Name.eq&nbsp;*)</span><br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="var">Arguments</span> <a class="idref" href="Tealeaves.Backends.Common.Names.html#eq"><span class="id" title="definition">Name.eq</span></a> /.<br/>
+
+<br/>
+#[<span class="id" title="var">export</span>] <span class="id" title="keyword">Instance</span> <a id="EqDec_name" class="idref" href="#EqDec_name"><span class="id" title="instance">EqDec_name</span></a> : @<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Classes.EquivDec.html#EqDec"><span class="id" title="class">EqDec</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#eq"><span class="id" title="inductive">eq</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Classes.RelationClasses.html#eq_equivalence"><span class="id" title="instance">eq_equivalence</span></a> := <a class="idref" href="Tealeaves.Backends.Common.Names.html#eq_dec"><span class="id" title="definition">Name.eq_dec</span></a>.<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>

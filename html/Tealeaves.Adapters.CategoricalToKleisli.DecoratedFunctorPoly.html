@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span> <img class="logo" src="./logo_96.png"> </span>
+      <span class="projectname"> Tealeaves </span>
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+      <a href="../html-alectryon/toc.html"> Switch to Alectryon Docs </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<h1 class="libtitle">Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly</h1>
+
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#"><span class="id" title="library">Classes.Categorical.DecoratedFunctorPoly</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctorPoly.html#"><span class="id" title="library">Classes.Kleisli.DecoratedFunctorPoly</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Functors.List.html#"><span class="id" title="library">Functors.List</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">local</span>] <span class="id" title="keyword">Generalizable</span> <span class="id" title="keyword">Variables</span> <span class="id" title="var">T</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Classes.Functor2.html#Notations"><span class="id" title="module">Functor2.Notations</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab1234"></a><h1 class="section">Kleisli DTMs from Categorical DTMs</h1>
+
+<div class="paragraph"> </div>
+
+<a id="lab1235"></a><h2 class="section">Derived Operations</h2>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Module</span> <a id="DerivedOperations" class="idref" href="#DerivedOperations"><span class="id" title="module">DerivedOperations</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;#[<span class="id" title="var">export</span>] <span class="id" title="keyword">Instance</span> <a id="DerivedOperations.Mapdp_Categorical" class="idref" href="#DerivedOperations.Mapdp_Categorical"><span class="id" title="instance">Mapdp_Categorical</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<a id="T:1" class="idref" href="#T:1"><span class="id" title="binder">T</span></a>: <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="H:2" class="idref" href="#H:2"><span class="id" title="binder">Map2</span></a> <a id="H:2" class="idref" href="#H:2"><span class="id" title="binder">T</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="H0:3" class="idref" href="#H0:3"><span class="id" title="binder">DecoratePoly</span></a> <a id="H0:3" class="idref" href="#H0:3"><span class="id" title="binder">T</span></a>}: <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctorPoly.html#MapdPoly"><span class="id" title="class">MapdPoly</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#T:1"><span class="id" title="variable">T</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">fun</span> (<a id="B1:4" class="idref" href="#B1:4"><span class="id" title="binder">B1</span></a> <a id="B2:5" class="idref" href="#B2:5"><span class="id" title="binder">B2</span></a> <a id="V1:6" class="idref" href="#V1:6"><span class="id" title="binder">V1</span></a> <a id="V2:7" class="idref" href="#V2:7"><span class="id" title="binder">V2</span></a>: <span class="id" title="keyword">Type</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a id="912f528bcc2a3307968970578885417a" class="idref" href="#912f528bcc2a3307968970578885417a"><span class="id" title="binder">ρ</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#B1:4"><span class="id" title="variable">B1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#B1:4"><span class="id" title="variable">B1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#B2:5"><span class="id" title="variable">B2</span></a>) <span class="comment">(*&nbsp;rename&nbsp;binders&nbsp;*)</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a id="72e868d13abb05ece78ff9e6f5f88467" class="idref" href="#72e868d13abb05ece78ff9e6f5f88467"><span class="id" title="binder">σ</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#B1:4"><span class="id" title="variable">B1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#V1:6"><span class="id" title="variable">V1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#V2:7"><span class="id" title="variable">V2</span></a>) <span class="comment">(*&nbsp;insert&nbsp;subtrees&nbsp;*)</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;⇒ <a class="idref" href="Tealeaves.Classes.Functor2.html#map2"><span class="id" title="definition">map2</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#912f528bcc2a3307968970578885417a"><span class="id" title="variable">ρ</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#72e868d13abb05ece78ff9e6f5f88467"><span class="id" title="variable">σ</span></a> <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#decp"><span class="id" title="definition">decp</span></a> (<span class="id" title="var">F</span> := <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> := <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#B1:4"><span class="id" title="variable">B1</span></a>) (<span class="id" title="var">V</span> := <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#V1:6"><span class="id" title="variable">V1</span></a>).<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#DerivedOperations"><span class="id" title="module">DerivedOperations</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Class</span> <a id="Compat_Mapdp_Categorical" class="idref" href="#Compat_Mapdp_Categorical"><span class="id" title="record">Compat_Mapdp_Categorical</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<a id="T:10" class="idref" href="#T:10"><span class="id" title="binder">T</span></a>: <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="Map_T:11" class="idref" href="#Map_T:11"><span class="id" title="binder">Map_T</span></a>: <a class="idref" href="Tealeaves.Classes.Functor2.html#Map2"><span class="id" title="class">Map2</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#T:10"><span class="id" title="variable">T</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="Decorate_T:12" class="idref" href="#Decorate_T:12"><span class="id" title="binder">Decorate_T</span></a>: <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#DecoratePoly"><span class="id" title="class">DecoratePoly</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#T:10"><span class="id" title="variable">T</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="Mapdp_T:13" class="idref" href="#Mapdp_T:13"><span class="id" title="binder">Mapdp_T</span></a>: <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctorPoly.html#MapdPoly"><span class="id" title="class">MapdPoly</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#T:10"><span class="id" title="variable">T</span></a>} :=<br/>
+&nbsp;&nbsp;<a id="compat_mapdp_categorical" class="idref" href="#compat_mapdp_categorical"><span class="id" title="projection">compat_mapdp_categorical</span></a>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#Mapdp_T:13"><span class="id" title="variable">Mapdp_T</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> @<a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#Mapdp_Categorical"><span class="id" title="instance">DerivedOperations.Mapdp_Categorical</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#T:10"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#Map_T:11"><span class="id" title="variable">Map_T</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#Decorate_T:12"><span class="id" title="variable">Decorate_T</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">export</span>] <span class="id" title="keyword">Instance</span> <a id="Mapdp_Categorical_Self" class="idref" href="#Mapdp_Categorical_Self"><span class="id" title="instance">Mapdp_Categorical_Self</span></a><br/>
+&nbsp;&nbsp;(<a id="T:16" class="idref" href="#T:16"><span class="id" title="binder">T</span></a>: <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span>)<br/>
+&nbsp;&nbsp;`{<a id="H:17" class="idref" href="#H:17"><span class="id" title="binder">Map2</span></a> <a id="H:17" class="idref" href="#H:17"><span class="id" title="binder">T</span></a>}<br/>
+&nbsp;&nbsp;`{<a id="H0:18" class="idref" href="#H0:18"><span class="id" title="binder">DecoratePoly</span></a> <a id="H0:18" class="idref" href="#H0:18"><span class="id" title="binder">T</span></a>}:<br/>
+&nbsp;&nbsp;@<a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#Compat_Mapdp_Categorical"><span class="id" title="class">Compat_Mapdp_Categorical</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#T:16"><span class="id" title="variable">T</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> (@<a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#Mapdp_Categorical"><span class="id" title="instance">DerivedOperations.Mapdp_Categorical</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#T:16"><span class="id" title="variable">T</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="mapdp_to_categorical" class="idref" href="#mapdp_to_categorical"><span class="id" title="lemma">mapdp_to_categorical</span></a> {<a id="T:19" class="idref" href="#T:19"><span class="id" title="binder">T</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="Map_T:20" class="idref" href="#Map_T:20"><span class="id" title="binder">Map_T</span></a>: <a class="idref" href="Tealeaves.Classes.Functor2.html#Map2"><span class="id" title="class">Map2</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#T:19"><span class="id" title="variable">T</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="Decorate_T:21" class="idref" href="#Decorate_T:21"><span class="id" title="binder">Decorate_T</span></a>: <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#DecoratePoly"><span class="id" title="class">DecoratePoly</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#T:19"><span class="id" title="variable">T</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="Mapdp_T:22" class="idref" href="#Mapdp_T:22"><span class="id" title="binder">Mapdp_T</span></a>: <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctorPoly.html#MapdPoly"><span class="id" title="class">MapdPoly</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#T:19"><span class="id" title="variable">T</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="Compat:26" class="idref" href="#Compat:26"><span class="id" title="binder">Compat</span></a>: <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#Compat_Mapdp_Categorical"><span class="id" title="class">Compat_Mapdp_Categorical</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#T:19"><span class="id" title="variable">T</span></a>}:<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<a id="B1:27" class="idref" href="#B1:27"><span class="id" title="binder">B1</span></a> <a id="B2:28" class="idref" href="#B2:28"><span class="id" title="binder">B2</span></a> <a id="V1:29" class="idref" href="#V1:29"><span class="id" title="binder">V1</span></a> <a id="V2:30" class="idref" href="#V2:30"><span class="id" title="binder">V2</span></a>: <span class="id" title="keyword">Type</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a id="21a5a9d1bb42088c35cd2f336d25ba3b" class="idref" href="#21a5a9d1bb42088c35cd2f336d25ba3b"><span class="id" title="binder">ρ</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#B1:27"><span class="id" title="variable">B1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#B1:27"><span class="id" title="variable">B1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#B2:28"><span class="id" title="variable">B2</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a id="06b43d5b33f680f1c997e1fdb8d32e12" class="idref" href="#06b43d5b33f680f1c997e1fdb8d32e12"><span class="id" title="binder">σ</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#B1:27"><span class="id" title="variable">B1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#V1:29"><span class="id" title="variable">V1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#V2:30"><span class="id" title="variable">V2</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a id="t:33" class="idref" href="#t:33"><span class="id" title="binder">t</span></a>: <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#T:19"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#B1:27"><span class="id" title="variable">B1</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#V1:29"><span class="id" title="variable">V1</span></a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctorPoly.html#mapdp"><span class="id" title="definition">mapdp</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#21a5a9d1bb42088c35cd2f336d25ba3b"><span class="id" title="variable">ρ</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#06b43d5b33f680f1c997e1fdb8d32e12"><span class="id" title="variable">σ</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#t:33"><span class="id" title="variable">t</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="Tealeaves.Classes.Functor2.html#map2"><span class="id" title="definition">map2</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#21a5a9d1bb42088c35cd2f336d25ba3b"><span class="id" title="variable">ρ</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#06b43d5b33f680f1c997e1fdb8d32e12"><span class="id" title="variable">σ</span></a> (<a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#decp"><span class="id" title="definition">decp</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#t:33"><span class="id" title="variable">t</span></a>).<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="var">now</span> <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#compat_mapdp_categorical"><span class="id" title="definition">compat_mapdp_categorical</span></a>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="DerivedInstances" class="idref" href="#DerivedInstances"><span class="id" title="module">DerivedInstances</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#DerivedOperations"><span class="id" title="module">DerivedOperations</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Section</span> <a id="DerivedInstances.context" class="idref" href="#DerivedInstances.context"><span class="id" title="section">context</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Context</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="H1:37" class="idref" href="#H1:37"><span class="id" title="binder">Categorical.DecoratedFunctorPoly.DecoratedFunctorPoly</span></a> <a id="H1:37" class="idref" href="#H1:37"><span class="id" title="binder">T</span></a>}.<br/>
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;#[<span class="id" title="var">export</span>] <span class="id" title="keyword">Instance</span>: <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctorPoly.html#DecoratedFunctorPoly"><span class="id" title="class">Kleisli.DecoratedFunctorPoly.DecoratedFunctorPoly</span></a> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#DerivedInstances.context.T"><span class="id" title="variable">T</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">constructor</span>; <span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctorPoly.html#mapdp"><span class="id" title="definition">mapdp</span></a>, <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#DerivedOperations.Mapdp_Categorical"><span class="id" title="instance">Mapdp_Categorical</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#dfunp_dec_extract"><span class="id" title="method">dfunp_dec_extract</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctorPoly.html#mapdp"><span class="id" title="definition">mapdp</span></a>, <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#DerivedOperations.Mapdp_Categorical"><span class="id" title="instance">Mapdp_Categorical</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> &lt;- <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> → <span class="id" title="var">near</span> (<a class="idref" href="Tealeaves.Classes.Functor2.html#map2"><span class="id" title="definition">map2</span></a> ρ1 σ1).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#polydecnat"><span class="id" title="definition">polydecnat</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">reassociate</span> &lt;- <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Functor2.html#fun2_map_map"><span class="id" title="method">fun2_map_map</span></a>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> → <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#dfunp_dec_dec"><span class="id" title="method">dfunp_dec_dec</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> &lt;- <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Functor2.html#fun2_map_map"><span class="id" title="method">fun2_map_map</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctorPoly.html#kc_dz"><span class="id" title="definition">kc_dz</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctorPoly.html#kc_dfunp"><span class="id" title="definition">kc_dfunp</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> → <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#cobind_Z_spec"><span class="id" title="definition">cobind_Z_spec</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#DerivedInstances.context"><span class="id" title="section">context</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#DerivedInstances"><span class="id" title="module">DerivedInstances</span></a>.<br/>
+
+<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>

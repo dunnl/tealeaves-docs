@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span> <img class="logo" src="./logo_96.png"> </span>
+      <span class="projectname"> Tealeaves </span>
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+      <a href="../html-alectryon/toc.html"> Switch to Alectryon Docs </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<h1 class="libtitle">Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad</h1>
+
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonad.html#"><span class="id" title="library">Classes.Kleisli.DecoratedTraversableMonad</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#"><span class="id" title="library">Classes.Kleisli.DecoratedTraversableMonadPoly</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableCommIdemFunctor.html#"><span class="id" title="library">Classes.Kleisli.DecoratedTraversableCommIdemFunctor</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Monoid.html#"><span class="id" title="library">Classes.Monoid</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Functors.List.html#"><span class="id" title="library">Functors.List</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Functors.Writer.html#"><span class="id" title="library">Functors.Writer</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#"><span class="id" title="library">Functors.List_Telescoping_General</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#Notations"><span class="id" title="module">Applicative.Notations</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#Notations"><span class="id" title="module">Monoid.Notations</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Misc.Product.html#Notations"><span class="id" title="module">Product.Notations</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableCommIdemFunctor.html#Notations"><span class="id" title="module">DecoratedTraversableCommIdemFunctor.Notations</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">local</span>] <span class="id" title="keyword">Generalizable</span> <span class="id" title="keyword">Variables</span> <span class="id" title="var">ϕ</span> <span class="id" title="var">T</span> <span class="id" title="var">W</span> <span class="id" title="var">G</span> <span class="id" title="var">A</span> <span class="id" title="var">B</span> <span class="id" title="var">C</span> <span class="id" title="var">D</span> <span class="id" title="var">F</span> <span class="id" title="var">M</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Section</span> <a id="dtmp_to_dtm" class="idref" href="#dtmp_to_dtm"><span class="id" title="section">dtmp_to_dtm</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Context</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<a id="T:1" class="idref" href="#T:1"><span class="id" title="binder">T</span></a>: <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="H1:4" class="idref" href="#H1:4"><span class="id" title="binder">DecoratedTraversableMonadPoly</span></a> <a id="H1:4" class="idref" href="#H1:4"><span class="id" title="binder">T</span></a>}.<br/>
+
+<br/>
+&nbsp;&nbsp;#[<span class="id" title="var">export</span>] <span class="id" title="keyword">Instance</span> <a id="Binddt_of_Binddtp" class="idref" href="#Binddt_of_Binddtp"><span class="id" title="instance">Binddt_of_Binddtp</span></a> {<a id="B:5" class="idref" href="#B:5"><span class="id" title="binder">B</span></a>}: <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonad.html#Binddt"><span class="id" title="class">Binddt</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#B:5"><span class="id" title="variable">B</span></a>) (<a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#dtmp_to_dtm.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#B:5"><span class="id" title="variable">B</span></a>) (<a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#dtmp_to_dtm.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#B:5"><span class="id" title="variable">B</span></a>) :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">fun</span> <a id="G:6" class="idref" href="#G:6"><span class="id" title="binder">G</span></a> <a id="Gmap:7" class="idref" href="#Gmap:7"><span class="id" title="binder">Gmap</span></a> <a id="Gpure:8" class="idref" href="#Gpure:8"><span class="id" title="binder">Gpure</span></a> <a id="Gmult:9" class="idref" href="#Gmult:9"><span class="id" title="binder">Gmult</span></a> <a id="V1:10" class="idref" href="#V1:10"><span class="id" title="binder">V1</span></a> <a id="V2:11" class="idref" href="#V2:11"><span class="id" title="binder">V2</span></a> <a id="feb34c1ba9419896b17e3d09a5a7adde" class="idref" href="#feb34c1ba9419896b17e3d09a5a7adde"><span class="id" title="binder">σ</span></a> ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#substitute"><span class="id" title="definition">substitute</span></a> (<span class="id" title="var">G</span> := <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#G:6"><span class="id" title="variable">G</span></a>) (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#dtmp_to_dtm.T"><span class="id" title="variable">T</span></a>) (<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#pure"><span class="id" title="definition">pure</span></a> <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.Comonad.html#extract"><span class="id" title="definition">extract</span></a> (<span class="id" title="var">W</span> := <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#prod"><span class="id" title="inductive">prod</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <span class="id" title="var">B</span>)) (<span class="id" title="var">A</span> := <span class="id" title="var">B</span>)) (<a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#feb34c1ba9419896b17e3d09a5a7adde"><span class="id" title="variable">σ</span></a>).<br/>
+
+<br/>
+&nbsp;&nbsp;#[<span class="id" title="var">export</span>] <span class="id" title="keyword">Instance</span> <a id="DTM_of_DTMP" class="idref" href="#DTM_of_DTMP"><span class="id" title="instance">DTM_of_DTMP</span></a> {<a id="B:13" class="idref" href="#B:13"><span class="id" title="binder">B</span></a>}: <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonad.html#DecoratedTraversableMonad"><span class="id" title="class">DecoratedTraversableMonad</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#B:13"><span class="id" title="variable">B</span></a>) (<a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#dtmp_to_dtm.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#B:13"><span class="id" title="variable">B</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">constructor</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">typeclasses</span> <span class="id" title="tactic">eauto</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#Binddt_of_Binddtp"><span class="id" title="instance">Binddt_of_Binddtp</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#kdtmp_substitute0"><span class="id" title="method">kdtmp_substitute0</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">constructor</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#Binddt_of_Binddtp"><span class="id" title="instance">Binddt_of_Binddtp</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#Pure_I"><span class="id" title="instance">Pure_I</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#kdtmp_substitute1"><span class="id" title="method">kdtmp_substitute1</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#Binddt_of_Binddtp"><span class="id" title="instance">Binddt_of_Binddtp</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#Pure_I"><span class="id" title="instance">Pure_I</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#kdtmp_substitute2"><span class="id" title="method">kdtmp_substitute2</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="id" title="var">fequal</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">ext</span> [<span class="id" title="var">ctx</span> <span class="id" title="var">b</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">fequal</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">fequal</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#extract_Z_prod"><span class="id" title="lemma">extract_Z_prod</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableCommIdemFunctor.html#kc3_ci_pure_extract1"><span class="id" title="lemma">kc3_ci_pure_extract1</span></a> (<span class="id" title="var">W</span> := <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#Z"><span class="id" title="definition">Z</span></a>) (<span class="id" title="var">G1</span> := <span class="id" title="var">G1</span>) (<span class="id" title="var">G2</span> := <span class="id" title="var">G2</span>)).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">ext</span> [<span class="id" title="var">ctx</span> <span class="id" title="var">v</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#kc_dtmp"><span class="id" title="definition">kc_dtmp</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonad.html#kc7"><span class="id" title="definition">kc7</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#map_ap"><span class="id" title="lemma">map_ap</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#map_ap"><span class="id" title="lemma">map_ap</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#app_pure_natural"><span class="id" title="method">app_pure_natural</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">admit</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="id" title="tactic">intros</span> [<span class="id" title="var">ctx</span> <span class="id" title="var">b</span>].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">cbv</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">typeclasses</span> <span class="id" title="tactic">eauto</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#Binddt_of_Binddtp"><span class="id" title="instance">Binddt_of_Binddtp</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#kdtmp_morphism"><span class="id" title="method">kdtmp_morphism</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> &lt;- <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#appmor_pure_pf"><span class="id" title="lemma">appmor_pure_pf</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Abort</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#dtmp_to_dtm"><span class="id" title="section">dtmp_to_dtm</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Section</span> <a id="dtmp_to_dtf_bin" class="idref" href="#dtmp_to_dtf_bin"><span class="id" title="section">dtmp_to_dtf_bin</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Context</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<a id="T:14" class="idref" href="#T:14"><span class="id" title="binder">T</span></a>: <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="H1:17" class="idref" href="#H1:17"><span class="id" title="binder">DecoratedTraversableMonadPoly</span></a> <a id="H1:17" class="idref" href="#H1:17"><span class="id" title="binder">T</span></a>}.<br/>
+
+<br/>
+&nbsp;&nbsp;#[<span class="id" title="var">export</span>] <span class="id" title="keyword">Instance</span> <a id="MapdtB_of_Binddtp" class="idref" href="#MapdtB_of_Binddtp"><span class="id" title="instance">MapdtB_of_Binddtp</span></a> {<a id="V:18" class="idref" href="#V:18"><span class="id" title="binder">V</span></a>}: <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableCommIdemFunctor.html#Mapdt_CommIdem"><span class="id" title="class">Mapdt_CommIdem</span></a> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#Z"><span class="id" title="definition">Z</span></a> (<span class="id" title="keyword">fun</span> <a id="B:19" class="idref" href="#B:19"><span class="id" title="binder">B</span></a> ⇒ <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#dtmp_to_dtf_bin.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#B:19"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#V:18"><span class="id" title="variable">V</span></a>) :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">fun</span> <a id="G:20" class="idref" href="#G:20"><span class="id" title="binder">G</span></a> <a id="Gmap:21" class="idref" href="#Gmap:21"><span class="id" title="binder">Gmap</span></a> <a id="Gpure:22" class="idref" href="#Gpure:22"><span class="id" title="binder">Gpure</span></a> <a id="Gmult:23" class="idref" href="#Gmult:23"><span class="id" title="binder">Gmult</span></a> <a id="B1:24" class="idref" href="#B1:24"><span class="id" title="binder">B1</span></a> <a id="B2:25" class="idref" href="#B2:25"><span class="id" title="binder">B2</span></a> <a id="5887ff30c3475dc86b5d5aeb60b7c453" class="idref" href="#5887ff30c3475dc86b5d5aeb60b7c453"><span class="id" title="binder">ρ</span></a> ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#substitute"><span class="id" title="definition">substitute</span></a> (<span class="id" title="var">G</span> := <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#G:20"><span class="id" title="variable">G</span></a>) (<span class="id" title="var">U</span> := <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#dtmp_to_dtf_bin.T"><span class="id" title="variable">T</span></a>) (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#dtmp_to_dtf_bin.T"><span class="id" title="variable">T</span></a>) <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#5887ff30c3475dc86b5d5aeb60b7c453"><span class="id" title="variable">ρ</span></a> (<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#pure"><span class="id" title="definition">pure</span></a> (<span class="id" title="var">F</span> := <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#G:20"><span class="id" title="variable">G</span></a>) <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.Monad.html#ret"><span class="id" title="definition">ret</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#dtmp_to_dtf_bin.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#B2:25"><span class="id" title="variable">B2</span></a>) <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.Comonad.html#extract"><span class="id" title="definition">extract</span></a>).<br/>
+
+<br/>
+&nbsp;&nbsp;#[<span class="id" title="var">export</span>] <span class="id" title="keyword">Instance</span> <a id="DTFCI_of_DTMP" class="idref" href="#DTFCI_of_DTMP"><span class="id" title="instance">DTFCI_of_DTMP</span></a> {<a id="V:27" class="idref" href="#V:27"><span class="id" title="binder">V</span></a>}: <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableCommIdemFunctor.html#DecoratedTraversableCommIdemFunctor"><span class="id" title="class">DecoratedTraversableCommIdemFunctor</span></a> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#Z"><span class="id" title="definition">Z</span></a> (<span class="id" title="keyword">fun</span> <a id="B:28" class="idref" href="#B:28"><span class="id" title="binder">B</span></a> ⇒ <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#dtmp_to_dtf_bin.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#B:28"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#V:27"><span class="id" title="variable">V</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">constructor</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#MapdtB_of_Binddtp"><span class="id" title="instance">MapdtB_of_Binddtp</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">apply</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#kdtmp_substitute1"><span class="id" title="method">kdtmp_substitute1</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#MapdtB_of_Binddtp"><span class="id" title="instance">MapdtB_of_Binddtp</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#kdtmp_substitute2"><span class="id" title="method">kdtmp_substitute2</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">fequal</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="comment">(*&nbsp;kc_dtmp&nbsp;lemma&nbsp;*)</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">admit</span>. }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="comment">(*&nbsp;idempotentcenter&nbsp;lemma&nbsp;*)</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">admit</span>. }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#MapdtB_of_Binddtp"><span class="id" title="instance">MapdtB_of_Binddtp</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#kdtmp_morphism"><span class="id" title="method">kdtmp_morphism</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> &lt;- <span class="id" title="var">on</span> <span class="id" title="tactic">right</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> &lt;- <span class="id" title="var">on</span> <span class="id" title="tactic">right</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#appmor_pure_pf"><span class="id" title="lemma">appmor_pure_pf</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Abort</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#dtmp_to_dtf_bin"><span class="id" title="section">dtmp_to_dtf_bin</span></a>.<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>

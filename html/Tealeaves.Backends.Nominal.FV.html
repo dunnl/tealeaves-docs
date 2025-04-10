@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span> <img class="logo" src="./logo_96.png"> </span>
+      <span class="projectname"> Tealeaves </span>
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+      <a href="../html-alectryon/toc.html"> Switch to Alectryon Docs </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<h1 class="libtitle">Tealeaves.Backends.Nominal.FV</h1>
+
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableFunctor.html#"><span class="id" title="library">Classes.Kleisli.DecoratedTraversableFunctor</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#"><span class="id" title="library">Kleisli.Theory.DecoratedTraversableFunctor</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.Nominal.Common.html#"><span class="id" title="library">Backends.Nominal.Common</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ListNotations"><span class="id" title="module">List.ListNotations</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab1618"></a><h1 class="section">Free Variables</h1>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Section</span> <a id="FV" class="idref" href="#FV"><span class="id" title="section">FV</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Context</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<a id="T:1" class="idref" href="#T:1"><span class="id" title="binder">T</span></a>: <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="H:2" class="idref" href="#H:2"><span class="id" title="binder">Mapdt</span></a> <a id="H:2" class="idref" href="#H:2"><span class="id" title="binder">(</span></a><a id="H:2" class="idref" href="#H:2"><span class="id" title="binder">list</span></a> <a id="H:2" class="idref" href="#H:2"><span class="id" title="binder">name</span></a><a id="H:2" class="idref" href="#H:2"><span class="id" title="binder">)</span></a> <a id="H:2" class="idref" href="#H:2"><span class="id" title="binder">T</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="DecoratedTraversableFunctor0:3" class="idref" href="#DecoratedTraversableFunctor0:3"><span class="id" title="binder">!</span></a> <a id="DecoratedTraversableFunctor0:3" class="idref" href="#DecoratedTraversableFunctor0:3"><span class="id" title="binder">DecoratedTraversableFunctor</span></a> <a id="DecoratedTraversableFunctor0:3" class="idref" href="#DecoratedTraversableFunctor0:3"><span class="id" title="binder">(</span></a><a id="DecoratedTraversableFunctor0:3" class="idref" href="#DecoratedTraversableFunctor0:3"><span class="id" title="binder">list</span></a> <a id="DecoratedTraversableFunctor0:3" class="idref" href="#DecoratedTraversableFunctor0:3"><span class="id" title="binder">name</span></a><a id="DecoratedTraversableFunctor0:3" class="idref" href="#DecoratedTraversableFunctor0:3"><span class="id" title="binder">)</span></a> <a id="DecoratedTraversableFunctor0:3" class="idref" href="#DecoratedTraversableFunctor0:3"><span class="id" title="binder">T</span></a>}.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="FV_loc" class="idref" href="#FV_loc"><span class="id" title="definition">FV_loc</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">fun</span> '<a id="pat:6" class="idref" href="#pat:6"><span class="id" title="binder">(</span></a><a id="pat:6" class="idref" href="#pat:6"><span class="id" title="binder">ctx</span></a><a id="pat:6" class="idref" href="#pat:6"><span class="id" title="binder">,</span></a> <a id="pat:6" class="idref" href="#pat:6"><span class="id" title="binder">x</span></a><a id="pat:6" class="idref" href="#pat:6"><span class="id" title="binder">)</span></a> ⇒ <span class="id" title="keyword">if</span> <a class="idref" href="Tealeaves.Backends.Nominal.Common.html#get_binding"><span class="id" title="definition">get_binding</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#ctx:5"><span class="id" title="variable">ctx</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#x:4"><span class="id" title="variable">x</span></a> <span class="id" title="keyword">then</span> @<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#nil"><span class="id" title="constructor">nil</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <span class="id" title="keyword">else</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ddd65c2f7ee73ecec433744948d846bb"><span class="id" title="notation">[</span></a><a class="idref" href="Tealeaves.Backends.Nominal.FV.html#x:4"><span class="id" title="variable">x</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ddd65c2f7ee73ecec433744948d846bb"><span class="id" title="notation">]</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="FV" class="idref" href="#FV"><span class="id" title="definition">FV</span></a>: <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#foldMapd"><span class="id" title="definition">foldMapd</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV_loc"><span class="id" title="definition">FV_loc</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#Notations"><span class="id" title="module">ContainerFunctor.Notations</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedContainerFunctor.html#Notations"><span class="id" title="module">DecoratedContainerFunctor.Notations</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Context</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="H0:7" class="idref" href="#H0:7"><span class="id" title="binder">ToCtxset</span></a> <a id="H0:7" class="idref" href="#H0:7"><span class="id" title="binder">(</span></a><a id="H0:7" class="idref" href="#H0:7"><span class="id" title="binder">list</span></a> <a id="H0:7" class="idref" href="#H0:7"><span class="id" title="binder">atom</span></a><a id="H0:7" class="idref" href="#H0:7"><span class="id" title="binder">)</span></a> <a id="H0:7" class="idref" href="#H0:7"><span class="id" title="binder">T</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="Compat_ToCtxset_Mapdt0:8" class="idref" href="#Compat_ToCtxset_Mapdt0:8"><span class="id" title="binder">!</span></a> <a id="Compat_ToCtxset_Mapdt0:8" class="idref" href="#Compat_ToCtxset_Mapdt0:8"><span class="id" title="binder">Compat_ToCtxset_Mapdt</span></a> <a id="Compat_ToCtxset_Mapdt0:8" class="idref" href="#Compat_ToCtxset_Mapdt0:8"><span class="id" title="binder">(</span></a><a id="Compat_ToCtxset_Mapdt0:8" class="idref" href="#Compat_ToCtxset_Mapdt0:8"><span class="id" title="binder">list</span></a> <a id="Compat_ToCtxset_Mapdt0:8" class="idref" href="#Compat_ToCtxset_Mapdt0:8"><span class="id" title="binder">atom</span></a><a id="Compat_ToCtxset_Mapdt0:8" class="idref" href="#Compat_ToCtxset_Mapdt0:8"><span class="id" title="binder">)</span></a> <a id="Compat_ToCtxset_Mapdt0:8" class="idref" href="#Compat_ToCtxset_Mapdt0:8"><span class="id" title="binder">T</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="H1:9" class="idref" href="#H1:9"><span class="id" title="binder">Traverse</span></a> <a id="H1:9" class="idref" href="#H1:9"><span class="id" title="binder">T</span></a>}.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Theory.TraversableFunctor.html#"><span class="id" title="module">Theory.TraversableFunctor</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Existing Instance</span> <span class="id" title="var">ToSubset_Traverse</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#"><span class="id" title="module">Theory.DecoratedTraversableFunctor</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Existing Instance</span> <span class="id" title="var">ToCtxset_Mapdt</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="FV_lift_local" class="idref" href="#FV_lift_local"><span class="id" title="lemma">FV_lift_local</span></a>: <span class="id" title="keyword">∀</span> (<a id="t:10" class="idref" href="#t:10"><span class="id" title="binder">t</span></a>: <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a>) (<a id="ctx:11" class="idref" href="#ctx:11"><span class="id" title="binder">ctx</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#atom"><span class="id" title="abbreviation">atom</span></a>) (<a id="a:12" class="idref" href="#a:12"><span class="id" title="binder">a</span></a>: <a class="idref" href="Tealeaves.Backends.Common.Names.html#atom"><span class="id" title="abbreviation">atom</span></a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Backends.Nominal.FV.html#ctx:11"><span class="id" title="variable">ctx</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">,</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#a:12"><span class="id" title="variable">a</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">)</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedContainerFunctor.html#934c3c4b89b2e961cbebf444fa26bd90"><span class="id" title="notation">∈</span></a><a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedContainerFunctor.html#934c3c4b89b2e961cbebf444fa26bd90"><span class="id" title="notation">d</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#t:10"><span class="id" title="variable">t</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">¬</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#a:12"><span class="id" title="variable">a</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">∈</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#ctx:11"><span class="id" title="variable">ctx</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#a:12"><span class="id" title="variable">a</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">∈</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV"><span class="id" title="definition">FV</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#t:10"><span class="id" title="variable">t</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV"><span class="id" title="definition">FV</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">compose</span> <span class="id" title="var">near</span> <span class="id" title="var">t</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#foldMapd_morphism"><span class="id" title="lemma">foldMapd_morphism</span></a> (<span class="id" title="var">M1</span> := <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#atom"><span class="id" title="abbreviation">atom</span></a>) (<span class="id" title="var">M2</span> := <span class="id" title="keyword">Prop</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">A</span> := <a class="idref" href="Tealeaves.Backends.Common.Names.html#atom"><span class="id" title="abbreviation">atom</span></a>) (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV.T"><span class="id" title="variable">T</span></a>) (<span class="id" title="var">E</span> := <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#atom"><span class="id" title="abbreviation">atom</span></a>) (<span class="id" title="var">ϕ</span> := @<a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#element_of"><span class="id" title="definition">element_of</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">a</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">morphism</span> := <a class="idref" href="Tealeaves.Functors.Early.List.html#Monoid_Morphism_element_list"><span class="id" title="instance">Monoid_Morphism_element_list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#atom"><span class="id" title="abbreviation">atom</span></a> <span class="id" title="var">a</span>)).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#Forany_ctx"><span class="id" title="definition">Forany_ctx</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV.T"><span class="id" title="variable">T</span></a>) (<a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#element_of"><span class="id" title="definition">element_of</span></a> <span class="id" title="var">a</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV_loc"><span class="id" title="definition">FV_loc</span></a>) <span class="id" title="var">t</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#forany_ctx_iff"><span class="id" title="lemma">forany_ctx_iff</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">∃</span> <span class="id" title="var">ctx</span>. <span class="id" title="tactic">∃</span> <span class="id" title="var">a</span>. <span class="id" title="tactic">split</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">assumption</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>, <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV_loc"><span class="id" title="definition">FV_loc</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">destruct</span> (<a class="idref" href="Tealeaves.Backends.Nominal.Common.html#get_binding_spec"><span class="id" title="lemma">get_binding_spec</span></a> <span class="id" title="var">ctx</span> <span class="id" title="var">a</span>) <span class="id" title="keyword">as</span> [[<span class="id" title="var">Case1</span> <span class="id" title="var">rest</span>] | [<span class="id" title="var">prefix</span> [<span class="id" title="var">postfix</span> [<span class="id" title="var">Case2</span> [<span class="id" title="var">ctxspec</span> <span class="id" title="var">Hnin</span>]]]]].<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="id" title="tactic">rewrite</span> <span class="id" title="var">Case1</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Early.List.html#element_of_list_one"><span class="id" title="lemma">element_of_list_one</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="id" title="tactic">rewrite</span> <span class="id" title="var">Case2</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">assert</span> (<span class="id" title="var">a</span> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">∈</span></a> <span class="id" title="var">ctx</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ <span class="id" title="tactic">subst</span>. <span class="id" title="tactic">autorewrite</span> <span class="id" title="keyword">with</span> <span class="id" title="var">tea_list</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">tauto</span>. }<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">contradiction</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV"><span class="id" title="section">FV</span></a>.<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>

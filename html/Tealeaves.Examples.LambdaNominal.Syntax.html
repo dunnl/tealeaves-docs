@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span> <img class="logo" src="./logo_96.png"> </span>
+      <span class="projectname"> Tealeaves </span>
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+      <a href="../html-alectryon/toc.html"> Switch to Alectryon Docs </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<h1 class="libtitle">Tealeaves.Examples.LambdaNominal.Syntax</h1>
+
+<div class="code">
+<span class="comment">(*|<br/>
+##############################<br/>
+Formalizing&nbsp;STLC&nbsp;with&nbsp;Named&nbsp;Variables<br/>
+##############################<br/>
+<br/>
+============================<br/>
+Exports&nbsp;and&nbsp;setup<br/>
+============================<br/>
+|*)</span><br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves.Classes</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Functor2.html#"><span class="id" title="library">Functor2</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.ApplicativeCommutativeIdempotent.html#"><span class="id" title="library">Categorical.ApplicativeCommutativeIdempotent</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.TraversableFunctor2.html#"><span class="id" title="library">Categorical.TraversableFunctor2</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.DecoratedFunctorPoly.html#"><span class="id" title="library">Categorical.DecoratedFunctorPoly</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.DecoratedTraversableMonadPoly.html#"><span class="id" title="library">Categorical.DecoratedTraversableMonadPoly</span></a>.<br/>
+&nbsp;&nbsp;<span class="comment">(*&nbsp;Kleisli.DecoratedTraversableCommIdemFunctor<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kleisli.DecoratedTraversableMonadPoly.<br/>
+&nbsp;&nbsp;&nbsp;*)</span><br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves.Functors</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Functors.List.html#"><span class="id" title="library">List</span></a> <a class="idref" href="Tealeaves.Functors.Z2.html#"><span class="id" title="library">Z2</span></a> <a class="idref" href="Tealeaves.Functors.Pair.html#"><span class="id" title="library">Pair</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves.Backends</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.Common.Names.html#"><span class="id" title="library">Common.Names</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Export</span> <a class="idref" href="Tealeaves.Misc.Product.html#Notations"><span class="id" title="module">Product.Notations</span></a>.<br/>
+<span class="id" title="keyword">Export</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#Notations"><span class="id" title="module">Monoid.Notations</span></a>.<br/>
+<span class="id" title="keyword">Export</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ListNotations"><span class="id" title="module">List.ListNotations</span></a>.<br/>
+<span class="id" title="keyword">Export</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableCommIdemFunctor.html#Notations"><span class="id" title="module">DecoratedTraversableCommIdemFunctor.Notations</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">local</span>] <span class="id" title="keyword">Generalizable</span> <span class="id" title="keyword">Variables</span> <span class="id" title="var">G</span> <span class="id" title="var">ϕ</span>.<br/>
+#[<span class="id" title="var">local</span>] <span class="id" title="keyword">Set</span> <span class="id" title="keyword">Implicit</span> <span class="id" title="var">Arguments</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Export</span> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#Notations"><span class="id" title="module">Applicative.Notations</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab1800"></a><h1 class="section">Language definition</h1>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Inductive</span> <a id="term" class="idref" href="#term"><span class="id" title="inductive">term</span></a> (<a id="B:1" class="idref" href="#B:1"><span class="id" title="binder">B</span></a> <a id="V:2" class="idref" href="#V:2"><span class="id" title="binder">V</span></a>: <span class="id" title="keyword">Type</span>) :=<br/>
+| <a id="tvar" class="idref" href="#tvar"><span class="id" title="constructor">tvar</span></a>: <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#V:2"><span class="id" title="variable">V</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#term:3"><span class="id" title="inductive">term</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#B:1"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#V:2"><span class="id" title="variable">V</span></a><br/>
+| <a id="lam" class="idref" href="#lam"><span class="id" title="constructor">lam</span></a>: <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#B:1"><span class="id" title="variable">B</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#term:3"><span class="id" title="inductive">term</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#B:1"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#V:2"><span class="id" title="variable">V</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#term:3"><span class="id" title="inductive">term</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#B:1"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#V:2"><span class="id" title="variable">V</span></a><br/>
+| <a id="tap" class="idref" href="#tap"><span class="id" title="constructor">tap</span></a>: <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#term:3"><span class="id" title="inductive">term</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#B:1"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#V:2"><span class="id" title="variable">V</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#term:3"><span class="id" title="inductive">term</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#B:1"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#V:2"><span class="id" title="variable">V</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#term:3"><span class="id" title="inductive">term</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#B:1"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#V:2"><span class="id" title="variable">V</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">global</span>] <span class="id" title="var">Arguments</span> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#tvar"><span class="id" title="constructor">tvar</span></a> {<span class="id" title="var">B</span>}%<span class="id" title="var">type_scope</span> {<span class="id" title="var">V</span>}%<span class="id" title="var">type_scope</span> <span class="id" title="var">_</span>.<br/>
+
+<br/>
+#[<span class="id" title="var">export</span>] <span class="id" title="keyword">Instance</span> <a id="Return_lambda_term" class="idref" href="#Return_lambda_term"><span class="id" title="instance">Return_lambda_term</span></a>: <span class="id" title="keyword">∀</span> <a id="B:5" class="idref" href="#B:5"><span class="id" title="binder">B</span></a>, <a class="idref" href="Tealeaves.Classes.Categorical.Monad.html#Return"><span class="id" title="class">Return</span></a> (<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#term"><span class="id" title="inductive">term</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#B:5"><span class="id" title="variable">B</span></a>) :=<br/>
+&nbsp;&nbsp;@<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#tvar"><span class="id" title="constructor">tvar</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab1801"></a><h2 class="section">Notations and automation</h2>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Module</span> <a id="Notations" class="idref" href="#Notations"><span class="id" title="module">Notations</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Notation</span> <a id="7be905405a21c2ce938f59824372acec" class="idref" href="#7be905405a21c2ce938f59824372acec"><span class="id" title="notation">&quot;</span></a>'λ'" := (<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#lam"><span class="id" title="constructor">lam</span></a>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 45).<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Notation</span> <a id="d84450183b19a6879eb296f8117d2549" class="idref" href="#d84450183b19a6879eb296f8117d2549"><span class="id" title="notation">&quot;</span></a>⟨ t ⟩ ( u )" := (<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#tap"><span class="id" title="constructor">tap</span></a> <span class="id" title="var">t</span> <span class="id" title="var">u</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 80, <span class="id" title="var">t</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 40, <span class="id" title="var">u</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 40).<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#Notations"><span class="id" title="module">Notations</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Declare Scope</span> <span class="id" title="var">lambda_scope</span>.<br/>
+<span class="id" title="keyword">Delimit</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">lambda_scope</span> <span class="id" title="keyword">with</span> <span class="id" title="var">lam</span>.<br/>
+
+<br/>
+<span class="comment">(*&nbsp;Notation&nbsp;for&nbsp;variables&nbsp;*)</span><br/>
+<span class="id" title="keyword">Notation</span> <a id="ca96ff90e311e7ca5655fa05dbf4cc93" class="idref" href="#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">&quot;</span></a>'`' x" := (@<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#tvar"><span class="id" title="constructor">tvar</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#atom"><span class="id" title="abbreviation">atom</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#atom"><span class="id" title="abbreviation">atom</span></a> <span class="id" title="var">x</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 1, <span class="id" title="var">format</span> "'`' x") : <span class="id" title="var">lambda_scope</span>.<br/>
+
+<br/>
+<span class="comment">(*&nbsp;Notation&nbsp;for&nbsp;lambda&nbsp;abstraction&nbsp;*)</span><br/>
+<span class="id" title="keyword">Notation</span> <a id="38c390bf3957ef1ea14a7bc31e005db2" class="idref" href="#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">&quot;</span></a>'λ' x , t" := (@<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#lam"><span class="id" title="constructor">lam</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#atom"><span class="id" title="abbreviation">atom</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#atom"><span class="id" title="abbreviation">atom</span></a> <span class="id" title="var">x</span> <span class="id" title="var">t</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 100, <span class="id" title="tactic">right</span> <span class="id" title="keyword">associativity</span>, <span class="id" title="var">format</span> "'λ' x ,  t") : <span class="id" title="var">lambda_scope</span>.<br/>
+
+<br/>
+<span class="comment">(*&nbsp;Notation&nbsp;for&nbsp;application&nbsp;*)</span><br/>
+<span class="id" title="keyword">Notation</span> <a id="70726fe20b2422d7937a6e76b88868d7" class="idref" href="#70726fe20b2422d7937a6e76b88868d7"><span class="id" title="notation">&quot;</span></a>t1 · t2" := (@<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#tap"><span class="id" title="constructor">tap</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#atom"><span class="id" title="abbreviation">atom</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#atom"><span class="id" title="abbreviation">atom</span></a> <span class="id" title="var">t1</span> <span class="id" title="var">t2</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 50, <span class="id" title="tactic">left</span> <span class="id" title="keyword">associativity</span>, <span class="id" title="var">format</span> "t1 · t2") : <span class="id" title="var">lambda_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">lambda_scope</span>.<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>
