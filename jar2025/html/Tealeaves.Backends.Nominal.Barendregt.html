@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span> <img class="logo" src="./logo_96.png"> </span>
+      <span class="projectname"> Tealeaves </span>
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+      <a href="../html-alectryon/toc.html"> Switch to Alectryon Docs </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<h1 class="libtitle">Tealeaves.Backends.Nominal.Barendregt</h1>
+
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.Nominal.Common.Freshening.html#"><span class="id" title="library">Backends.Nominal.Common.Freshening</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.Nominal.Common.Binding.html#"><span class="id" title="library">Backends.Nominal.Common.Binding</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.Nominal.FV.html#"><span class="id" title="library">Backends.Nominal.FV</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#"><span class="id" title="library">Kleisli.DecoratedTraversableMonadPoly</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Section</span> <a id="ops" class="idref" href="#ops"><span class="id" title="section">ops</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Context</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;{<a id="T:1" class="idref" href="#T:1"><span class="id" title="binder">T</span></a>: <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="keyword">Type</span>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="H:3" class="idref" href="#H:3"><span class="id" title="binder">∀</span></a> <a id="H:3" class="idref" href="#H:3"><span class="id" title="binder">W</span></a><a id="H:3" class="idref" href="#H:3"><span class="id" title="binder">,</span></a> <a id="H:3" class="idref" href="#H:3"><span class="id" title="binder">Return</span></a> <a id="H:3" class="idref" href="#H:3"><span class="id" title="binder">(</span></a><a id="H:3" class="idref" href="#H:3"><span class="id" title="binder">T</span></a> <a id="H:3" class="idref" href="#H:3"><span class="id" title="binder">W</span></a><a id="H:3" class="idref" href="#H:3"><span class="id" title="binder">)</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="H0:4" class="idref" href="#H0:4"><span class="id" title="binder">Mapdt</span></a> <a id="H0:4" class="idref" href="#H0:4"><span class="id" title="binder">(</span></a><a id="H0:4" class="idref" href="#H0:4"><span class="id" title="binder">list</span></a> <a id="H0:4" class="idref" href="#H0:4"><span class="id" title="binder">name</span></a><a id="H0:4" class="idref" href="#H0:4"><span class="id" title="binder">)</span></a> <a id="H0:4" class="idref" href="#H0:4"><span class="id" title="binder">(</span></a><a id="H0:4" class="idref" href="#H0:4"><span class="id" title="binder">T</span></a> <a id="H0:4" class="idref" href="#H0:4"><span class="id" title="binder">name</span></a><a id="H0:4" class="idref" href="#H0:4"><span class="id" title="binder">)</span></a>}<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;`{<a id="H1:5" class="idref" href="#H1:5"><span class="id" title="binder">Substitute</span></a> <a id="H1:5" class="idref" href="#H1:5"><span class="id" title="binder">T</span></a> <a id="H1:5" class="idref" href="#H1:5"><span class="id" title="binder">T</span></a>}.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Section</span> <a id="ops.rename_local" class="idref" href="#ops.rename_local"><span class="id" title="section">rename_local</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Context</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a id="6b23b3527a5ae82de0dbe08d52926f19" class="idref" href="#6b23b3527a5ae82de0dbe08d52926f19"><span class="id" title="binder">Γ</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a id="x:7" class="idref" href="#x:7"><span class="id" title="binder">x</span></a>: <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a id="u:8" class="idref" href="#u:8"><span class="id" title="binder">u</span></a>: <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#ops.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a>).<br/>
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="subst_loc" class="idref" href="#subst_loc"><span class="id" title="definition">subst_loc</span></a>:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#ops.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">fun</span> '<a id="pat:11" class="idref" href="#pat:11"><span class="id" title="binder">(</span></a><a id="pat:11" class="idref" href="#pat:11"><span class="id" title="binder">ctx</span></a><a id="pat:11" class="idref" href="#pat:11"><span class="id" title="binder">,</span></a> <a id="pat:11" class="idref" href="#pat:11"><span class="id" title="binder">v</span></a><a id="pat:11" class="idref" href="#pat:11"><span class="id" title="binder">)</span></a> ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">match</span> <a class="idref" href="Tealeaves.Backends.Nominal.Common.Binding.html#get_binding"><span class="id" title="definition">get_binding</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#ctx:10"><span class="id" title="variable">ctx</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#v:9"><span class="id" title="variable">v</span></a> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <a class="idref" href="Tealeaves.Backends.Nominal.Common.Binding.html#Unbound"><span class="id" title="constructor">Unbound</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">if</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#v:9"><span class="id" title="variable">v</span></a> <a class="idref" href="Tealeaves.Classes.EqDec_eq.html#a6e843c62e1ac2a74737b7a9f636e026"><span class="id" title="notation">==</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#ops.rename_local.x"><span class="id" title="variable">x</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">then</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#ops.rename_local.u"><span class="id" title="variable">u</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">else</span> <a class="idref" href="Tealeaves.Classes.Categorical.Monad.html#ret"><span class="id" title="definition">ret</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#v:9"><span class="id" title="variable">v</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <a class="idref" href="Tealeaves.Backends.Nominal.Common.Binding.html#Bound"><span class="id" title="constructor">Bound</span></a> <span class="id" title="var">prefix</span> <span class="id" title="var">_</span> <span class="id" title="var">post</span> ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.Monad.html#ret"><span class="id" title="definition">ret</span></a> (<a class="idref" href="Tealeaves.Backends.Nominal.Common.Freshening.html#renb_ctx"><span class="id" title="definition">renb_ctx</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#5b5200a63a24448d1fa6038cc07f5a37"><span class="id" title="variable">Γ</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">(</span></a><span class="id" title="var">prefix</span><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">,</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#v:9"><span class="id" title="variable">v</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">)</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#ops.rename_local"><span class="id" title="section">rename_local</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="subst_top" class="idref" href="#subst_top"><span class="id" title="definition">subst_top</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<a id="7adcac760179e19a0bb37c9e1720bc22" class="idref" href="#7adcac760179e19a0bb37c9e1720bc22"><span class="id" title="binder">Γ</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<a id="x:13" class="idref" href="#x:13"><span class="id" title="binder">x</span></a>: <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a>) (<a id="u:14" class="idref" href="#u:14"><span class="id" title="binder">u</span></a>: <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#ops.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<a id="t:15" class="idref" href="#t:15"><span class="id" title="binder">t</span></a>: <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#ops.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a>): <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#ops.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#substitute"><span class="id" title="definition">substitute</span></a> (<span class="id" title="var">G</span> := <span class="id" title="keyword">fun</span> <a id="A:16" class="idref" href="#A:16"><span class="id" title="binder">A</span></a> ⇒ <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#A:16"><span class="id" title="variable">A</span></a>) (<span class="id" title="var">U</span> := <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#ops.T"><span class="id" title="variable">T</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a class="idref" href="Tealeaves.Backends.Nominal.Common.Freshening.html#renb_ctx"><span class="id" title="definition">renb_ctx</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#7adcac760179e19a0bb37c9e1720bc22"><span class="id" title="variable">Γ</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst_loc"><span class="id" title="definition">subst_loc</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#7adcac760179e19a0bb37c9e1720bc22"><span class="id" title="variable">Γ</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#x:13"><span class="id" title="variable">x</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#u:14"><span class="id" title="variable">u</span></a>) <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#t:15"><span class="id" title="variable">t</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Definition</span> <a id="subst" class="idref" href="#subst"><span class="id" title="definition">subst</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<a id="x:17" class="idref" href="#x:17"><span class="id" title="binder">x</span></a>: <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a>) (<a id="u:18" class="idref" href="#u:18"><span class="id" title="binder">u</span></a>: <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#ops.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(<a id="t:19" class="idref" href="#t:19"><span class="id" title="binder">t</span></a>: <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#ops.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a>): <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#ops.T"><span class="id" title="variable">T</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> <a class="idref" href="Tealeaves.Backends.Common.Names.html#name"><span class="id" title="abbreviation">name</span></a> :=<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst_top"><span class="id" title="definition">subst_top</span></a> (<a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV"><span class="id" title="definition">FV</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#t:19"><span class="id" title="variable">t</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#bc347c51eaf667706ae54503b26d52c6"><span class="id" title="notation">++</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV"><span class="id" title="definition">FV</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#u:18"><span class="id" title="variable">u</span></a>) <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#x:17"><span class="id" title="variable">x</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#u:18"><span class="id" title="variable">u</span></a> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#t:19"><span class="id" title="variable">t</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#ops"><span class="id" title="section">ops</span></a>.<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>
