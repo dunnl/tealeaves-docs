@@ -87,7 +87,7 @@ under&nbsp;the&nbsp;namespaces&nbsp;``Classes.Kleisli``&nbsp;and&nbsp;``Theory.K
 </div>
 
 <div class="doc">
-<a id="lab1581"></a><h2 class="section">Basic supporting lemmas</h2>
+<a id="lab1582"></a><h2 class="section">Basic supporting lemmas</h2>
 
 </div>
 <div class="code">
@@ -97,7 +97,7 @@ under&nbsp;the&nbsp;namespaces&nbsp;``Classes.Kleisli``&nbsp;and&nbsp;``Theory.K
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.DB.DB.html#bound"><span class="id" title="definition">bound</span></a> <a class="idref" href="Tealeaves.Backends.Adapters.Roundtrips.LNDB.html#n:10"><span class="id" title="variable">n</span></a> <a class="idref" href="Tealeaves.Backends.Adapters.Roundtrips.LNDB.html#e:9"><span class="id" title="variable">e</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#true"><span class="id" title="constructor">true</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">introv</span> <span class="id" title="var">HLC</span> <span class="id" title="var">Hin</span>. <span class="id" title="var">cbn</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Backends.LN.LN.html#LC"><span class="id" title="definition">LC</span></a>, <a class="idref" href="Tealeaves.Backends.LN.LN.html#LCn"><span class="id" title="definition">LCn</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">HLC</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Backends.LN.LN.html#LC_spec"><span class="id" title="definition">LC_spec</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">HLC</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">specialize</span> (<span class="id" title="var">HLC</span> <span class="id" title="var">e</span> (<a class="idref" href="Tealeaves.Backends.LN.LN.html#Bd"><span class="id" title="constructor">Bd</span></a> <span class="id" title="var">n</span>) <span class="id" title="var">Hin</span>).<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Backends.LN.LN.html#lc_loc"><span class="id" title="definition">lc_loc</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">HLC</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">replace</span> (<span class="id" title="var">e</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Peano.html#0dacc1786c5ba797d47dd85006231633"><span class="id" title="notation">+</span></a> 0) <span class="id" title="keyword">with</span> <span class="id" title="var">e</span> <span class="id" title="tactic">in</span> × <span class="id" title="tactic">by</span> <span class="id" title="var">lia</span>.<br/>
@@ -137,7 +137,7 @@ under&nbsp;the&nbsp;namespaces&nbsp;``Classes.Kleisli``&nbsp;and&nbsp;``Theory.K
 </div>
 
 <div class="doc">
-<a id="lab1582"></a><h2 class="section">Totality</h2>
+<a id="lab1583"></a><h2 class="section">Totality</h2>
  Given a locally closed locally nameless term and a key with enough atoms,
       <code>toDB</code> is guaranteed to return something. 
 </div>
@@ -221,7 +221,7 @@ under&nbsp;the&nbsp;namespaces&nbsp;``Classes.Kleisli``&nbsp;and&nbsp;``Theory.K
 </div>
 
 <div class="doc">
-<a id="lab1583"></a><h2 class="section">Roundtrip from LN</h2>
+<a id="lab1584"></a><h2 class="section">Roundtrip from LN</h2>
 
 <div class="paragraph"> </div>
 
@@ -274,6 +274,7 @@ Starting with a locally closed term and a big enough key,
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Backends.Adapters.DBtoLN.html#toLN_loc"><span class="id" title="definition">toLN_loc</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">now</span> <span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Backends.Adapters.Roundtrips.LNDB.html#lc_bound"><span class="id" title="lemma">lc_bound</span></a> <span class="id" title="var">t</span> <span class="id" title="var">depth</span> <span class="id" title="var">n</span> <span class="id" title="var">Hlc</span> <span class="id" title="var">Hin</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Backends.LN.LN.html#LC_spec"><span class="id" title="definition">LC_spec</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">Hlc</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">specialize</span> (<span class="id" title="var">Hlc</span> <span class="id" title="var">depth</span> (<a class="idref" href="Tealeaves.Backends.LN.LN.html#Bd"><span class="id" title="constructor">Bd</span></a> <span class="id" title="var">n</span>) <span class="id" title="var">Hin</span>).<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Backends.LN.LN.html#lc_loc"><span class="id" title="definition">lc_loc</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">Hlc</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">lia</span>.<br/>
@@ -310,7 +311,7 @@ Starting with a locally closed term and a big enough key,
 </div>
 
 <div class="doc">
-<a id="lab1584"></a><h2 class="section">Roundtrip from DB</h2>
+<a id="lab1585"></a><h2 class="section">Roundtrip from DB</h2>
 
 <div class="paragraph"> </div>
 
@@ -421,7 +422,7 @@ Starting with a term with no more than <code>gap</code>-level free variables, if
 </div>
 
 <div class="doc">
-<a id="lab1585"></a><h2 class="section">Partial Bijections</h2>
+<a id="lab1586"></a><h2 class="section">Partial Bijections</h2>
 
 </div>
 <div class="code">

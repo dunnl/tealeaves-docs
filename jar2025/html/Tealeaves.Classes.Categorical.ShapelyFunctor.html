@@ -268,7 +268,7 @@
 
 <br/>
 <span class="comment">(*<br/>
-<span class="comment">(**&nbsp;**&nbsp;<span class="inlinecode"><span class="id" title="tactic">fold</span></span>&nbsp;and&nbsp;<span class="inlinecode"><span class="id" title="var">foldMap</span></span>&nbsp;operations&nbsp;*)</span><br/>
+<span class="comment">(**&nbsp;**&nbsp;<span class="inlinecode"><span class="id" title="tactic">fold</span></span>&nbsp;and&nbsp;<span class="inlinecode"><span class="id" title="var">mapReduce</span></span>&nbsp;operations&nbsp;*)</span><br/>
 <span class="comment">(**********************************************************************)</span><br/>
 Section&nbsp;fold.<br/>
 <br/>
@@ -282,7 +282,7 @@ Section&nbsp;fold.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;`{monoid_unit:&nbsp;Monoid_unit&nbsp;M}:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;F&nbsp;M&nbsp;-&gt;&nbsp;M&nbsp;:=&nbsp;crush_list&nbsp;∘&nbsp;tolist.<br/>
 <br/>
-&nbsp;&nbsp;Definition&nbsp;foldMap&nbsp;{A}<br/>
+&nbsp;&nbsp;Definition&nbsp;mapReduce&nbsp;{A}<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;`{monoid_op:&nbsp;Monoid_op&nbsp;M}<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;`{monoid_unit:&nbsp;Monoid_unit&nbsp;M}<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(f:&nbsp;A&nbsp;-&gt;&nbsp;M):&nbsp;F&nbsp;A&nbsp;-&gt;&nbsp;M&nbsp;:=<br/>
@@ -300,17 +300,17 @@ Section&nbsp;fold.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;reflexivity.<br/>
 &nbsp;&nbsp;Qed.<br/>
 <br/>
-&nbsp;&nbsp;Lemma&nbsp;foldMap_map&nbsp;{A&nbsp;B}&nbsp;`{Monoid&nbsp;M}&nbsp;{f:&nbsp;A&nbsp;-&gt;&nbsp;B}&nbsp;{g:&nbsp;B&nbsp;-&gt;&nbsp;M}:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;foldMap&nbsp;g&nbsp;∘&nbsp;map&nbsp;f&nbsp;=&nbsp;foldMap&nbsp;(g&nbsp;∘&nbsp;f).<br/>
+&nbsp;&nbsp;Lemma&nbsp;mapReduce_map&nbsp;{A&nbsp;B}&nbsp;`{Monoid&nbsp;M}&nbsp;{f:&nbsp;A&nbsp;-&gt;&nbsp;B}&nbsp;{g:&nbsp;B&nbsp;-&gt;&nbsp;M}:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;mapReduce&nbsp;g&nbsp;∘&nbsp;map&nbsp;f&nbsp;=&nbsp;mapReduce&nbsp;(g&nbsp;∘&nbsp;f).<br/>
 &nbsp;&nbsp;Proof.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;intros.&nbsp;unfold&nbsp;foldMap.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;intros.&nbsp;unfold&nbsp;mapReduce.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;now&nbsp;rewrite&nbsp;&lt;-&nbsp;(fun_map_map&nbsp;(F&nbsp;:=&nbsp;F)).<br/>
 &nbsp;&nbsp;Qed.<br/>
 <br/>
-&nbsp;&nbsp;Theorem&nbsp;foldMap_hom&nbsp;{A}&nbsp;`{Monoid_Morphism&nbsp;M1&nbsp;M2&nbsp;ϕ}&nbsp;{f:&nbsp;A&nbsp;-&gt;&nbsp;M1}:<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;ϕ&nbsp;∘&nbsp;foldMap&nbsp;f&nbsp;=&nbsp;foldMap&nbsp;(ϕ&nbsp;∘&nbsp;f).<br/>
+&nbsp;&nbsp;Theorem&nbsp;mapReduce_hom&nbsp;{A}&nbsp;`{Monoid_Morphism&nbsp;M1&nbsp;M2&nbsp;ϕ}&nbsp;{f:&nbsp;A&nbsp;-&gt;&nbsp;M1}:<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;ϕ&nbsp;∘&nbsp;mapReduce&nbsp;f&nbsp;=&nbsp;mapReduce&nbsp;(ϕ&nbsp;∘&nbsp;f).<br/>
 &nbsp;&nbsp;Proof.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;intros.&nbsp;unfold&nbsp;foldMap.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;intros.&nbsp;unfold&nbsp;mapReduce.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;reassociate&nbsp;&lt;-&nbsp;on&nbsp;left.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;rewrite&nbsp;(crush_mon_hom&nbsp;ϕ).<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;now&nbsp;rewrite&nbsp;&lt;-&nbsp;(fun_map_map&nbsp;(F&nbsp;:=&nbsp;F)).<br/>
@@ -326,7 +326,7 @@ End&nbsp;fold.<br/>
 Section&nbsp;fold_monoidal_structure.<br/>
 <br/>
 &nbsp;&nbsp;Theorem&nbsp;fold_I&nbsp;(A:&nbsp;Type)&nbsp;`(Monoid&nbsp;A):&nbsp;forall&nbsp;(a:&nbsp;A),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foldMap&nbsp;a&nbsp;=&nbsp;a.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mapReduce&nbsp;a&nbsp;=&nbsp;a.<br/>
 &nbsp;&nbsp;Proof.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;intros.&nbsp;cbn.&nbsp;now&nbsp;rewrite&nbsp;(monoid_id_r).<br/>
 &nbsp;&nbsp;Qed.<br/>

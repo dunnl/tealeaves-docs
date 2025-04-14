@@ -174,17 +174,17 @@
 &nbsp;&nbsp;&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedContainerFunctor.html#toctxset"><span class="id" title="definition">toctxset</span></a> (<span class="id" title="var">F</span> := <span class="id" title="var">T</span>) ?<span class="id" title="var">t</span>] ⇒<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "toctxset_to_binddt";<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableMonad.html#toctxset_to_binddt"><span class="id" title="lemma">toctxset_to_binddt</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>))<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;foldMap&nbsp;*)</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>) ?<span class="id" title="var">t</span>] ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "foldMap_to_binddt";<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap_to_traverse1"><span class="id" title="lemma">foldMap_to_traverse1</span></a>, <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonad.html#traverse_to_binddt"><span class="id" title="lemma">traverse_to_binddt</span></a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#foldMapd"><span class="id" title="definition">foldMapd</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>) ?<span class="id" title="var">t</span>] ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "foldMap_to_binddt";<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#foldMapd_to_mapdt1"><span class="id" title="lemma">foldMapd_to_mapdt1</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>)),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;mapReduce&nbsp;*)</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>) ?<span class="id" title="var">t</span>] ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "mapReduce_to_binddt";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce_to_traverse1"><span class="id" title="lemma">mapReduce_to_traverse1</span></a>, <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonad.html#traverse_to_binddt"><span class="id" title="lemma">traverse_to_binddt</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#mapdReduce"><span class="id" title="definition">mapdReduce</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>) ?<span class="id" title="var">t</span>] ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "mapReduce_to_binddt";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#mapdReduce_to_mapdt1"><span class="id" title="lemma">mapdReduce_to_mapdt1</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>)),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonad.html#mapdt_to_binddt"><span class="id" title="lemma">mapdt_to_binddt</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>))<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;quantifiers&nbsp;*)</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#Forall_ctx"><span class="id" title="definition">Forall_ctx</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>)  ?<span class="id" title="var">P</span>] ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "Forall_to_foldMapd";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "Forall_to_mapdReduce";<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#Forall_ctx"><span class="id" title="definition">Forall_ctx</span></a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
 
@@ -589,54 +589,54 @@ If&nbsp;we&nbsp;find&nbsp;some&nbsp;&lt;&lt;binddt&nbsp;f&nbsp;t&gt;&gt;,&nbsp;s
 &nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_foldMapd_post</span> :=<br/>
-&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_foldMapd_post";<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_mapdReduce_post</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_mapdReduce_post";<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">simplify_applicative_const</span>;<br/>
 &nbsp;&nbsp;<span class="comment">(*&nbsp;^&nbsp;above&nbsp;step&nbsp;creates&nbsp;some&nbsp;((Ƶ&nbsp;●&nbsp;m)&nbsp;●&nbsp;n)&nbsp;*)</span><br/>
 &nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">simplify_monoid_units</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_foldMapd</span> :=<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_mapdReduce</span> :=<br/>
 &nbsp;&nbsp;<span class="id" title="var">multimatch</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
-&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#foldMapd"><span class="id" title="definition">foldMapd</span></a> (<span class="id" title="var">T</span> := ?<span class="id" title="var">T</span>) (<span class="id" title="var">M</span> := ?<span class="id" title="var">M</span>) (<span class="id" title="var">op</span> := ?<span class="id" title="var">op</span>) (<span class="id" title="var">unit</span> := ?<span class="id" title="var">unit</span>)] ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#foldMapd_to_mapdt1"><span class="id" title="lemma">foldMapd_to_mapdt1</span></a>;<br/>
+&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#mapdReduce"><span class="id" title="definition">mapdReduce</span></a> (<span class="id" title="var">T</span> := ?<span class="id" title="var">T</span>) (<span class="id" title="var">M</span> := ?<span class="id" title="var">M</span>) (<span class="id" title="var">op</span> := ?<span class="id" title="var">op</span>) (<span class="id" title="var">unit</span> := ?<span class="id" title="var">unit</span>)] ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#mapdReduce_to_mapdt1"><span class="id" title="lemma">mapdReduce_to_mapdt1</span></a>;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_mapdt</span>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#foldMapd_to_mapdt1"><span class="id" title="lemma">foldMapd_to_mapdt1</span></a>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_foldMapd_post</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#mapdReduce_to_mapdt1"><span class="id" title="lemma">mapdReduce_to_mapdt1</span></a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_mapdReduce_post</span><br/>
 &nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_foldMapd_post_in</span> <span class="id" title="var">H</span> :=<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_mapdReduce_post_in</span> <span class="id" title="var">H</span> :=<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">simplify_applicative_const_in</span> <span class="id" title="var">H</span>;<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">simplify_monoid_units_in</span> <span class="id" title="var">H</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_foldMapd_in</span> :=<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_mapdReduce_in</span> :=<br/>
 &nbsp;&nbsp;<span class="id" title="var">multimatch</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
-&nbsp;&nbsp;| <span class="id" title="var">H</span>: <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#foldMapd"><span class="id" title="definition">foldMapd</span></a> (<span class="id" title="var">T</span> := ?<span class="id" title="var">T</span>) (<span class="id" title="var">M</span> := ?<span class="id" title="var">M</span>) (<span class="id" title="var">op</span> := ?<span class="id" title="var">op</span>) (<span class="id" title="var">unit</span> := ?<span class="id" title="var">unit</span>)] |- <span class="id" title="var">_</span> ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#foldMapd_to_mapdt1"><span class="id" title="lemma">foldMapd_to_mapdt1</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>;<br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span>: <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#mapdReduce"><span class="id" title="definition">mapdReduce</span></a> (<span class="id" title="var">T</span> := ?<span class="id" title="var">T</span>) (<span class="id" title="var">M</span> := ?<span class="id" title="var">M</span>) (<span class="id" title="var">op</span> := ?<span class="id" title="var">op</span>) (<span class="id" title="var">unit</span> := ?<span class="id" title="var">unit</span>)] |- <span class="id" title="var">_</span> ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#mapdReduce_to_mapdt1"><span class="id" title="lemma">mapdReduce_to_mapdt1</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_mapdt_in</span> <span class="id" title="var">H</span>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#foldMapd_to_mapdt1"><span class="id" title="lemma">foldMapd_to_mapdt1</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_foldMapd_post_in</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#mapdReduce_to_mapdt1"><span class="id" title="lemma">mapdReduce_to_mapdt1</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_mapdReduce_post_in</span> <span class="id" title="var">H</span><br/>
 &nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_foldMap_post</span> :=<br/>
-&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_foldMap_post";<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_mapReduce_post</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_mapReduce_post";<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">simplify_applicative_const</span>;<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">simplify_monoid_units</span>;<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">change</span> (<a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a> ?<span class="id" title="var">x</span> ?<span class="id" title="var">y</span>) <span class="id" title="keyword">with</span> <span class="id" title="var">x</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_foldMap</span> :=<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_mapReduce</span> :=<br/>
 &nbsp;&nbsp;<span class="id" title="var">multimatch</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
-&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> (<span class="id" title="var">T</span> := ?<span class="id" title="var">T</span>) (<span class="id" title="var">M</span> := ?<span class="id" title="var">M</span>) (<span class="id" title="var">op</span> := ?<span class="id" title="var">op</span>) (<span class="id" title="var">unit</span> := ?<span class="id" title="var">unit</span>)] ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_foldMap_start";<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap_to_traverse1"><span class="id" title="lemma">foldMap_to_traverse1</span></a>;<br/>
+&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> (<span class="id" title="var">T</span> := ?<span class="id" title="var">T</span>) (<span class="id" title="var">M</span> := ?<span class="id" title="var">M</span>) (<span class="id" title="var">op</span> := ?<span class="id" title="var">op</span>) (<span class="id" title="var">unit</span> := ?<span class="id" title="var">unit</span>)] ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_mapReduce_start";<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce_to_traverse1"><span class="id" title="lemma">mapReduce_to_traverse1</span></a>;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_traverse</span>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap_to_traverse1"><span class="id" title="lemma">foldMap_to_traverse1</span></a>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_foldMap_post</span>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_foldMap_end"<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce_to_traverse1"><span class="id" title="lemma">mapReduce_to_traverse1</span></a>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_mapReduce_post</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_mapReduce_end"<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
 
 <br/>
@@ -644,9 +644,9 @@ If&nbsp;we&nbsp;find&nbsp;some&nbsp;&lt;&lt;binddt&nbsp;f&nbsp;t&gt;&gt;,&nbsp;s
 &nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_tolist";<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
 &nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Categorical.ShapelyFunctor.html#tolist"><span class="id" title="definition">tolist</span></a> (<span class="id" title="var">F</span> := ?<span class="id" title="var">T</span>) ?<span class="id" title="var">t</span>] ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tolist_to_foldMap"><span class="id" title="lemma">tolist_to_foldMap</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>));<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_foldMap</span>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tolist_to_foldMap"><span class="id" title="lemma">tolist_to_foldMap</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tolist_to_mapReduce"><span class="id" title="lemma">tolist_to_mapReduce</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_mapReduce</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tolist_to_mapReduce"><span class="id" title="lemma">tolist_to_mapReduce</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>));<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_monoid_list</span><br/>
 &nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
 
@@ -655,9 +655,9 @@ If&nbsp;we&nbsp;find&nbsp;some&nbsp;&lt;&lt;binddt&nbsp;f&nbsp;t&gt;&gt;,&nbsp;s
 &nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_tosubset";<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
 &nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#tosubset"><span class="id" title="definition">tosubset</span></a> (<span class="id" title="var">F</span> := ?<span class="id" title="var">T</span>) (<span class="id" title="var">A</span> := ?<span class="id" title="var">A</span>) ?<span class="id" title="var">t</span>] ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tosubset_to_foldMap"><span class="id" title="lemma">tosubset_to_foldMap</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>) <span class="id" title="var">A</span>);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_foldMap</span>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tosubset_to_foldMap"><span class="id" title="lemma">tosubset_to_foldMap</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tosubset_to_mapReduce"><span class="id" title="lemma">tosubset_to_mapReduce</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>) <span class="id" title="var">A</span>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_mapReduce</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tosubset_to_mapReduce"><span class="id" title="lemma">tosubset_to_mapReduce</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>));<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">simplify_monoid_subset</span><br/>
 &nbsp;&nbsp;<span class="id" title="keyword">end</span>;<br/>
 &nbsp;&nbsp;<span class="comment">(*&nbsp;This&nbsp;should&nbsp;only&nbsp;be&nbsp;necessary&nbsp;after&nbsp;binddt&nbsp;(ret&nbsp;x))&nbsp;*)</span><br/>
@@ -671,9 +671,9 @@ If&nbsp;we&nbsp;find&nbsp;some&nbsp;&lt;&lt;binddt&nbsp;f&nbsp;t&gt;&gt;,&nbsp;s
 &nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_toctxset";<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
 &nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedContainerFunctor.html#toctxset"><span class="id" title="definition">toctxset</span></a> (<span class="id" title="var">F</span> := ?<span class="id" title="var">T</span>) ?<span class="id" title="var">t</span>] ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#toctxset_to_foldMapd"><span class="id" title="lemma">toctxset_to_foldMapd</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>) <span class="id" title="var">t</span>);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_foldMapd</span>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#toctxset_to_foldMapd"><span class="id" title="lemma">toctxset_to_foldMapd</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#toctxset_to_mapdReduce"><span class="id" title="lemma">toctxset_to_mapdReduce</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>) <span class="id" title="var">t</span>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_mapdReduce</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#toctxset_to_mapdReduce"><span class="id" title="lemma">toctxset_to_mapdReduce</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>));<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">simplify_monoid_subset</span><br/>
 &nbsp;&nbsp;<span class="id" title="keyword">end</span>;<br/>
 &nbsp;&nbsp;<span class="comment">(*&nbsp;This&nbsp;should&nbsp;only&nbsp;be&nbsp;necessary&nbsp;after&nbsp;binddt&nbsp;(ret&nbsp;x))&nbsp;*)</span><br/>
@@ -687,9 +687,9 @@ If&nbsp;we&nbsp;find&nbsp;some&nbsp;&lt;&lt;binddt&nbsp;f&nbsp;t&gt;&gt;,&nbsp;s
 &nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_element_of";<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
 &nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#element_of"><span class="id" title="definition">element_of</span></a> (<span class="id" title="var">F</span> := ?<span class="id" title="var">T</span>) (<span class="id" title="var">A</span> := ?<span class="id" title="var">A</span>) ?<span class="id" title="var">t</span>] ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#element_of_to_foldMap"><span class="id" title="lemma">element_of_to_foldMap</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>) <span class="id" title="var">A</span> <span class="id" title="var">t</span>);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_foldMap</span>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#element_of_to_foldMap"><span class="id" title="lemma">element_of_to_foldMap</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#element_of_to_mapReduce"><span class="id" title="lemma">element_of_to_mapReduce</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>) <span class="id" title="var">A</span> <span class="id" title="var">t</span>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_mapReduce</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#element_of_to_mapReduce"><span class="id" title="lemma">element_of_to_mapReduce</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>));<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">simplify_monoid_disjunction</span><br/>
 &nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
 
@@ -743,10 +743,10 @@ If&nbsp;we&nbsp;find&nbsp;some&nbsp;&lt;&lt;binddt&nbsp;f&nbsp;t&gt;&gt;,&nbsp;s
 &nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_element_ctx_of";<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
 &nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedContainerFunctor.html#element_ctx_of"><span class="id" title="definition">element_ctx_of</span></a> (<span class="id" title="var">T</span> := ?<span class="id" title="var">T</span>) (<span class="id" title="var">A</span> := ?<span class="id" title="var">A</span>) ?<span class="id" title="var">p</span>] ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#element_ctx_of_to_foldMapd"><span class="id" title="lemma">element_ctx_of_to_foldMapd</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>) <span class="id" title="var">A</span> <span class="id" title="var">p</span>);<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_foldMapd</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#element_ctx_of_to_mapdReduce"><span class="id" title="lemma">element_ctx_of_to_mapdReduce</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>) <span class="id" title="var">A</span> <span class="id" title="var">p</span>);<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_mapdReduce</span>;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">try</span> <span class="id" title="var">simplify_singleton_ctx_under_binder</span>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#element_ctx_of_to_foldMapd"><span class="id" title="lemma">element_ctx_of_to_foldMapd</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#element_ctx_of_to_mapdReduce"><span class="id" title="lemma">element_ctx_of_to_mapdReduce</span></a> (<span class="id" title="var">T</span> := <span class="id" title="var">T</span>));<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">simplify_monoid_disjunction</span><br/>
 &nbsp;&nbsp;<span class="id" title="keyword">end</span>;<br/>
 &nbsp;&nbsp;<span class="comment">(*&nbsp;This&nbsp;should&nbsp;only&nbsp;be&nbsp;necessary&nbsp;after&nbsp;binddt&nbsp;(ret&nbsp;x))&nbsp;*)</span><br/>
@@ -756,32 +756,32 @@ If&nbsp;we&nbsp;find&nbsp;some&nbsp;&lt;&lt;binddt&nbsp;f&nbsp;t&gt;&gt;,&nbsp;s
 <br/>
 <span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_Forall_ctx</span> :=<br/>
 &nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_Forall_ctx";<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Simplification.Support.html#Forall_ctx_to_foldMapd"><span class="id" title="lemma">Forall_ctx_to_foldMapd</span></a>;<br/>
-&nbsp;&nbsp;<span class="id" title="var">simplify_foldMapd</span>;<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Simplification.Support.html#Forall_ctx_to_foldMapd"><span class="id" title="lemma">Forall_ctx_to_foldMapd</span></a>;<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Simplification.Support.html#Forall_ctx_to_mapdReduce"><span class="id" title="lemma">Forall_ctx_to_mapdReduce</span></a>;<br/>
+&nbsp;&nbsp;<span class="id" title="var">simplify_mapdReduce</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Simplification.Support.html#Forall_ctx_to_mapdReduce"><span class="id" title="lemma">Forall_ctx_to_mapdReduce</span></a>;<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">simplify_monoid_conjunction</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_Forall_ctx_in</span> <span class="id" title="var">H</span> :=<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Simplification.Support.html#Forall_ctx_to_foldMapd"><span class="id" title="lemma">Forall_ctx_to_foldMapd</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>;<br/>
-&nbsp;&nbsp;<span class="id" title="var">simplify_foldMapd_in</span> <span class="id" title="var">H</span>;<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Simplification.Support.html#Forall_ctx_to_foldMapd"><span class="id" title="lemma">Forall_ctx_to_foldMapd</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Simplification.Support.html#Forall_ctx_to_mapdReduce"><span class="id" title="lemma">Forall_ctx_to_mapdReduce</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="var">simplify_mapdReduce_in</span> <span class="id" title="var">H</span>;<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Simplification.Support.html#Forall_ctx_to_mapdReduce"><span class="id" title="lemma">Forall_ctx_to_mapdReduce</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span>;<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">repeat</span> <span class="id" title="var">simplify_monoid_conjunction_in</span> <span class="id" title="var">H</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_derived_operations</span> :=<br/>
 &nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_derived_operations";<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
-&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#foldMapd"><span class="id" title="definition">foldMapd</span></a> ?<span class="id" title="var">f</span> ?<span class="id" title="var">t</span>] ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_foldMap</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#mapdReduce"><span class="id" title="definition">mapdReduce</span></a> ?<span class="id" title="var">f</span> ?<span class="id" title="var">t</span>] ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_mapReduce</span><br/>
 &nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#Forall_ctx"><span class="id" title="definition">Forall_ctx</span></a> ?<span class="id" title="var">P</span> ?<span class="id" title="var">t</span>] ⇒<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_Forall_ctx</span><br/>
 &nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedContainerFunctor.html#toctxset"><span class="id" title="definition">toctxset</span></a> ?<span class="id" title="var">t</span>] ⇒<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_toctxset</span><br/>
 &nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedContainerFunctor.html#element_ctx_of"><span class="id" title="definition">element_ctx_of</span></a> ?<span class="id" title="var">x</span> ?<span class="id" title="var">t</span>] ⇒<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_element_ctx_of</span><br/>
-&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> ?<span class="id" title="var">f</span> ?<span class="id" title="var">t</span>] ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_foldMap</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> ?<span class="id" title="var">f</span> ?<span class="id" title="var">t</span>] ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_mapReduce</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*<br/>
 &nbsp;&nbsp;|&nbsp;|-&nbsp;context<span class="inlinecode"><span class="id" title="var">Forall</span></span> <span class="inlinecode">?<span class="id" title="var">P</span></span> <span class="inlinecode">?<span class="id" title="var">t</span></span>&nbsp;=&gt;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;simplify_Forall<br/>
