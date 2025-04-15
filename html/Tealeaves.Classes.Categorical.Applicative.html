@@ -48,7 +48,7 @@
 </div>
 
 <div class="doc">
-<a id="lab75"></a><h1 class="section">Applicative Functors</h1>
+<a id="lab79"></a><h1 class="section">Applicative Functors</h1>
 
 </div>
 <div class="code">
@@ -92,7 +92,7 @@
 </div>
 
 <div class="doc">
-<a id="lab76"></a><h2 class="section">Homomorphisms Between Applicative Functors</h2>
+<a id="lab80"></a><h2 class="section">Homomorphisms Between Applicative Functors</h2>
 
 </div>
 <div class="code">
@@ -162,7 +162,7 @@
 </div>
 
 <div class="doc">
-<a id="lab77"></a><h3 class="section">The identity transformation on any <code>F</code> is a homomorphism</h3>
+<a id="lab81"></a><h3 class="section">The identity transformation on any <code>F</code> is a homomorphism</h3>
 
 </div>
 <div class="code">
@@ -176,7 +176,7 @@
 </div>
 
 <div class="doc">
-<a id="lab78"></a><h2 class="section">Basic Lemmas</h2>
+<a id="lab82"></a><h2 class="section">Basic Lemmas</h2>
 
 </div>
 <div class="code">
@@ -285,7 +285,7 @@
 </div>
 
 <div class="doc">
-<a id="lab79"></a><h2 class="section">Mapping and Reassociating <code>⊗</code></h2>
+<a id="lab83"></a><h2 class="section">Mapping and Reassociating <code>⊗</code></h2>
 
 </div>
 <div class="code">
@@ -367,11 +367,11 @@
 </div>
 
 <div class="doc">
-<a id="lab80"></a><h1 class="section">The Category of Applicative Functors</h1>
+<a id="lab84"></a><h1 class="section">The Category of Applicative Functors</h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab81"></a><h2 class="section">The Identity Applicative Functor</h2>
+<a id="lab85"></a><h2 class="section">The Identity Applicative Functor</h2>
 
 </div>
 <div class="code">
@@ -387,7 +387,7 @@
 </div>
 
 <div class="doc">
-<a id="lab82"></a><h3 class="section"><code>pure F</code> is a Homomorphism from <code>I</code> to <code>F</code></h3>
+<a id="lab86"></a><h3 class="section"><code>pure F</code> is a Homomorphism from <code>I</code> to <code>F</code></h3>
 
 </div>
 <div class="code">
@@ -438,7 +438,7 @@
 </div>
 
 <div class="doc">
-<a id="lab83"></a><h2 class="section">Composition of Applicative Functors</h2>
+<a id="lab87"></a><h2 class="section">Composition of Applicative Functors</h2>
 
 </div>
 <div class="code">
@@ -590,7 +590,7 @@
 </div>
 
 <div class="doc">
-<a id="lab84"></a><h2 class="section">Composition with the Identity Functor</h2>
+<a id="lab88"></a><h2 class="section">Composition with the Identity Functor</h2>
 
 </div>
 <div class="code">
@@ -638,7 +638,7 @@
 </div>
 
 <div class="doc">
-<a id="lab85"></a><h2 class="section">Parallel Composition of Applicative Homomorphisms</h2>
+<a id="lab89"></a><h2 class="section">Parallel Composition of Applicative Homomorphisms</h2>
 
 </div>
 <div class="code">
@@ -778,7 +778,7 @@
 </div>
 
 <div class="doc">
-<a id="lab86"></a><h1 class="section">The "ap" combinator <code>&lt;⋆&gt; </code></h1>
+<a id="lab90"></a><h1 class="section">The "ap" combinator <code>&lt;⋆&gt; </code></h1>
 
 </div>
 <div class="code">
@@ -879,7 +879,7 @@
 </div>
 
 <div class="doc">
-<a id="lab87"></a><h2 class="section">Convenience Laws for <code>ap</code></h2>
+<a id="lab91"></a><h2 class="section">Convenience Laws for <code>ap</code></h2>
 
 </div>
 <div class="code">
@@ -974,7 +974,7 @@ Bring an <code>map</code> from right of an <code>ap</code> to left
 </div>
 
 <div class="doc">
-<a id="lab88"></a><h2 class="section">Composition of Functors and <code>ap</code> / <code>&lt;⋆&gt; </code></h2>
+<a id="lab92"></a><h2 class="section">Composition of Functors and <code>ap</code> / <code>&lt;⋆&gt; </code></h2>
 
 </div>
 <div class="code">
@@ -1044,7 +1044,7 @@ Bring an <code>map</code> from right of an <code>ap</code> to left
 </div>
 
 <div class="doc">
-<a id="lab89"></a><h1 class="section">Monoids as Constant Applicative Functors</h1>
+<a id="lab93"></a><h1 class="section">Monoids as Constant Applicative Functors</h1>
 
 </div>
 <div class="code">
@@ -1097,7 +1097,7 @@ Bring an <code>map</code> from right of an <code>ap</code> to left
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#pure_ap_map"><span class="id" title="lemma">pure_ap_map</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> <span class="id" title="var">x</span> <span class="id" title="keyword">with</span> (<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#id"><span class="id" title="definition">id</span></a> <span class="id" title="var">x</span>) <span class="id" title="tactic">at</span> 2. <span class="id" title="tactic">rewrite</span> &lt;- (<a class="idref" href="Tealeaves.Classes.Functor.html#fun_map_id"><span class="id" title="method">fun_map_id</span></a>).<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">fequal</span>. <span class="id" title="var">ext</span> <span class="id" title="var">m</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>. <span class="id" title="var">now</span> <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_l"><span class="id" title="method">monoid_id_l</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>. <span class="id" title="var">now</span> <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_r"><span class="id" title="method">monoid_id_r</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">intros</span>. <span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#Monoid_op_applicative"><span class="id" title="instance">Monoid_op_applicative</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#Monoid_unit_applicative"><span class="id" title="instance">Monoid_unit_applicative</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#ap_curry"><span class="id" title="lemma">ap_curry</span></a>.<br/>
@@ -1105,7 +1105,7 @@ Bring an <code>map</code> from right of an <code>ap</code> to left
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#map_to_ap"><span class="id" title="lemma">map_to_ap</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> <span class="id" title="var">x</span> <span class="id" title="keyword">with</span> (<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#id"><span class="id" title="definition">id</span></a> <span class="id" title="var">x</span>) <span class="id" title="tactic">at</span> 2. <span class="id" title="tactic">rewrite</span> &lt;- (<a class="idref" href="Tealeaves.Classes.Functor.html#fun_map_id"><span class="id" title="method">fun_map_id</span></a>).<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">fequal</span>. <span class="id" title="var">ext</span> <span class="id" title="var">m</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>. <span class="id" title="var">now</span> <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_r"><span class="id" title="method">monoid_id_r</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>. <span class="id" title="var">now</span> <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_l"><span class="id" title="method">monoid_id_l</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
@@ -1115,7 +1115,7 @@ Bring an <code>map</code> from right of an <code>ap</code> to left
 </div>
 
 <div class="doc">
-<a id="lab90"></a><h2 class="section">Monoids Homomorphisms as Applicative Homomorphisms</h2>
+<a id="lab94"></a><h2 class="section">Monoids Homomorphisms as Applicative Homomorphisms</h2>
 
 </div>
 <div class="code">
@@ -1156,7 +1156,7 @@ Bring an <code>map</code> from right of an <code>ap</code> to left
 </div>
 
 <div class="doc">
-<a id="lab91"></a><h1 class="section">Notations</h1>
+<a id="lab95"></a><h1 class="section">Notations</h1>
 
 </div>
 <div class="code">

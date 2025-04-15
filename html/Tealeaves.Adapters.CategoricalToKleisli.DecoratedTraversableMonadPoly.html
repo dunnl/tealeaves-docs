@@ -41,11 +41,11 @@
 </div>
 
 <div class="doc">
-<a id="lab1238"></a><h1 class="section">Kleisli DTMs from Categorical DTMs</h1>
+<a id="lab1256"></a><h1 class="section">Kleisli DTMs from Categorical DTMs</h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab1239"></a><h2 class="section">Derived Operations</h2>
+<a id="lab1257"></a><h2 class="section">Derived Operations</h2>
 
 </div>
 <div class="code">
@@ -91,12 +91,12 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> &lt;- <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">fequal</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> →.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.DecoratedMonadPoly.html#dmp_map_ret"><span class="id" title="method">dmp_map_ret</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.Monad2.html#dmp_map_ret"><span class="id" title="method">dmp_map_ret</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> &lt;- <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> σ <span class="id" title="keyword">with</span> (<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#id"><span class="id" title="definition">id</span></a> <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> σ) <span class="id" title="tactic">at</span> 2.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">fequal</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">reassociate</span> → <span class="id" title="var">on</span> <span class="id" title="tactic">left</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Categorical.DecoratedTraversableMonadPoly.html#xxx_dist2_ret"><span class="id" title="method">xxx_dist2_ret</span></a> (<span class="id" title="var">G</span> := <span class="id" title="var">G</span>) (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedTraversableMonadPoly.html#DerivedInstances.section.T"><span class="id" title="variable">T</span></a>) (<span class="id" title="var">B2</span>) (<a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedTraversableMonadPoly.html#DerivedInstances.section.T"><span class="id" title="variable">T</span></a> <span class="id" title="var">B2</span> <span class="id" title="var">A2</span>)).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Categorical.TraversableMonad2.html#xxx_dist2_ret"><span class="id" title="method">xxx_dist2_ret</span></a> (<span class="id" title="var">G</span> := <span class="id" title="var">G</span>) (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedTraversableMonadPoly.html#DerivedInstances.section.T"><span class="id" title="variable">T</span></a>) (<span class="id" title="var">B2</span>) (<a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedTraversableMonadPoly.html#DerivedInstances.section.T"><span class="id" title="variable">T</span></a> <span class="id" title="var">B2</span> <span class="id" title="var">A2</span>)).<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Functor.html#fun_map_map"><span class="id" title="method">fun_map_map</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">setoid_rewrite</span> <a class="idref" href="Tealeaves.Classes.Categorical.Monad.html#mon_join_ret"><span class="id" title="method">mon_join_ret</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Functor.html#fun_map_id"><span class="id" title="method">fun_map_id</span></a>.<br/>

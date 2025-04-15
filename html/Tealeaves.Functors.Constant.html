@@ -32,7 +32,8 @@
 <div class="code">
 <span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span><br/>
 &nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Monoid.html#"><span class="id" title="library">Classes.Monoid</span></a><br/>
-&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#"><span class="id" title="library">Classes.Categorical.Applicative</span></a>.<br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#"><span class="id" title="library">Classes.Categorical.Applicative</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Tactics.Debug.html#"><span class="id" title="library">Tactics.Debug</span></a>.<br/>
 
 <br/>
 <span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#Notations"><span class="id" title="module">Monoid.Notations</span></a>.<br/>
@@ -48,7 +49,7 @@
 </div>
 
 <div class="doc">
-<a id="lab731"></a><h1 class="section">Inductive Definition of the Constant Functor</h1>
+<a id="lab742"></a><h1 class="section">Inductive Definition of the Constant Functor</h1>
 
 </div>
 <div class="code">
@@ -127,7 +128,7 @@
 </div>
 
 <div class="doc">
-<a id="lab732"></a><h2 class="section">Monoids as Constant Applicative Functors</h2>
+<a id="lab743"></a><h2 class="section">Monoids as Constant Applicative Functors</h2>
 
 </div>
 <div class="code">
@@ -174,7 +175,7 @@
 </div>
 
 <div class="doc">
-<a id="lab733"></a><h1 class="section">Computational Definition of the Constant Functor</h1>
+<a id="lab744"></a><h1 class="section">Computational Definition of the Constant Functor</h1>
 
 </div>
 <div class="code">
@@ -212,7 +213,7 @@ First we establish that (const M) is an applicative functor.
 </div>
 
 <div class="doc">
-<a id="lab734"></a><h2 class="section">Monoids as Constant Applicative Functors</h2>
+<a id="lab745"></a><h2 class="section">Monoids as Constant Applicative Functors</h2>
 
 </div>
 <div class="code">
@@ -277,6 +278,85 @@ First we establish that (const M) is an applicative functor.
 
 <br/>
 <span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Functors.Constant.html#constant_functor"><span class="id" title="section">constant_functor</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab746"></a><h1 class="section">Simplification Support</h1>
+
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="pure_const_rw" class="idref" href="#pure_const_rw"><span class="id" title="lemma">pure_const_rw</span></a>: <span class="id" title="keyword">∀</span> {<a id="A:111" class="idref" href="#A:111"><span class="id" title="binder">A</span></a>} {<a id="a:112" class="idref" href="#a:112"><span class="id" title="binder">a</span></a>:<a class="idref" href="Tealeaves.Functors.Constant.html#A:111"><span class="id" title="variable">A</span></a>} {<a id="M:113" class="idref" href="#M:113"><span class="id" title="binder">M</span></a>} {<a id="unit:114" class="idref" href="#unit:114"><span class="id" title="binder">unit</span></a>: <a class="idref" href="Tealeaves.Classes.Monoid.html#Monoid_unit"><span class="id" title="class">Monoid_unit</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#M:113"><span class="id" title="variable">M</span></a>},<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#pure"><span class="id" title="definition">pure</span></a> (<span class="id" title="var">F</span> := <a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#M:113"><span class="id" title="variable">M</span></a>) (<span class="id" title="var">Pure</span> := @<a class="idref" href="Tealeaves.Functors.Constant.html#Pure_const"><span class="id" title="instance">Pure_const</span></a> <span class="id" title="var">_</span> <a class="idref" href="Tealeaves.Functors.Constant.html#unit:114"><span class="id" title="variable">unit</span></a>) <a class="idref" href="Tealeaves.Functors.Constant.html#a:112"><span class="id" title="variable">a</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> @<a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_unit"><span class="id" title="definition">monoid_unit</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#M:113"><span class="id" title="variable">M</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#unit:114"><span class="id" title="variable">unit</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="ap_const_rw" class="idref" href="#ap_const_rw"><span class="id" title="lemma">ap_const_rw</span></a>:<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">∀</span> {<a id="M:115" class="idref" href="#M:115"><span class="id" title="binder">M</span></a>} `{<a id="op:116" class="idref" href="#op:116"><span class="id" title="binder">op</span></a>: <a class="idref" href="Tealeaves.Classes.Monoid.html#Monoid_op"><span class="id" title="class">Monoid_op</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#M:115"><span class="id" title="variable">M</span></a>} {<a id="A:117" class="idref" href="#A:117"><span class="id" title="binder">A</span></a> <a id="B:118" class="idref" href="#B:118"><span class="id" title="binder">B</span></a>} (<a id="x:119" class="idref" href="#x:119"><span class="id" title="binder">x</span></a>: <a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#M:115"><span class="id" title="variable">M</span></a> (<a class="idref" href="Tealeaves.Functors.Constant.html#A:117"><span class="id" title="variable">A</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#B:118"><span class="id" title="variable">B</span></a>)) (<a id="y:120" class="idref" href="#y:120"><span class="id" title="binder">y</span></a>: <a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#M:115"><span class="id" title="variable">M</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#A:117"><span class="id" title="variable">A</span></a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#ap"><span class="id" title="definition">ap</span></a> (<a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#M:115"><span class="id" title="variable">M</span></a>) <a class="idref" href="Tealeaves.Functors.Constant.html#x:119"><span class="id" title="variable">x</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#y:120"><span class="id" title="variable">y</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">(</span></a>@<a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_op"><span class="id" title="definition">monoid_op</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#M:115"><span class="id" title="variable">M</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#op:116"><span class="id" title="variable">op</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#x:119"><span class="id" title="variable">x</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#y:120"><span class="id" title="variable">y</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">)</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="map_const_rw" class="idref" href="#map_const_rw"><span class="id" title="lemma">map_const_rw</span></a>: <span class="id" title="keyword">∀</span> <a id="A:121" class="idref" href="#A:121"><span class="id" title="binder">A</span></a> <a id="B:122" class="idref" href="#B:122"><span class="id" title="binder">B</span></a> (<a id="f:123" class="idref" href="#f:123"><span class="id" title="binder">f</span></a>: <a class="idref" href="Tealeaves.Functors.Constant.html#A:121"><span class="id" title="variable">A</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#B:122"><span class="id" title="variable">B</span></a>) <a id="X:124" class="idref" href="#X:124"><span class="id" title="binder">X</span></a>,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Functor.html#map"><span class="id" title="definition">map</span></a> (<a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#X:124"><span class="id" title="variable">X</span></a>) <a class="idref" href="Tealeaves.Functors.Constant.html#f:123"><span class="id" title="variable">f</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> @<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#id"><span class="id" title="definition">id</span></a> <a class="idref" href="Tealeaves.Functors.Constant.html#X:124"><span class="id" title="variable">X</span></a>.<br/>
+<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab747"></a><h2 class="section">Constant applicatives</h2>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_applicative_const</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_applicative_const";<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span> [<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#pure"><span class="id" title="definition">pure</span></a> (<span class="id" title="var">F</span> := <a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a> ?<span class="id" title="var">W</span>) ?<span class="id" title="var">x</span>] ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Constant.html#pure_const_rw"><span class="id" title="lemma">pure_const_rw</span></a><br/>
+&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[(<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#ap"><span class="id" title="definition">ap</span></a> (<a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a> ?<span class="id" title="var">W</span>) ?<span class="id" title="var">x</span> ?<span class="id" title="var">y</span>)] ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Constant.html#ap_const_rw"><span class="id" title="lemma">ap_const_rw</span></a><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_applicative_const_in</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span>: <span class="id" title="keyword">context</span> [<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#pure"><span class="id" title="definition">pure</span></a> (<span class="id" title="var">F</span> := <a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a> ?<span class="id" title="var">W</span>) ?<span class="id" title="var">x</span>] |- <span class="id" title="var">_</span> ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Constant.html#pure_const_rw"><span class="id" title="lemma">pure_const_rw</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span>: <span class="id" title="keyword">context</span>[(<a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#ap"><span class="id" title="definition">ap</span></a> (<a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a> ?<span class="id" title="var">W</span>) ?<span class="id" title="var">x</span> ?<span class="id" title="var">y</span>)] |- <span class="id" title="var">_</span> ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Constant.html#ap_const_rw"><span class="id" title="lemma">ap_const_rw</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab748"></a><h2 class="section">Constant maps</h2>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_map_const</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="var">ltac_trace</span> "simplify_map_const";<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Functor.html#map"><span class="id" title="definition">map</span></a> (<a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a> ?<span class="id" title="var">X</span>) ?<span class="id" title="var">f</span>] ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Constant.html#map_const_rw"><span class="id" title="lemma">map_const_rw</span></a><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">simplify_map_const_in</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| <span class="id" title="var">H</span>: <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Classes.Functor.html#map"><span class="id" title="definition">map</span></a> (<a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a> ?<span class="id" title="var">X</span>) ?<span class="id" title="var">f</span>] |- <span class="id" title="var">_</span> ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Constant.html#map_const_rw"><span class="id" title="lemma">map_const_rw</span></a> <span class="id" title="tactic">in</span> <span class="id" title="var">H</span><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
 </div>
 </div>
 <div id="footer">

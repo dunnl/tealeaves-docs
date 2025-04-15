@@ -74,15 +74,15 @@
 &nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="free_to_foldMapk" class="idref" href="#free_to_foldMapk"><span class="id" title="lemma">free_to_foldMapk</span></a> : <span class="id" title="keyword">∀</span> (<a id="k:14" class="idref" href="#k:14"><span class="id" title="binder">k</span></a>: <a class="idref" href="Tealeaves.Categories.TypeFamily.html#K"><span class="id" title="method">K</span></a>),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.Multisorted.LN.LN.html#free"><span class="id" title="definition">free</span></a> <a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#local_lemmas_needed.U"><span class="id" title="variable">U</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#local_lemmas_needed.T"><span class="id" title="variable">T</span></a>) <a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#k:14"><span class="id" title="variable">k</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="Tealeaves.Classes.Multisorted.Theory.Foldmap.html#foldMapk"><span class="id" title="definition">foldMapk</span></a> <a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#local_lemmas_needed.U"><span class="id" title="variable">U</span></a> <a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#k:14"><span class="id" title="variable">k</span></a> <a class="idref" href="Tealeaves.Backends.Multisorted.LN.LN.html#free_loc"><span class="id" title="definition">free_loc</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="free_to_mapReducek" class="idref" href="#free_to_mapReducek"><span class="id" title="lemma">free_to_mapReducek</span></a> : <span class="id" title="keyword">∀</span> (<a id="k:14" class="idref" href="#k:14"><span class="id" title="binder">k</span></a>: <a class="idref" href="Tealeaves.Categories.TypeFamily.html#K"><span class="id" title="method">K</span></a>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.Multisorted.LN.LN.html#free"><span class="id" title="definition">free</span></a> <a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#local_lemmas_needed.U"><span class="id" title="variable">U</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#local_lemmas_needed.T"><span class="id" title="variable">T</span></a>) <a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#k:14"><span class="id" title="variable">k</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="Tealeaves.Classes.Multisorted.Theory.Foldmap.html#mapReducek"><span class="id" title="definition">mapReducek</span></a> <a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#local_lemmas_needed.U"><span class="id" title="variable">U</span></a> <a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#k:14"><span class="id" title="variable">k</span></a> <a class="idref" href="Tealeaves.Backends.Multisorted.LN.LN.html#free_loc"><span class="id" title="definition">free_loc</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Backends.Multisorted.LN.LN.html#free"><span class="id" title="definition">free</span></a>. <span class="id" title="var">ext</span> <span class="id" title="var">t</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Multisorted.Theory.Container.html#toklist"><span class="id" title="definition">toklist</span></a>, <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Multisorted.Theory.Foldmap.html#foldMapk"><span class="id" title="definition">foldMapk</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Multisorted.Theory.Foldmap.html#foldMapm_to_foldMapmd"><span class="id" title="lemma">foldMapm_to_foldMapmd</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Multisorted.Theory.Foldmap.html#foldMapmd_through_tolist"><span class="id" title="lemma">foldMapmd_through_tolist</span></a> <a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#local_lemmas_needed.U"><span class="id" title="variable">U</span></a>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Multisorted.Theory.Foldmap.html#mapReducek"><span class="id" title="definition">mapReducek</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Multisorted.Theory.Foldmap.html#mapReducem_to_mapReducemd"><span class="id" title="lemma">mapReducem_to_mapReducemd</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Multisorted.Theory.Foldmap.html#mapReducemd_through_tolist"><span class="id" title="lemma">mapReducemd_through_tolist</span></a> <a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#local_lemmas_needed.U"><span class="id" title="variable">U</span></a>).<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Multisorted.Theory.Container.html#toklistd"><span class="id" title="definition">toklistd</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">induction</span> (<a class="idref" href="Tealeaves.Classes.Multisorted.Theory.Container.html#tolistmd"><span class="id" title="definition">tolistmd</span></a> <a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#local_lemmas_needed.U"><span class="id" title="variable">U</span></a> <span class="id" title="var">t</span>).<br/>
@@ -202,7 +202,7 @@ Ltac&nbsp;handle_lc_loc&nbsp;:=<br/>
 </div>
 
 <div class="doc">
-<a id="lab1793"></a><h2 class="section"><code>open</code></h2>
+<a id="lab1815"></a><h2 class="section"><code>open</code></h2>
 
 </div>
 <div class="code">
@@ -324,7 +324,7 @@ Ltac&nbsp;handle_lc_loc&nbsp;:=<br/>
 </div>
 
 <div class="doc">
-<a id="lab1794"></a><h2 class="section"><code>LCn</code></h2>
+<a id="lab1816"></a><h2 class="section"><code>LCn</code></h2>
 
 </div>
 <div class="code">
@@ -475,7 +475,7 @@ Ltac&nbsp;handle_lc_loc&nbsp;:=<br/>
 </div>
 
 <div class="doc">
-<a id="lab1795"></a><h2 class="section"><code>LC</code></h2>
+<a id="lab1817"></a><h2 class="section"><code>LC</code></h2>
 
 </div>
 <div class="code">
@@ -602,7 +602,7 @@ Ltac&nbsp;handle_lc_loc&nbsp;:=<br/>
 </div>
 
 <div class="doc">
-<a id="lab1796"></a><h2 class="section"><code>subst</code></h2>
+<a id="lab1818"></a><h2 class="section"><code>subst</code></h2>
 
 </div>
 <div class="code">
@@ -707,10 +707,10 @@ Ltac&nbsp;handle_lc_loc&nbsp;:=<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
 &nbsp;&nbsp;| |- <span class="id" title="keyword">context</span>[<a class="idref" href="Tealeaves.Backends.Multisorted.LN.LN.html#free"><span class="id" title="definition">free</span></a> (<span class="id" title="var">T</span> := ?<span class="id" title="var">T</span>) (<span class="id" title="var">ix</span> := ?<span class="id" title="var">ix</span>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?<span class="id" title="var">U</span> ?<span class="id" title="var">k</span> ?<span class="id" title="var">t</span>] ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> ?(<a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#free_to_foldMapk"><span class="id" title="lemma">free_to_foldMapk</span></a> <span class="id" title="var">_</span> (<span class="id" title="var">ix</span> := <span class="id" title="var">ix</span>));<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_foldMapk</span>;<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> ?(<a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#free_to_mapReducek"><span class="id" title="lemma">free_to_mapReducek</span></a> <span class="id" title="var">_</span> (<span class="id" title="var">ix</span> := <span class="id" title="var">ix</span>));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_mapReducek</span>;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_free_pre_refold_hook</span>;<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- ?(<a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#free_to_foldMapk"><span class="id" title="lemma">free_to_foldMapk</span></a> <span class="id" title="var">_</span> (<span class="id" title="var">ix</span> := <span class="id" title="var">ix</span>));<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- ?(<a class="idref" href="Tealeaves.Simplification.Tests.SystemF_LN.html#free_to_mapReducek"><span class="id" title="lemma">free_to_mapReducek</span></a> <span class="id" title="var">_</span> (<span class="id" title="var">ix</span> := <span class="id" title="var">ix</span>));<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_free_post_refold_hook</span>;<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">try</span> <span class="id" title="tactic">solve</span> [<span class="id" title="var">handle_free_at_leaf</span>]<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
@@ -719,7 +719,7 @@ Ltac&nbsp;handle_lc_loc&nbsp;:=<br/>
 </div>
 
 <div class="doc">
-<a id="lab1797"></a><h2 class="section"><code>free</code></h2>
+<a id="lab1819"></a><h2 class="section"><code>free</code></h2>
 
 </div>
 <div class="code">
@@ -864,7 +864,7 @@ Ltac&nbsp;handle_lc_loc&nbsp;:=<br/>
 </div>
 
 <div class="doc">
-<a id="lab1798"></a><h2 class="section"><code>FV</code></h2>
+<a id="lab1820"></a><h2 class="section"><code>FV</code></h2>
 
 </div>
 <div class="code">
@@ -985,7 +985,7 @@ Ltac&nbsp;handle_lc_loc&nbsp;:=<br/>
 </div>
 
 <div class="doc">
-<a id="lab1799"></a><h2 class="section"><code>scoped</code></h2>
+<a id="lab1821"></a><h2 class="section"><code>scoped</code></h2>
 
 </div>
 <div class="code">

@@ -50,11 +50,11 @@
 </div>
 
 <div class="doc">
-<a id="lab1145"></a><h1 class="section">Telescoping Decoration for the List Functor</h1>
+<a id="lab1161"></a><h1 class="section">Telescoping Decoration for the List Functor</h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab1146"></a><h2 class="section">The <code>decorate_telescoping_list</code> Operation</h2>
+<a id="lab1162"></a><h2 class="section">The <code>decorate_telescoping_list</code> Operation</h2>
 
 </div>
 <div class="code">
@@ -74,7 +74,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1147"></a><h2 class="section">Alternative Characterization of <code>decorate_telescoping_list</code></h2>
+<a id="lab1163"></a><h2 class="section">Alternative Characterization of <code>decorate_telescoping_list</code></h2>
 
 </div>
 <div class="code">
@@ -90,7 +90,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1148"></a><h2 class="section">Rewriting Rules for <code>decorate_telescoping_list</code></h2>
+<a id="lab1164"></a><h2 class="section">Rewriting Rules for <code>decorate_telescoping_list</code></h2>
 
 </div>
 <div class="code">
@@ -146,7 +146,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1149"></a><h2 class="section">Equivalence</h2>
+<a id="lab1165"></a><h2 class="section">Equivalence</h2>
 
 </div>
 <div class="code">
@@ -163,7 +163,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">intros</span>. <span class="id" title="var">cbn</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">IHl</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> 0 <span class="id" title="keyword">with</span> (<a class="idref" href="Tealeaves.Classes.Monoid.html#118a0ae73788a324a953caf13a2d25ca"><span class="id" title="notation">Ƶ</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#nat"><span class="id" title="inductive">nat</span></a>) <span class="id" title="tactic">at</span> 1.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_l"><span class="id" title="method">monoid_id_l</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_r"><span class="id" title="method">monoid_id_r</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">compose</span> <span class="id" title="var">near</span> (<a class="idref" href="Tealeaves.Functors.List_Telescoping.html#decorate_telescoping_list_alt"><span class="id" title="definition">decorate_telescoping_list_alt</span></a> <span class="id" title="var">l</span>) <span class="id" title="var">on</span> <span class="id" title="tactic">right</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Functor.html#fun_map_map"><span class="id" title="method">fun_map_map</span></a>).<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#incr_incr"><span class="id" title="lemma">incr_incr</span></a>.<br/>
@@ -181,7 +181,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1150"></a><h2 class="section">Associated <code>mapdt</code> Operation</h2>
+<a id="lab1166"></a><h2 class="section">Associated <code>mapdt</code> Operation</h2>
 
 </div>
 <div class="code">
@@ -220,7 +220,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1151"></a><h2 class="section">Rewriting Rules for <code>decorate_telescoping_list</code></h2>
+<a id="lab1167"></a><h2 class="section">Rewriting Rules for <code>decorate_telescoping_list</code></h2>
 
 </div>
 <div class="code">
@@ -279,7 +279,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1152"></a><h2 class="section">Typeclass Instance</h2>
+<a id="lab1168"></a><h2 class="section">Typeclass Instance</h2>
 
 </div>
 <div class="code">
@@ -349,7 +349,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1153"></a><h2 class="section">Derived Operation Compatibility</h2>
+<a id="lab1169"></a><h2 class="section">Derived Operation Compatibility</h2>
 
 </div>
 <div class="code">
@@ -397,7 +397,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1154"></a><h2 class="section">Associated <code>toctxlist</code> and <code>toctxset</code> Operations</h2>
+<a id="lab1170"></a><h2 class="section">Associated <code>toctxlist</code> and <code>toctxset</code> Operations</h2>
 
 </div>
 <div class="code">
@@ -419,9 +419,9 @@
 &nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedContainerFunctor.html#ToSubset_ToCtxset"><span class="id" title="definition">ToSubset_ToCtxset</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Functors.List_Telescoping.html#ToCtxset_List_Telescoping"><span class="id" title="instance">ToCtxset_List_Telescoping</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#ToCtxset_Mapdt"><span class="id" title="instance">ToCtxset_Mapdt</span></a>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#foldMapd_morphism"><span class="id" title="lemma">foldMapd_morphism</span></a>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tosubset_to_foldMap"><span class="id" title="lemma">tosubset_to_foldMap</span></a>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#foldMap_to_foldMapd"><span class="id" title="lemma">foldMap_to_foldMapd</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#mapdReduce_morphism"><span class="id" title="lemma">mapdReduce_morphism</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tosubset_to_mapReduce"><span class="id" title="lemma">tosubset_to_mapReduce</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.DecoratedTraversableFunctor.html#mapReduce_to_mapdReduce"><span class="id" title="lemma">mapReduce_to_mapdReduce</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Functor.html#natural"><span class="id" title="method">natural</span></a> (<span class="id" title="var">ϕ</span> := @<a class="idref" href="Tealeaves.Classes.Categorical.Monad.html#ret"><span class="id" title="definition">ret</span></a> <a class="idref" href="Tealeaves.Functors.Early.Subset.html#Notations.::tealeaves_scope:'subset'"><span class="id" title="notation">subset</span></a> <span class="id" title="var">_</span>)).<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
@@ -430,11 +430,11 @@
 </div>
 
 <div class="doc">
-<a id="lab1155"></a><h1 class="section">Fully Recursive Decoration for the List Functor</h1>
+<a id="lab1171"></a><h1 class="section">Fully Recursive Decoration for the List Functor</h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab1156"></a><h2 class="section">The <code>decorate_list_full</code> Operation</h2>
+<a id="lab1172"></a><h2 class="section">The <code>decorate_list_full</code> Operation</h2>
 
 </div>
 <div class="code">
@@ -446,7 +446,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1157"></a><h2 class="section">The Associated <code>mapdt_list_full</code> Operation</h2>
+<a id="lab1173"></a><h2 class="section">The Associated <code>mapdt_list_full</code> Operation</h2>
 
 </div>
 <div class="code">
@@ -463,7 +463,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1158"></a><h2 class="section"><code>DecoratedTraversableFunctor</code> Typeclass Instance</h2>
+<a id="lab1174"></a><h2 class="section"><code>DecoratedTraversableFunctor</code> Typeclass Instance</h2>
 
 </div>
 <div class="code">
@@ -519,7 +519,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1159"></a><h2 class="section">Derived <code>toBatch3</code> and <code>mapd</code></h2>
+<a id="lab1175"></a><h2 class="section">Derived <code>toBatch3</code> and <code>mapd</code></h2>
 
 </div>
 <div class="code">
@@ -534,7 +534,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1160"></a><h2 class="section">Compatibility Instances</h2>
+<a id="lab1176"></a><h2 class="section">Compatibility Instances</h2>
 
 </div>
 <div class="code">

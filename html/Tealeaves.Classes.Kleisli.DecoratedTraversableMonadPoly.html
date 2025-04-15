@@ -57,7 +57,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1226"></a><h1 class="section">Polymorphically Decorated Traversable Monads</h1>
+<a id="lab1244"></a><h1 class="section">Polymorphically Decorated Traversable Monads</h1>
  T = type of newly inserted syntax
     U = type of syntax substituted into
     B1 = type of binders before substitution
@@ -66,7 +66,7 @@
     A2 = new type of variables after substitution 
 <div class="paragraph"> </div>
 
-<a id="lab1227"></a><h2 class="section">Operation <code>substitute</code></h2>
+<a id="lab1245"></a><h2 class="section">Operation <code>substitute</code></h2>
 
 </div>
 <div class="code">
@@ -102,7 +102,7 @@ Definition&nbsp;kcompose_rename<br/>
 </div>
 
 <div class="doc">
-<a id="lab1228"></a><h2 class="section">Kleisli Composition</h2>
+<a id="lab1246"></a><h2 class="section">Kleisli Composition</h2>
 
 </div>
 <div class="code">
@@ -150,7 +150,7 @@ Definition&nbsp;kcompose_dtmp<br/>
 </div>
 
 <div class="doc">
-<a id="lab1229"></a><h2 class="section">Typeclass</h2>
+<a id="lab1247"></a><h2 class="section">Typeclass</h2>
 
 </div>
 <div class="code">
@@ -202,11 +202,11 @@ Definition&nbsp;kcompose_dtmp<br/>
 </div>
 
 <div class="doc">
-<a id="lab1230"></a><h1 class="section">Derived Instances</h1>
+<a id="lab1248"></a><h1 class="section">Derived Instances</h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab1231"></a><h2 class="section">Derived Operations</h2>
+<a id="lab1249"></a><h2 class="section">Derived Operations</h2>
 
 </div>
 <div class="code">
@@ -288,7 +288,7 @@ Definition&nbsp;kcompose_dtmp<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#kdtmp_substitute0"><span class="id" title="method">kdtmp_substitute0</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>, <a class="idref" href="Tealeaves.Classes.Monoid.html#incr"><span class="id" title="definition">incr</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Functors.Early.Writer.html#Return_Writer"><span class="id" title="instance">Return_Writer</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_l"><span class="id" title="method">monoid_id_l</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_r"><span class="id" title="method">monoid_id_r</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#DerivedOperations.MapdtPoly_Substitute"><span class="id" title="instance">MapdtPoly_Substitute</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#kdtmp_morphism"><span class="id" title="method">kdtmp_morphism</span></a>.<br/>

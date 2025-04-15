@@ -62,134 +62,134 @@
 </div>
 
 <div class="doc">
-<a id="lab1013"></a><h1 class="section"><code>foldMap</code> Rewriting Lemmas</h1>
+<a id="lab1028"></a><h1 class="section"><code>mapReduce</code> Rewriting Lemmas</h1>
 
 </div>
 <div class="code">
-<span class="id" title="keyword">Section</span> <a id="Batch_foldMap_rewriting" class="idref" href="#Batch_foldMap_rewriting"><span class="id" title="section">Batch_foldMap_rewriting</span></a>.<br/>
+<span class="id" title="keyword">Section</span> <a id="Batch_mapReduce_rewriting" class="idref" href="#Batch_mapReduce_rewriting"><span class="id" title="section">Batch_mapReduce_rewriting</span></a>.<br/>
 
 <br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Context</span> {<a id="A:1" class="idref" href="#A:1"><span class="id" title="binder">A</span></a> <a id="B:2" class="idref" href="#B:2"><span class="id" title="binder">B</span></a> <a id="C:3" class="idref" href="#C:3"><span class="id" title="binder">C</span></a>: <span class="id" title="keyword">Type</span>}.<br/>
 
 <br/>
-&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="foldMap_Batch_rw2" class="idref" href="#foldMap_Batch_rw2"><span class="id" title="lemma">foldMap_Batch_rw2</span></a>:<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="mapReduce_Batch_rw2" class="idref" href="#mapReduce_Batch_rw2"><span class="id" title="lemma">mapReduce_Batch_rw2</span></a>:<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">∀</span> `{<a id="H:7" class="idref" href="#H:7"><span class="id" title="binder">Monoid</span></a> <a id="H:7" class="idref" href="#H:7"><span class="id" title="binder">M</span></a>}<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a id="f:8" class="idref" href="#f:8"><span class="id" title="binder">f</span></a>: <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting.A"><span class="id" title="variable">A</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#M:4"><span class="id" title="variable">M</span></a>) (<a id="a:9" class="idref" href="#a:9"><span class="id" title="binder">a</span></a>: <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting.A"><span class="id" title="variable">A</span></a>) (<a id="rest:10" class="idref" href="#rest:10"><span class="id" title="binder">rest</span></a>: <a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting.A"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting.B"><span class="id" title="variable">B</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting.B"><span class="id" title="variable">B</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting.C"><span class="id" title="variable">C</span></a>)),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting.B"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting.C"><span class="id" title="variable">C</span></a>) <a class="idref" href="Tealeaves.Functors.Batch.html#f:8"><span class="id" title="variable">f</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#rest:10"><span class="id" title="variable">rest</span></a> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#45a660fcade13f7b83ca57ede582a0d1"><span class="id" title="notation">⧆</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#a:9"><span class="id" title="variable">a</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#f:8"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#rest:10"><span class="id" title="variable">rest</span></a> <a class="idref" href="Tealeaves.Classes.Monoid.html#23f40b1adcf5df7d889fd9b798da390c"><span class="id" title="notation">●</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#f:8"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#a:9"><span class="id" title="variable">a</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<a id="f:8" class="idref" href="#f:8"><span class="id" title="binder">f</span></a>: <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting.A"><span class="id" title="variable">A</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#M:4"><span class="id" title="variable">M</span></a>) (<a id="a:9" class="idref" href="#a:9"><span class="id" title="binder">a</span></a>: <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting.A"><span class="id" title="variable">A</span></a>) (<a id="rest:10" class="idref" href="#rest:10"><span class="id" title="binder">rest</span></a>: <a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting.A"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting.B"><span class="id" title="variable">B</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting.B"><span class="id" title="variable">B</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting.C"><span class="id" title="variable">C</span></a>)),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting.B"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting.C"><span class="id" title="variable">C</span></a>) <a class="idref" href="Tealeaves.Functors.Batch.html#f:8"><span class="id" title="variable">f</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#rest:10"><span class="id" title="variable">rest</span></a> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#45a660fcade13f7b83ca57ede582a0d1"><span class="id" title="notation">⧆</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#a:9"><span class="id" title="variable">a</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#f:8"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#rest:10"><span class="id" title="variable">rest</span></a> <a class="idref" href="Tealeaves.Classes.Monoid.html#23f40b1adcf5df7d889fd9b798da390c"><span class="id" title="notation">●</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#f:8"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#a:9"><span class="id" title="variable">a</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#traverse_Batch_rw2"><span class="id" title="lemma">traverse_Batch_rw2</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting"><span class="id" title="section">Batch_foldMap_rewriting</span></a>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting"><span class="id" title="section">Batch_mapReduce_rewriting</span></a>.<br/>
 
 <br/>
 </div>
 
 <div class="doc">
-<a id="lab1014"></a><h2 class="section"><code>foldMap</code> Rewriting for <code>&lt;⋆&gt; </code></h2>
+<a id="lab1029"></a><h2 class="section"><code>mapReduce</code> Rewriting for <code>&lt;⋆&gt; </code></h2>
 
 </div>
 <div class="code">
-<span class="id" title="keyword">Lemma</span> <a id="foldMap_Batch_map" class="idref" href="#foldMap_Batch_map"><span class="id" title="lemma">foldMap_Batch_map</span></a> {<a id="A:11" class="idref" href="#A:11"><span class="id" title="binder">A</span></a> <a id="B:12" class="idref" href="#B:12"><span class="id" title="binder">B</span></a> <a id="C:13" class="idref" href="#C:13"><span class="id" title="binder">C</span></a> <a id="C':14" class="idref" href="#C':14"><span class="id" title="binder">C'</span></a>: <span class="id" title="keyword">Type</span>}:<br/>
+<span class="id" title="keyword">Lemma</span> <a id="mapReduce_Batch_map" class="idref" href="#mapReduce_Batch_map"><span class="id" title="lemma">mapReduce_Batch_map</span></a> {<a id="A:11" class="idref" href="#A:11"><span class="id" title="binder">A</span></a> <a id="B:12" class="idref" href="#B:12"><span class="id" title="binder">B</span></a> <a id="C:13" class="idref" href="#C:13"><span class="id" title="binder">C</span></a> <a id="C':14" class="idref" href="#C':14"><span class="id" title="binder">C'</span></a>: <span class="id" title="keyword">Type</span>}:<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">∀</span> `{<a id="H:18" class="idref" href="#H:18"><span class="id" title="binder">Monoid</span></a> <a id="H:18" class="idref" href="#H:18"><span class="id" title="binder">M</span></a>}<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<a id="f:19" class="idref" href="#f:19"><span class="id" title="binder">f</span></a>: <a class="idref" href="Tealeaves.Functors.Batch.html#A:11"><span class="id" title="variable">A</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#M:15"><span class="id" title="variable">M</span></a>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<a id="g:20" class="idref" href="#g:20"><span class="id" title="binder">g</span></a>: <a class="idref" href="Tealeaves.Functors.Batch.html#C:13"><span class="id" title="variable">C</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#C':14"><span class="id" title="variable">C'</span></a>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<a id="b:21" class="idref" href="#b:21"><span class="id" title="binder">b</span></a>: <a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#A:11"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:12"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#C:13"><span class="id" title="variable">C</span></a>),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:12"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#C:13"><span class="id" title="variable">C</span></a>) <a class="idref" href="Tealeaves.Functors.Batch.html#f:19"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b:21"><span class="id" title="variable">b</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:12"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#C':14"><span class="id" title="variable">C'</span></a>) <a class="idref" href="Tealeaves.Functors.Batch.html#f:19"><span class="id" title="variable">f</span></a> (<a class="idref" href="Tealeaves.Classes.Functor.html#map"><span class="id" title="definition">map</span></a> (<a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#A:11"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:12"><span class="id" title="variable">B</span></a>) <a class="idref" href="Tealeaves.Functors.Batch.html#g:20"><span class="id" title="variable">g</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b:21"><span class="id" title="variable">b</span></a>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:12"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#C:13"><span class="id" title="variable">C</span></a>) <a class="idref" href="Tealeaves.Functors.Batch.html#f:19"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b:21"><span class="id" title="variable">b</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:12"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#C':14"><span class="id" title="variable">C'</span></a>) <a class="idref" href="Tealeaves.Functors.Batch.html#f:19"><span class="id" title="variable">f</span></a> (<a class="idref" href="Tealeaves.Classes.Functor.html#map"><span class="id" title="definition">map</span></a> (<a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#A:11"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:12"><span class="id" title="variable">B</span></a>) <a class="idref" href="Tealeaves.Functors.Batch.html#g:20"><span class="id" title="variable">g</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b:21"><span class="id" title="variable">b</span></a>).<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">generalize</span> <span class="id" title="tactic">dependent</span> <span class="id" title="var">C'</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">b</span>; <span class="id" title="tactic">intros</span>.<br/>
 &nbsp;&nbsp;- <span class="id" title="tactic">reflexivity</span>.<br/>
-&nbsp;&nbsp;- <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_rw2"><span class="id" title="lemma">foldMap_Batch_rw2</span></a>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_rw2"><span class="id" title="lemma">mapReduce_Batch_rw2</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#map_Batch_rw2"><span class="id" title="lemma">map_Batch_rw2</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_rw2"><span class="id" title="lemma">foldMap_Batch_rw2</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_rw2"><span class="id" title="lemma">mapReduce_Batch_rw2</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">specialize</span> (<span class="id" title="var">IHb</span> <span class="id" title="var">_</span> (<a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a> <span class="id" title="var">g</span>)).<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">IHb</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Lemma</span> <a id="foldMap_Batch_mult_Done" class="idref" href="#foldMap_Batch_mult_Done"><span class="id" title="lemma">foldMap_Batch_mult_Done</span></a> {<a id="A:22" class="idref" href="#A:22"><span class="id" title="binder">A</span></a> <a id="B:23" class="idref" href="#B:23"><span class="id" title="binder">B</span></a> <a id="C:24" class="idref" href="#C:24"><span class="id" title="binder">C</span></a> <a id="D:25" class="idref" href="#D:25"><span class="id" title="binder">D</span></a>: <span class="id" title="keyword">Type</span>}<br/>
+<span class="id" title="keyword">Lemma</span> <a id="mapReduce_Batch_mult_Done" class="idref" href="#mapReduce_Batch_mult_Done"><span class="id" title="lemma">mapReduce_Batch_mult_Done</span></a> {<a id="A:22" class="idref" href="#A:22"><span class="id" title="binder">A</span></a> <a id="B:23" class="idref" href="#B:23"><span class="id" title="binder">B</span></a> <a id="C:24" class="idref" href="#C:24"><span class="id" title="binder">C</span></a> <a id="D:25" class="idref" href="#D:25"><span class="id" title="binder">D</span></a>: <span class="id" title="keyword">Type</span>}<br/>
 &nbsp;&nbsp;`{<a id="H:29" class="idref" href="#H:29"><span class="id" title="binder">Monoid</span></a> <a id="H:29" class="idref" href="#H:29"><span class="id" title="binder">M</span></a>}(<a id="f:30" class="idref" href="#f:30"><span class="id" title="binder">f</span></a>: <a class="idref" href="Tealeaves.Functors.Batch.html#A:22"><span class="id" title="variable">A</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#M:26"><span class="id" title="variable">M</span></a>):<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<a id="c:31" class="idref" href="#c:31"><span class="id" title="binder">c</span></a>: <a class="idref" href="Tealeaves.Functors.Batch.html#C:24"><span class="id" title="variable">C</span></a>) (<a id="b2:32" class="idref" href="#b2:32"><span class="id" title="binder">b2</span></a>: <a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#A:22"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:23"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#D:25"><span class="id" title="variable">D</span></a>),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:23"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Functors.Batch.html#C:24"><span class="id" title="variable">C</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#D:25"><span class="id" title="variable">D</span></a><a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">)</span></a>)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Functors.Batch.html#f:30"><span class="id" title="variable">f</span></a> (<a class="idref" href="Tealeaves.Functors.Early.Batch.html#Done"><span class="id" title="constructor">Done</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#c:31"><span class="id" title="variable">c</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#f5015ba7e0151d291e623026bdca0ae5"><span class="id" title="notation">⊗</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b2:32"><span class="id" title="variable">b2</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#f:30"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b2:32"><span class="id" title="variable">b2</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:23"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Functors.Batch.html#C:24"><span class="id" title="variable">C</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#D:25"><span class="id" title="variable">D</span></a><a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">)</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Functors.Batch.html#f:30"><span class="id" title="variable">f</span></a> (<a class="idref" href="Tealeaves.Functors.Early.Batch.html#Done"><span class="id" title="constructor">Done</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#c:31"><span class="id" title="variable">c</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#f5015ba7e0151d291e623026bdca0ae5"><span class="id" title="notation">⊗</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b2:32"><span class="id" title="variable">b2</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#f:30"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b2:32"><span class="id" title="variable">b2</span></a>.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">b2</span>.<br/>
 &nbsp;&nbsp;- <span class="id" title="tactic">reflexivity</span>.<br/>
-&nbsp;&nbsp;- <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_rw2"><span class="id" title="lemma">foldMap_Batch_rw2</span></a>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_rw2"><span class="id" title="lemma">mapReduce_Batch_rw2</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">IHb2</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">cbn</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Functors.Constant.html#Pure_const"><span class="id" title="instance">Pure_const</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_r"><span class="id" title="method">monoid_id_r</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_l"><span class="id" title="method">monoid_id_l</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> (<a class="idref" href="Tealeaves.Functors.Early.Batch.html#Traverse_Batch1"><span class="id" title="instance">Traverse_Batch1</span></a> <span class="id" title="var">B</span> (<span class="id" title="var">B</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="var">C</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <span class="id" title="var">C0</span>) (<a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a> <span class="id" title="var">M</span>) <a class="idref" href="Tealeaves.Functors.Constant.html#Map_const"><span class="id" title="instance">Map_const</span></a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="keyword">fun</span> (<a id="X:34" class="idref" href="#X:34"><span class="id" title="binder">X</span></a> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">_</span> : <a class="idref" href="Tealeaves.Functors.Batch.html#X:33"><span class="id" title="variable">X</span></a>) ⇒ <a class="idref" href="Tealeaves.Classes.Monoid.html#118a0ae73788a324a953caf13a2d25ca"><span class="id" title="notation">Ƶ</span></a>) <a class="idref" href="Tealeaves.Functors.Constant.html#Mult_const"><span class="id" title="instance">Mult_const</span></a> <span class="id" title="var">A</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#False"><span class="id" title="inductive">False</span></a> <span class="id" title="var">f</span>)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">with</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <span class="id" title="var">B</span> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">(</span></a><span class="id" title="var">B</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="var">C</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <span class="id" title="var">C0</span><a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">)</span></a>) <span class="id" title="var">f</span>).<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_map"><span class="id" title="lemma">foldMap_Batch_map</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">with</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <span class="id" title="var">B</span> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">(</span></a><span class="id" title="var">B</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="var">C</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <span class="id" title="var">C0</span><a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">)</span></a>) <span class="id" title="var">f</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_map"><span class="id" title="lemma">mapReduce_Batch_map</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Lemma</span> <a id="foldMap_Batch_mult" class="idref" href="#foldMap_Batch_mult"><span class="id" title="lemma">foldMap_Batch_mult</span></a> {<a id="A:35" class="idref" href="#A:35"><span class="id" title="binder">A</span></a> <a id="B:36" class="idref" href="#B:36"><span class="id" title="binder">B</span></a> <a id="C:37" class="idref" href="#C:37"><span class="id" title="binder">C</span></a> <a id="D:38" class="idref" href="#D:38"><span class="id" title="binder">D</span></a>: <span class="id" title="keyword">Type</span>}<br/>
+<span class="id" title="keyword">Lemma</span> <a id="mapReduce_Batch_mult" class="idref" href="#mapReduce_Batch_mult"><span class="id" title="lemma">mapReduce_Batch_mult</span></a> {<a id="A:35" class="idref" href="#A:35"><span class="id" title="binder">A</span></a> <a id="B:36" class="idref" href="#B:36"><span class="id" title="binder">B</span></a> <a id="C:37" class="idref" href="#C:37"><span class="id" title="binder">C</span></a> <a id="D:38" class="idref" href="#D:38"><span class="id" title="binder">D</span></a>: <span class="id" title="keyword">Type</span>}<br/>
 &nbsp;&nbsp;`{<a id="H:42" class="idref" href="#H:42"><span class="id" title="binder">Monoid</span></a> <a id="H:42" class="idref" href="#H:42"><span class="id" title="binder">M</span></a>}(<a id="f:43" class="idref" href="#f:43"><span class="id" title="binder">f</span></a>: <a class="idref" href="Tealeaves.Functors.Batch.html#A:35"><span class="id" title="variable">A</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#M:39"><span class="id" title="variable">M</span></a>):<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<a id="b1:44" class="idref" href="#b1:44"><span class="id" title="binder">b1</span></a>: <a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#A:35"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:36"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#C:37"><span class="id" title="variable">C</span></a>) (<a id="b2:45" class="idref" href="#b2:45"><span class="id" title="binder">b2</span></a>: <a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#A:35"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:36"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#D:38"><span class="id" title="variable">D</span></a>),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:36"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Functors.Batch.html#C:37"><span class="id" title="variable">C</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#D:38"><span class="id" title="variable">D</span></a><a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">)</span></a>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:36"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Functors.Batch.html#C:37"><span class="id" title="variable">C</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#D:38"><span class="id" title="variable">D</span></a><a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">)</span></a>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Functors.Batch.html#f:43"><span class="id" title="variable">f</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#b1:44"><span class="id" title="variable">b1</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#f5015ba7e0151d291e623026bdca0ae5"><span class="id" title="notation">⊗</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b2:45"><span class="id" title="variable">b2</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#f:43"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b1:44"><span class="id" title="variable">b1</span></a> <a class="idref" href="Tealeaves.Classes.Monoid.html#23f40b1adcf5df7d889fd9b798da390c"><span class="id" title="notation">●</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#f:43"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b2:45"><span class="id" title="variable">b2</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#f:43"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b1:44"><span class="id" title="variable">b1</span></a> <a class="idref" href="Tealeaves.Classes.Monoid.html#23f40b1adcf5df7d889fd9b798da390c"><span class="id" title="notation">●</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#f:43"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b2:45"><span class="id" title="variable">b2</span></a>.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">b2</span>.<br/>
 &nbsp;&nbsp;- <span class="id" title="var">cbn</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_map"><span class="id" title="lemma">foldMap_Batch_map</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_map"><span class="id" title="lemma">mapReduce_Batch_map</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Functors.Constant.html#Pure_const"><span class="id" title="instance">Pure_const</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_l"><span class="id" title="method">monoid_id_l</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_r"><span class="id" title="method">monoid_id_r</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
-&nbsp;&nbsp;- <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_rw2"><span class="id" title="lemma">foldMap_Batch_rw2</span></a>.<br/>
+&nbsp;&nbsp;- <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_rw2"><span class="id" title="lemma">mapReduce_Batch_rw2</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_assoc"><span class="id" title="method">monoid_assoc</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <span class="id" title="var">IHb2</span>; <span class="id" title="tactic">clear</span> <span class="id" title="var">IHb2</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">b1</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_mult_Done"><span class="id" title="lemma">foldMap_Batch_mult_Done</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_mult_Done"><span class="id" title="lemma">foldMap_Batch_mult_Done</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_rw2"><span class="id" title="lemma">foldMap_Batch_rw2</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_mult_Done"><span class="id" title="lemma">mapReduce_Batch_mult_Done</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_mult_Done"><span class="id" title="lemma">mapReduce_Batch_mult_Done</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_rw2"><span class="id" title="lemma">mapReduce_Batch_rw2</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;+ <span class="id" title="var">cbn</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Functors.Constant.html#Pure_const"><span class="id" title="instance">Pure_const</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_r"><span class="id" title="method">monoid_id_r</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_l"><span class="id" title="method">monoid_id_l</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> (<a class="idref" href="Tealeaves.Functors.Early.Batch.html#Traverse_Batch1"><span class="id" title="instance">Traverse_Batch1</span></a> <span class="id" title="var">B</span> (<span class="id" title="var">B</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="var">C</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <span class="id" title="var">C0</span>) (<a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a> <span class="id" title="var">M</span>) <a class="idref" href="Tealeaves.Functors.Constant.html#Map_const"><span class="id" title="instance">Map_const</span></a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="keyword">fun</span> (<a id="X:47" class="idref" href="#X:47"><span class="id" title="binder">X</span></a> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">_</span> : <a class="idref" href="Tealeaves.Functors.Batch.html#X:46"><span class="id" title="variable">X</span></a>) ⇒ <a class="idref" href="Tealeaves.Classes.Monoid.html#118a0ae73788a324a953caf13a2d25ca"><span class="id" title="notation">Ƶ</span></a>) <a class="idref" href="Tealeaves.Functors.Constant.html#Mult_const"><span class="id" title="instance">Mult_const</span></a> <span class="id" title="var">A</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#False"><span class="id" title="inductive">False</span></a> <span class="id" title="var">f</span>)<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">with</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <span class="id" title="var">B</span> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">(</span></a><span class="id" title="var">B</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="var">C</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <span class="id" title="var">C0</span><a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">)</span></a>) <span class="id" title="var">f</span>).<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_map"><span class="id" title="lemma">foldMap_Batch_map</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">with</span> (<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <span class="id" title="var">B</span> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">(</span></a><span class="id" title="var">B</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <span class="id" title="var">C</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <span class="id" title="var">C0</span><a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">)</span></a>) <span class="id" title="var">f</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_map"><span class="id" title="lemma">mapReduce_Batch_map</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Lemma</span> <a id="foldMap_Batch_ap_rw2" class="idref" href="#foldMap_Batch_ap_rw2"><span class="id" title="lemma">foldMap_Batch_ap_rw2</span></a> {<a id="A:48" class="idref" href="#A:48"><span class="id" title="binder">A</span></a> <a id="B:49" class="idref" href="#B:49"><span class="id" title="binder">B</span></a>: <span class="id" title="keyword">Type</span>}:<br/>
+<span class="id" title="keyword">Lemma</span> <a id="mapReduce_Batch_ap_rw2" class="idref" href="#mapReduce_Batch_ap_rw2"><span class="id" title="lemma">mapReduce_Batch_ap_rw2</span></a> {<a id="A:48" class="idref" href="#A:48"><span class="id" title="binder">A</span></a> <a id="B:49" class="idref" href="#B:49"><span class="id" title="binder">B</span></a>: <span class="id" title="keyword">Type</span>}:<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">∀</span> `{<a id="H:53" class="idref" href="#H:53"><span class="id" title="binder">Monoid</span></a> <a id="H:53" class="idref" href="#H:53"><span class="id" title="binder">M</span></a>}<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<a id="f:54" class="idref" href="#f:54"><span class="id" title="binder">f</span></a>: <a class="idref" href="Tealeaves.Functors.Batch.html#A:48"><span class="id" title="variable">A</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#M:50"><span class="id" title="variable">M</span></a>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;{<a id="X:55" class="idref" href="#X:55"><span class="id" title="binder">X</span></a> <a id="Y:56" class="idref" href="#Y:56"><span class="id" title="binder">Y</span></a>: <span class="id" title="keyword">Type</span>}<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<a id="lhs:57" class="idref" href="#lhs:57"><span class="id" title="binder">lhs</span></a>: <a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#A:48"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:49"><span class="id" title="variable">B</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#X:55"><span class="id" title="variable">X</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Y:56"><span class="id" title="variable">Y</span></a>))<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<a id="rhs:58" class="idref" href="#rhs:58"><span class="id" title="binder">rhs</span></a>: <a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#A:48"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:49"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#X:55"><span class="id" title="variable">X</span></a>),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:49"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Y:56"><span class="id" title="variable">Y</span></a>) <a class="idref" href="Tealeaves.Functors.Batch.html#f:54"><span class="id" title="variable">f</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#lhs:57"><span class="id" title="variable">lhs</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#4eeed44cd0d6a0bc26940e7c91bf6af4"><span class="id" title="notation">&lt;⋆&gt;</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#rhs:58"><span class="id" title="variable">rhs</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:49"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Functors.Batch.html#X:55"><span class="id" title="variable">X</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Y:56"><span class="id" title="variable">Y</span></a><a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">)</span></a>) <a class="idref" href="Tealeaves.Functors.Batch.html#f:54"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#lhs:57"><span class="id" title="variable">lhs</span></a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Monoid.html#23f40b1adcf5df7d889fd9b798da390c"><span class="id" title="notation">●</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#foldMap"><span class="id" title="definition">foldMap</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:49"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#X:55"><span class="id" title="variable">X</span></a>) <a class="idref" href="Tealeaves.Functors.Batch.html#f:54"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#rhs:58"><span class="id" title="variable">rhs</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:49"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Y:56"><span class="id" title="variable">Y</span></a>) <a class="idref" href="Tealeaves.Functors.Batch.html#f:54"><span class="id" title="variable">f</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#lhs:57"><span class="id" title="variable">lhs</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#4eeed44cd0d6a0bc26940e7c91bf6af4"><span class="id" title="notation">&lt;⋆&gt;</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#rhs:58"><span class="id" title="variable">rhs</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:49"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Functors.Batch.html#X:55"><span class="id" title="variable">X</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Y:56"><span class="id" title="variable">Y</span></a><a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">)</span></a>) <a class="idref" href="Tealeaves.Functors.Batch.html#f:54"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#lhs:57"><span class="id" title="variable">lhs</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Monoid.html#23f40b1adcf5df7d889fd9b798da390c"><span class="id" title="notation">●</span></a> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#mapReduce"><span class="id" title="definition">mapReduce</span></a> (<span class="id" title="var">T</span> := <a class="idref" href="Tealeaves.Functors.Early.Batch.html#:::'BATCH1'_x_x"><span class="id" title="notation">BATCH1</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#B:49"><span class="id" title="variable">B</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#X:55"><span class="id" title="variable">X</span></a>) <a class="idref" href="Tealeaves.Functors.Batch.html#f:54"><span class="id" title="variable">f</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#rhs:58"><span class="id" title="variable">rhs</span></a>.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Categorical.Applicative.html#ap"><span class="id" title="definition">ap</span></a>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_map"><span class="id" title="lemma">foldMap_Batch_map</span></a>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_mult"><span class="id" title="lemma">foldMap_Batch_mult</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> &lt;- <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_map"><span class="id" title="lemma">mapReduce_Batch_map</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_mult"><span class="id" title="lemma">mapReduce_Batch_mult</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 <span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">Section</span> <a id="Batch_foldMap_rewriting_derived" class="idref" href="#Batch_foldMap_rewriting_derived"><span class="id" title="section">Batch_foldMap_rewriting_derived</span></a>.<br/>
+<span class="id" title="keyword">Section</span> <a id="Batch_mapReduce_rewriting_derived" class="idref" href="#Batch_mapReduce_rewriting_derived"><span class="id" title="section">Batch_mapReduce_rewriting_derived</span></a>.<br/>
 
 <br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Context</span> {<a id="A:59" class="idref" href="#A:59"><span class="id" title="binder">A</span></a> <a id="B:60" class="idref" href="#B:60"><span class="id" title="binder">B</span></a> <a id="C:61" class="idref" href="#C:61"><span class="id" title="binder">C</span></a>: <span class="id" title="keyword">Type</span>}.<br/>
@@ -198,14 +198,14 @@
 </div>
 
 <div class="doc">
-<a id="lab1015"></a><h2 class="section"><code>tolist</code></h2>
+<a id="lab1030"></a><h2 class="section"><code>tolist</code></h2>
 
 </div>
 <div class="code">
 &nbsp;&nbsp;<span class="id" title="keyword">Import</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ListNotations"><span class="id" title="module">List.ListNotations</span></a>.<br/>
 
 <br/>
-&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="tolist_Batch_rw2" class="idref" href="#tolist_Batch_rw2"><span class="id" title="lemma">tolist_Batch_rw2</span></a>: <span class="id" title="keyword">∀</span> (<a id="b:62" class="idref" href="#b:62"><span class="id" title="binder">b</span></a>: <a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived.A"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived.B"><span class="id" title="variable">B</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived.B"><span class="id" title="variable">B</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived.C"><span class="id" title="variable">C</span></a>)) (<a id="a:63" class="idref" href="#a:63"><span class="id" title="binder">a</span></a>: <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived.A"><span class="id" title="variable">A</span></a>),<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="tolist_Batch_rw2" class="idref" href="#tolist_Batch_rw2"><span class="id" title="lemma">tolist_Batch_rw2</span></a>: <span class="id" title="keyword">∀</span> (<a id="b:62" class="idref" href="#b:62"><span class="id" title="binder">b</span></a>: <a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived.A"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived.B"><span class="id" title="variable">B</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived.B"><span class="id" title="variable">B</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived.C"><span class="id" title="variable">C</span></a>)) (<a id="a:63" class="idref" href="#a:63"><span class="id" title="binder">a</span></a>: <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived.A"><span class="id" title="variable">A</span></a>),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.ShapelyFunctor.html#tolist"><span class="id" title="definition">tolist</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#b:62"><span class="id" title="variable">b</span></a> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#45a660fcade13f7b83ca57ede582a0d1"><span class="id" title="notation">⧆</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#a:63"><span class="id" title="variable">a</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ShapelyFunctor.html#tolist"><span class="id" title="definition">tolist</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b:62"><span class="id" title="variable">b</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#bc347c51eaf667706ae54503b26d52c6"><span class="id" title="notation">++</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ddd65c2f7ee73ecec433744948d846bb"><span class="id" title="notation">[</span></a><a class="idref" href="Tealeaves.Functors.Batch.html#a:63"><span class="id" title="variable">a</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ddd65c2f7ee73ecec433744948d846bb"><span class="id" title="notation">]</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
@@ -216,7 +216,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1016"></a><h2 class="section"><code>tosubset</code></h2>
+<a id="lab1031"></a><h2 class="section"><code>tosubset</code></h2>
 
 </div>
 <div class="code">
@@ -225,12 +225,12 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#ToSubset_Traverse"><span class="id" title="instance">ToSubset_Traverse</span></a>.<br/>
 
 <br/>
-&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="tosubset_Batch_rw2" class="idref" href="#tosubset_Batch_rw2"><span class="id" title="lemma">tosubset_Batch_rw2</span></a>: <span class="id" title="keyword">∀</span> (<a id="b:66" class="idref" href="#b:66"><span class="id" title="binder">b</span></a>: <a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived.A"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived.B"><span class="id" title="variable">B</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived.B"><span class="id" title="variable">B</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived.C"><span class="id" title="variable">C</span></a>)) (<a id="a:67" class="idref" href="#a:67"><span class="id" title="binder">a</span></a>: <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived.A"><span class="id" title="variable">A</span></a>),<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="tosubset_Batch_rw2" class="idref" href="#tosubset_Batch_rw2"><span class="id" title="lemma">tosubset_Batch_rw2</span></a>: <span class="id" title="keyword">∀</span> (<a id="b:66" class="idref" href="#b:66"><span class="id" title="binder">b</span></a>: <a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived.A"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived.B"><span class="id" title="variable">B</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived.B"><span class="id" title="variable">B</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived.C"><span class="id" title="variable">C</span></a>)) (<a id="a:67" class="idref" href="#a:67"><span class="id" title="binder">a</span></a>: <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived.A"><span class="id" title="variable">A</span></a>),<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#tosubset"><span class="id" title="definition">tosubset</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#b:66"><span class="id" title="variable">b</span></a> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#45a660fcade13f7b83ca57ede582a0d1"><span class="id" title="notation">⧆</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#a:67"><span class="id" title="variable">a</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#tosubset"><span class="id" title="definition">tosubset</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b:66"><span class="id" title="variable">b</span></a> <a class="idref" href="Tealeaves.Functors.Early.Subset.html#fc28ab41a8c0a013bee8d4ee45936a3c"><span class="id" title="notation">∪</span></a> <a class="idref" href="Tealeaves.Functors.Early.Subset.html#f47b92762d79346bcd8a6569478ba954"><span class="id" title="notation">{{</span></a><a class="idref" href="Tealeaves.Functors.Batch.html#a:67"><span class="id" title="variable">a</span></a><a class="idref" href="Tealeaves.Functors.Early.Subset.html#f47b92762d79346bcd8a6569478ba954"><span class="id" title="notation">}}</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tosubset_to_foldMap"><span class="id" title="lemma">tosubset_to_foldMap</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_rw2"><span class="id" title="lemma">foldMap_Batch_rw2</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tosubset_to_mapReduce"><span class="id" title="lemma">tosubset_to_mapReduce</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_rw2"><span class="id" title="lemma">mapReduce_Batch_rw2</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
 
@@ -238,31 +238,31 @@
 </div>
 
 <div class="doc">
-<a id="lab1017"></a><h2 class="section"><code>a ∈ _</code></h2>
+<a id="lab1032"></a><h2 class="section"><code>a ∈ _</code></h2>
 
 </div>
 <div class="code">
 &nbsp;&nbsp;<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#Notations"><span class="id" title="module">ContainerFunctor.Notations</span></a>.<br/>
 
 <br/>
-&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="element_of_Batch_rw2" class="idref" href="#element_of_Batch_rw2"><span class="id" title="lemma">element_of_Batch_rw2</span></a>: <span class="id" title="keyword">∀</span> `(<a id="b:68" class="idref" href="#b:68"><span class="id" title="binder">b</span></a>: <a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived.A"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived.B"><span class="id" title="variable">B</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived.B"><span class="id" title="variable">B</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived.C"><span class="id" title="variable">C</span></a>)) <a id="a:69" class="idref" href="#a:69"><span class="id" title="binder">a</span></a> <a id="a':70" class="idref" href="#a':70"><span class="id" title="binder">a'</span></a>,<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="element_of_Batch_rw2" class="idref" href="#element_of_Batch_rw2"><span class="id" title="lemma">element_of_Batch_rw2</span></a>: <span class="id" title="keyword">∀</span> `(<a id="b:68" class="idref" href="#b:68"><span class="id" title="binder">b</span></a>: <a class="idref" href="Tealeaves.Functors.Early.Batch.html#Batch"><span class="id" title="inductive">Batch</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived.A"><span class="id" title="variable">A</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived.B"><span class="id" title="variable">B</span></a> (<a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived.B"><span class="id" title="variable">B</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived.C"><span class="id" title="variable">C</span></a>)) <a id="a:69" class="idref" href="#a:69"><span class="id" title="binder">a</span></a> <a id="a':70" class="idref" href="#a':70"><span class="id" title="binder">a'</span></a>,<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Functors.Batch.html#a':70"><span class="id" title="variable">a'</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">∈</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Functors.Batch.html#b:68"><span class="id" title="variable">b</span></a> <a class="idref" href="Tealeaves.Functors.Early.Batch.html#45a660fcade13f7b83ca57ede582a0d1"><span class="id" title="notation">⧆</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#a:69"><span class="id" title="variable">a</span></a><a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Functors.Batch.html#a':70"><span class="id" title="variable">a'</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.ContainerFunctor.html#11eb2861ea16289dd627ef9d8c2d6322"><span class="id" title="notation">∈</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#b:68"><span class="id" title="variable">b</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#f031fe1957c4a4a8e217aa46af2b4e25"><span class="id" title="notation">∨</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#a':70"><span class="id" title="variable">a'</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="Tealeaves.Functors.Batch.html#a:69"><span class="id" title="variable">a</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">)</span></a>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#element_of_to_foldMap"><span class="id" title="lemma">element_of_to_foldMap</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#element_of_to_foldMap"><span class="id" title="lemma">element_of_to_foldMap</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_rw2"><span class="id" title="lemma">foldMap_Batch_rw2</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#element_of_to_mapReduce"><span class="id" title="lemma">element_of_to_mapReduce</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#element_of_to_mapReduce"><span class="id" title="lemma">element_of_to_mapReduce</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_rw2"><span class="id" title="lemma">mapReduce_Batch_rw2</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
 
 <br/>
-<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_foldMap_rewriting_derived"><span class="id" title="section">Batch_foldMap_rewriting_derived</span></a>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Functors.Batch.html#Batch_mapReduce_rewriting_derived"><span class="id" title="section">Batch_mapReduce_rewriting_derived</span></a>.<br/>
 
 <br/>
 </div>
 
 <div class="doc">
-<a id="lab1018"></a><h1 class="section">Simultaneous Induction on Two <code>Batch</code>es of the Same Shape</h1>
+<a id="lab1033"></a><h1 class="section">Simultaneous Induction on Two <code>Batch</code>es of the Same Shape</h1>
 
 </div>
 <div class="code">
@@ -333,7 +333,7 @@ Defined.<br/>
 </div>
 
 <div class="doc">
-<a id="lab1019"></a><h1 class="section"><code>runBatch</code> specialized to monoids</h1>
+<a id="lab1034"></a><h1 class="section"><code>runBatch</code> specialized to monoids</h1>
 
 </div>
 <div class="code">
@@ -413,7 +413,7 @@ Defined.<br/>
 </div>
 
 <div class="doc">
-<a id="lab1020"></a><h1 class="section">The <code>length_Batch</code> Operation</h1>
+<a id="lab1035"></a><h1 class="section">The <code>length_Batch</code> Operation</h1>
  This function is introduced because using <code>plength</code> has less desirable
     simplification behavior, which makes programming functions like <code>Batch_make</code>  difficult 
 </div>
@@ -459,7 +459,7 @@ Defined.<br/>
 </div>
 
 <div class="doc">
-<a id="lab1021"></a><h2 class="section">Rewriting Rules</h2>
+<a id="lab1036"></a><h2 class="section">Rewriting Rules</h2>
  TODO 
 </div>
 <div class="code">
@@ -474,7 +474,7 @@ Defined.<br/>
 </div>
 
 <div class="doc">
-<a id="lab1022"></a><h2 class="section">Length is the Same as the Underlying <code>list</code></h2>
+<a id="lab1037"></a><h2 class="section">Length is the Same as the Underlying <code>list</code></h2>
 
 </div>
 <div class="code">
@@ -500,7 +500,7 @@ Defined.<br/>
 </div>
 
 <div class="doc">
-<a id="lab1023"></a><h2 class="section">Length is Preserved By <code>map</code></h2>
+<a id="lab1038"></a><h2 class="section">Length is Preserved By <code>map</code></h2>
 
 </div>
 <div class="code">
@@ -555,7 +555,7 @@ Defined.<br/>
 </div>
 
 <div class="doc">
-<a id="lab1024"></a><h2 class="section">Length is Preserved by <code>cojoin_Batch</code></h2>
+<a id="lab1039"></a><h2 class="section">Length is Preserved by <code>cojoin_Batch</code></h2>
 
 </div>
 <div class="code">
@@ -575,7 +575,7 @@ Defined.<br/>
 </div>
 
 <div class="doc">
-<a id="lab1025"></a><h2 class="section">Two Same-Shaped <code>Batch</code>es Have the Same Length</h2>
+<a id="lab1040"></a><h2 class="section">Two Same-Shaped <code>Batch</code>es Have the Same Length</h2>
 
 </div>
 <div class="code">
@@ -604,7 +604,7 @@ Defined.<br/>
 </div>
 
 <div class="doc">
-<a id="lab1026"></a><h1 class="section">Specification for <code>traverse</code> via <code>runBatch</code></h1>
+<a id="lab1041"></a><h1 class="section">Specification for <code>traverse</code> via <code>runBatch</code></h1>
 
 </div>
 <div class="code">
@@ -648,11 +648,11 @@ Defined.<br/>
 </div>
 
 <div class="doc">
-<a id="lab1027"></a><h1 class="section"><code>Batch _ B C</code> is a traversable monad</h1>
+<a id="lab1042"></a><h1 class="section"><code>Batch _ B C</code> is a traversable monad</h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab1028"></a><h2 class="section">Operation</h2>
+<a id="lab1043"></a><h2 class="section">Operation</h2>
 
 </div>
 <div class="code">
@@ -665,11 +665,11 @@ Defined.<br/>
 </div>
 
 <div class="doc">
-<a id="lab1029"></a><h2 class="section">Traversable Monad Laws</h2>
+<a id="lab1044"></a><h2 class="section">Traversable Monad Laws</h2>
  TODO 
 <div class="paragraph"> </div>
 
-<a id="lab1030"></a><h1 class="section">Deconstructing <code>Batch A B C</code> into Shape and Contents</h1>
+<a id="lab1045"></a><h1 class="section">Deconstructing <code>Batch A B C</code> into Shape and Contents</h1>
 
 </div>
 <div class="code">
@@ -682,7 +682,7 @@ Defined.<br/>
 </div>
 
 <div class="doc">
-<a id="lab1031"></a><h2 class="section"><code>Batch_make</code> and <code>Batch_contents</code></h2>
+<a id="lab1046"></a><h2 class="section"><code>Batch_make</code> and <code>Batch_contents</code></h2>
  Extract the contents of <code>Batch</code> as a vector 
 </div>
 <div class="code">
@@ -714,7 +714,7 @@ Obtain the build function of <code>Batch</code>. Note that
 </div>
 
 <div class="doc">
-<a id="lab1032"></a><h2 class="section"><code>Batch_replace_contents</code></h2>
+<a id="lab1047"></a><h2 class="section"><code>Batch_replace_contents</code></h2>
  This is <code>make</code> in the sense of <code>put</code>. 
 </div>
 <div class="code">
@@ -735,7 +735,7 @@ Obtain the build function of <code>Batch</code>. Note that
 </div>
 
 <div class="doc">
-<a id="lab1033"></a><h2 class="section">Rewriting rules</h2>
+<a id="lab1048"></a><h2 class="section">Rewriting rules</h2>
 
 </div>
 <div class="code">
@@ -799,7 +799,7 @@ Obtain the build function of <code>Batch</code>. Note that
 </div>
 
 <div class="doc">
-<a id="lab1034"></a><h2 class="section">Relating <code>tolist</code> and <code>Batch_contents</code></h2>
+<a id="lab1049"></a><h2 class="section">Relating <code>tolist</code> and <code>Batch_contents</code></h2>
 
 </div>
 <div class="code">
@@ -832,7 +832,7 @@ Obtain the build function of <code>Batch</code>. Note that
 </div>
 
 <div class="doc">
-<a id="lab1035"></a><h2 class="section">Rewriting Rules for <code>&lt;⋆&gt; </code></h2>
+<a id="lab1050"></a><h2 class="section">Rewriting Rules for <code>&lt;⋆&gt; </code></h2>
 
 </div>
 <div class="code">
@@ -859,8 +859,8 @@ Obtain the build function of <code>Batch</code>. Note that
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Functors.VectorRefinement.html#Vector_sim"><span class="id" title="definition">Vector_sim</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#tolist_Batch_contents"><span class="id" title="lemma">tolist_Batch_contents</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tolist_to_foldMap"><span class="id" title="lemma">tolist_to_foldMap</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_mult"><span class="id" title="lemma">foldMap_Batch_mult</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tolist_to_mapReduce"><span class="id" title="lemma">tolist_to_mapReduce</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_mult"><span class="id" title="lemma">mapReduce_Batch_mult</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Functors.Early.List.html#Monoid_op_list"><span class="id" title="instance">Monoid_op_list</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#rev_app_distr"><span class="id" title="lemma">List.rev_app_distr</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.VectorRefinement.html#proj_Vector_append"><span class="id" title="lemma">proj_Vector_append</span></a>.<br/>
@@ -878,9 +878,9 @@ Obtain the build function of <code>Batch</code>. Note that
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Functors.VectorRefinement.html#Vector_sim"><span class="id" title="definition">Vector_sim</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#tolist_Batch_contents"><span class="id" title="lemma">tolist_Batch_contents</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tolist_to_foldMap"><span class="id" title="lemma">tolist_to_foldMap</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Kleisli.Theory.TraversableFunctor.html#tolist_to_mapReduce"><span class="id" title="lemma">tolist_to_mapReduce</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.VectorRefinement.html#proj_Vector_append"><span class="id" title="lemma">proj_Vector_append</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#foldMap_Batch_ap_rw2"><span class="id" title="lemma">foldMap_Batch_ap_rw2</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#mapReduce_Batch_ap_rw2"><span class="id" title="lemma">mapReduce_Batch_ap_rw2</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">unfold_ops</span> @<a class="idref" href="Tealeaves.Functors.Early.List.html#Monoid_op_list"><span class="id" title="instance">Monoid_op_list</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#rev_app_distr"><span class="id" title="lemma">List.rev_app_distr</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Batch.html#tolist_Batch_contents"><span class="id" title="lemma">tolist_Batch_contents</span></a>.<br/>
@@ -895,7 +895,7 @@ Obtain the build function of <code>Batch</code>. Note that
 </div>
 
 <div class="doc">
-<a id="lab1036"></a><h2 class="section">Same Shape Iff Same <code>Batch_make</code></h2>
+<a id="lab1051"></a><h2 class="section">Same Shape Iff Same <code>Batch_make</code></h2>
 
 </div>
 <div class="code">
@@ -966,7 +966,7 @@ Obtain the build function of <code>Batch</code>. Note that
 </div>
 
 <div class="doc">
-<a id="lab1037"></a><h2 class="section">Two Lemmas for <code>shape</code> and <code>length_Batch</code></h2>
+<a id="lab1052"></a><h2 class="section">Two Lemmas for <code>shape</code> and <code>length_Batch</code></h2>
 
 </div>
 <div class="code">
@@ -1017,7 +1017,7 @@ Obtain the build function of <code>Batch</code>. Note that
 </div>
 
 <div class="doc">
-<a id="lab1038"></a><h2 class="section">Same Shape Implies Same <code>Batch_replace_contents</code></h2>
+<a id="lab1053"></a><h2 class="section">Same Shape Implies Same <code>Batch_replace_contents</code></h2>
 
 </div>
 <div class="code">
@@ -1081,7 +1081,7 @@ Obtain the build function of <code>Batch</code>. Note that
 </div>
 
 <div class="doc">
-<a id="lab1039"></a><h2 class="section"><code>Batch_make</code> Equal Iff <code>Batch_replace_contents</code> Equal</h2>
+<a id="lab1054"></a><h2 class="section"><code>Batch_make</code> Equal Iff <code>Batch_replace_contents</code> Equal</h2>
 
 </div>
 <div class="code">
@@ -1101,7 +1101,7 @@ Obtain the build function of <code>Batch</code>. Note that
 </div>
 
 <div class="doc">
-<a id="lab1040"></a><h2 class="section">Similarity Lemmas for <code>Batch_make</code></h2>
+<a id="lab1055"></a><h2 class="section">Similarity Lemmas for <code>Batch_make</code></h2>
 
 </div>
 <div class="code">
@@ -1204,7 +1204,7 @@ Rewrite the <code>Batch</code> argument to an equal one by
 </div>
 
 <div class="doc">
-<a id="lab1041"></a><h2 class="section">Similarity Laws for <code>Batch_replace_contents</code></h2>
+<a id="lab1056"></a><h2 class="section">Similarity Laws for <code>Batch_replace_contents</code></h2>
 
 </div>
 <div class="code">
@@ -1254,7 +1254,7 @@ Rewrite the <code>Batch</code> argument to an equal one by
 </div>
 
 <div class="doc">
-<a id="lab1042"></a><h2 class="section">Naturality of <code>Batch_make</code></h2>
+<a id="lab1057"></a><h2 class="section">Naturality of <code>Batch_make</code></h2>
 
 </div>
 <div class="code">
@@ -1313,7 +1313,7 @@ Rewrite the <code>Batch</code> argument to an equal one by
 </div>
 
 <div class="doc">
-<a id="lab1043"></a><h2 class="section">Naturality of <code>Batch_contents</code></h2>
+<a id="lab1058"></a><h2 class="section">Naturality of <code>Batch_contents</code></h2>
 
 </div>
 <div class="code">
@@ -1334,7 +1334,7 @@ Rewrite the <code>Batch</code> argument to an equal one by
 </div>
 
 <div class="doc">
-<a id="lab1044"></a><h2 class="section">Specification for <code>Batch_replace_contents</code></h2>
+<a id="lab1059"></a><h2 class="section">Specification for <code>Batch_replace_contents</code></h2>
 
 </div>
 <div class="code">
@@ -1364,7 +1364,7 @@ Rewrite the <code>Batch</code> argument to an equal one by
 </div>
 
 <div class="doc">
-<a id="lab1045"></a><h2 class="section">Replacing Contents Does Not Change <code>length_Batch</code>, <code>shape</code>, or <code>Batch_make</code></h2>
+<a id="lab1060"></a><h2 class="section">Replacing Contents Does Not Change <code>length_Batch</code>, <code>shape</code>, or <code>Batch_make</code></h2>
 
 </div>
 <div class="code">
@@ -1425,7 +1425,7 @@ Rewrite the <code>Batch</code> argument to an equal one by
 </div>
 
 <div class="doc">
-<a id="lab1046"></a><h1 class="section">Lens-like laws</h1>
+<a id="lab1061"></a><h1 class="section">Lens-like laws</h1>
 
 </div>
 <div class="code">
@@ -1513,7 +1513,7 @@ Rewrite the <code>Batch</code> argument to an equal one by
 </div>
 
 <div class="doc">
-<a id="lab1047"></a><h2 class="section">Batch is Shapely</h2>
+<a id="lab1062"></a><h2 class="section">Batch is Shapely</h2>
 
 </div>
 <div class="code">
@@ -1555,7 +1555,7 @@ Rewrite the <code>Batch</code> argument to an equal one by
 </div>
 
 <div class="doc">
-<a id="lab1048"></a><h1 class="section">Theory About Batch</h1>
+<a id="lab1063"></a><h1 class="section">Theory About Batch</h1>
 
 </div>
 <div class="code">
@@ -1673,7 +1673,7 @@ Rewrite the <code>Batch</code> argument to an equal one by
 </div>
 
 <div class="doc">
-<a id="lab1049"></a><h2 class="section">Misc</h2>
+<a id="lab1064"></a><h2 class="section">Misc</h2>
 
 </div>
 <div class="code">
@@ -1722,7 +1722,7 @@ Rewrite the <code>Batch</code> argument to an equal one by
 </div>
 
 <div class="doc">
-<a id="lab1050"></a><h1 class="section">Representation theorems</h1>
+<a id="lab1065"></a><h1 class="section">Representation theorems</h1>
 
 </div>
 <div class="code">
@@ -1794,7 +1794,7 @@ Rewrite the <code>Batch</code> argument to an equal one by
 </div>
 
 <div class="doc">
-<a id="lab1051"></a><h1 class="section">Annotating <code>Batch</code> with Proofs of Occurrence</h1>
+<a id="lab1066"></a><h1 class="section">Annotating <code>Batch</code> with Proofs of Occurrence</h1>
 
 </div>
 <div class="code">
@@ -1813,7 +1813,7 @@ Rewrite the <code>Batch</code> argument to an equal one by
 </div>
 
 <div class="doc">
-<a id="lab1052"></a><h2 class="section">Lemmas regarding <code>tosubset</code></h2>
+<a id="lab1067"></a><h2 class="section">Lemmas regarding <code>tosubset</code></h2>
 
 </div>
 <div class="code">
@@ -1866,7 +1866,7 @@ Rewrite the <code>Batch</code> argument to an equal one by
 </div>
 
 <div class="doc">
-<a id="lab1053"></a><h2 class="section">Annotation Operation</h2>
+<a id="lab1068"></a><h2 class="section">Annotation Operation</h2>
 
 </div>
 <div class="code">
@@ -1907,7 +1907,7 @@ Rewrite the <code>Batch</code> argument to an equal one by
 </div>
 
 <div class="doc">
-<a id="lab1054"></a><h1 class="section"><code>runBatch</code> Assuming Proofs of Occurrence</h1>
+<a id="lab1069"></a><h1 class="section"><code>runBatch</code> Assuming Proofs of Occurrence</h1>
 
 </div>
 <div class="code">

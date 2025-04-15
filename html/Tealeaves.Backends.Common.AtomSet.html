@@ -50,7 +50,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1572"></a><h1 class="section">Definition of <code>AtomSet</code> type</h1>
+<a id="lab1594"></a><h1 class="section">Definition of <code>AtomSet</code> type</h1>
 
 </div>
 <div class="code">
@@ -65,7 +65,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1573"></a><h2 class="section">Notations for operations on <code>AtomSet</code></h2>
+<a id="lab1595"></a><h2 class="section">Notations for operations on <code>AtomSet</code></h2>
 
 </div>
 <div class="code">
@@ -104,7 +104,7 @@
 #[<span class="id" title="var">global</span>] <span class="id" title="keyword">Instance</span> <a id="Monoid_atoms" class="idref" href="#Monoid_atoms"><span class="id" title="instance">Monoid_atoms</span></a>: <a class="idref" href="Tealeaves.Classes.Monoid.html#Monoid"><span class="id" title="class">Monoid</span></a> <a class="idref" href="Tealeaves.Backends.Common.AtomSet.html#t"><span class="id" title="definition">AtomSet.t</span></a>.<br/>
 <span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">constructor</span>; <span class="id" title="tactic">unfold</span> <span class="id" title="var">transparent</span> <span class="id" title="var">tcs</span>; <span class="id" title="tactic">intros</span>.<br/>
-&nbsp;&nbsp;<span class="comment">(*&nbsp;TODO:&nbsp;Can't&nbsp;use&nbsp;existing&nbsp;monoid&nbsp;typeclass&nbsp;because<br/>
+&nbsp;&nbsp;<span class="comment">(*&nbsp;Can't&nbsp;use&nbsp;existing&nbsp;monoid&nbsp;typeclass&nbsp;because<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;laws&nbsp;only&nbsp;hold&nbsp;up&nbsp;to&nbsp;AtomSet.Equal,&nbsp;not&nbsp;propositional&nbsp;equality.&nbsp;*)</span><br/>
 <span class="id" title="keyword">Abort</span>.<br/>
 
@@ -112,7 +112,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1574"></a><h2 class="section">The <span class="inlinecode"><a class="idref" href="Tealeaves.Backends.Common.AtomSet.html#atoms"><span class="id" title="definition">atoms</span></a></span> operation</h2>
+<a id="lab1596"></a><h2 class="section">The <span class="inlinecode"><a class="idref" href="Tealeaves.Backends.Common.AtomSet.html#atoms"><span class="id" title="definition">atoms</span></a></span> operation</h2>
  <code>atoms</code> collects a list of atoms into an <code>AtomSet</code>. It is
     conceptually inverse to <span class="inlinecode"><span class="id" title="var">AtomSet.elements</span></span>, but there's no
     guarantee the operations won't disturb the order
@@ -128,7 +128,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1575"></a><h2 class="section">Rewriting rules</h2>
+<a id="lab1597"></a><h2 class="section">Rewriting rules</h2>
 
 </div>
 <div class="code">
@@ -214,7 +214,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1576"></a><h2 class="section">Relating <code>AtomSet.t</code> and <code>list atom</code></h2>
+<a id="lab1598"></a><h2 class="section">Relating <code>AtomSet.t</code> and <code>list atom</code></h2>
 
 </div>
 <div class="code">

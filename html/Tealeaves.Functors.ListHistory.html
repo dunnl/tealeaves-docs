@@ -44,11 +44,11 @@
 </div>
 
 <div class="doc">
-<a id="lab902"></a><h1 class="section">Mapping over a List with History</h1>
+<a id="lab917"></a><h1 class="section">Mapping over a List with History</h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab903"></a><h2 class="section">Operation <code>hmap</code></h2>
+<a id="lab918"></a><h2 class="section">Operation <code>hmap</code></h2>
 
 </div>
 <div class="code">
@@ -78,7 +78,7 @@
 <span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="tactic">intros</span>. <span class="id" title="tactic">generalize</span> <span class="id" title="tactic">dependent</span> ρ<span class="id" title="var">f</span>. <span class="id" title="tactic">induction</span> <span class="id" title="var">wa</span>; <span class="id" title="tactic">intros</span> ρ<span class="id" title="var">f</span>.<br/>
 &nbsp;&nbsp;- <span class="id" title="tactic">change</span> (@<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#nil"><span class="id" title="constructor">nil</span></a> <span class="id" title="var">WA</span>) <span class="id" title="keyword">with</span> (<a class="idref" href="Tealeaves.Classes.Monoid.html#118a0ae73788a324a953caf13a2d25ca"><span class="id" title="notation">Ƶ</span></a>: <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <span class="id" title="var">WA</span>) <span class="id" title="tactic">at</span> 1 3.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_r"><span class="id" title="method">monoid_id_r</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_l"><span class="id" title="method">monoid_id_l</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#preincr_zero"><span class="id" title="lemma">preincr_zero</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 &nbsp;&nbsp;- <span class="id" title="var">cbn</span>. <span class="id" title="var">fequal</span>. <span class="id" title="tactic">rewrite</span> <span class="id" title="var">IHwa</span>.<br/>
@@ -90,7 +90,7 @@
 </div>
 
 <div class="doc">
-<a id="lab904"></a><h2 class="section">Alternative Definition of <code>hmap</code></h2>
+<a id="lab919"></a><h2 class="section">Alternative Definition of <code>hmap</code></h2>
 
 </div>
 <div class="code">
@@ -129,7 +129,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#preincr_preincr"><span class="id" title="lemma">preincr_preincr</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">IHl</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#preincr"><span class="id" title="definition">preincr</span></a>, <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>, <a class="idref" href="Tealeaves.Classes.Monoid.html#incr"><span class="id" title="definition">incr</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_l"><span class="id" title="method">monoid_id_l</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Classes.Monoid.html#monoid_id_r"><span class="id" title="method">monoid_id_r</span></a>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
 
