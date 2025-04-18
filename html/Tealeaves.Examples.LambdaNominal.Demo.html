@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<link href="coqdocjs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="config.js"></script>
+<script type="text/javascript" src="coqdocjs.js"></script>
+</head>
+
+<body onload="document.getElementById('content').focus()">
+  <div id="header">
+    <span class="left">
+      <span> <img class="logo" src="./logo_96.png"> </span>
+      <span class="projectname"> Tealeaves </span>
+      <span class="modulename"> <script> document.write(document.title) </script> </span>
+    </span>
+
+    <span class="button" id="toggle-proofs"></span>
+
+    <span class="right">
+      <a href="./indexpage.html"> Index </a>
+      <a href="./toc.html"> Table of Contents </a>
+      <a href="../html-alectryon/toc.html"> Switch to Alectryon Docs </a>
+    </span>
+</div>
+    <div id="content" tabindex="-1" onblur="document.getElementById('content').focus()">
+    <div id="main">
+<h1 class="libtitle">Tealeaves.Examples.LambdaNominal.Demo</h1>
+
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Examples.LambdaNominal.Categorical.html#"><span class="id" title="library">Examples.LambdaNominal.Categorical</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.Nominal.FV.html#"><span class="id" title="library">Backends.Nominal.FV</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#"><span class="id" title="library">Backends.Nominal.Barendregt</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Backends.Adapters.NominalToLN.html#"><span class="id" title="library">Backends.Adapters.NominalToLN</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#Notations"><span class="id" title="module">LambdaNominal.Syntax.Notations</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Categorical.DecoratedTraversableFunctorPoly.html#"><span class="id" title="library">Classes.Categorical.DecoratedTraversableFunctorPoly</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedTraversableMonadPoly.html#"><span class="id" title="library">Classes.Kleisli.DecoratedTraversableMonadPoly</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Tealeaves</span> <span class="id" title="keyword">Require</span><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Adapters.MonoidHom.DecoratedTraversableMonad.html#"><span class="id" title="library">Adapters.MonoidHom.DecoratedTraversableMonad</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedFunctor.html#"><span class="id" title="library">Adapters.PolyToMono.Kleisli.DecoratedFunctor</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableFunctor.html#"><span class="id" title="library">Adapters.PolyToMono.Kleisli.DecoratedTraversableFunctor</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad.html#"><span class="id" title="library">Adapters.PolyToMono.Kleisli.DecoratedTraversableMonad</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedTraversableMonadPoly.html#"><span class="id" title="library">Adapters.CategoricalToKleisli.DecoratedTraversableMonadPoly</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.TraversableFunctor.html#"><span class="id" title="library">Adapters.CategoricalToKleisli.TraversableFunctor</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedTraversableFunctor.html#"><span class="id" title="library">Adapters.CategoricalToKleisli.DecoratedTraversableFunctor</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Classes.Kleisli.DecoratedFunctorPoly.html#"><span class="id" title="module">Kleisli.DecoratedFunctorPoly</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#"><span class="id" title="module">CategoricalToKleisli.DecoratedFunctorPoly</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#DerivedOperations"><span class="id" title="module">CategoricalToKleisli.DecoratedFunctorPoly.DerivedOperations</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedFunctorPoly.html#DerivedInstances"><span class="id" title="module">CategoricalToKleisli.DecoratedFunctorPoly.DerivedInstances</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedTraversableFunctorPoly.html#DerivedOperations"><span class="id" title="module">CategoricalToKleisli.DecoratedTraversableFunctorPoly.DerivedOperations</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedTraversableFunctorPoly.html#DerivedInstances"><span class="id" title="module">CategoricalToKleisli.DecoratedTraversableFunctorPoly.DerivedInstances</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedTraversableMonadPoly.html#DerivedOperations"><span class="id" title="module">CategoricalToKleisli.DecoratedTraversableMonadPoly.DerivedOperations</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedTraversableMonadPoly.html#DerivedInstances"><span class="id" title="module">CategoricalToKleisli.DecoratedTraversableMonadPoly.DerivedInstances</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedFunctor.html#ToMono1"><span class="id" title="module">PolyToMono.Categorical.DecoratedFunctor.ToMono1</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.TraversableFunctor.html#ToMono"><span class="id" title="module">PolyToMono.Categorical.TraversableFunctor.ToMono</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Categorical.DecoratedFunctor.html#ToMono1"><span class="id" title="module">PolyToMono.Categorical.DecoratedFunctor.ToMono1</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.PolyToMono.Kleisli.DecoratedFunctor.html#ToMono1"><span class="id" title="module">PolyToMono.Kleisli.DecoratedFunctor.ToMono1</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.TraversableFunctor.html#DerivedOperations"><span class="id" title="module">CategoricalToKleisli.TraversableFunctor.DerivedOperations</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.TraversableFunctor.html#DerivedInstances"><span class="id" title="module">CategoricalToKleisli.TraversableFunctor.DerivedInstances</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedTraversableFunctor.html#DerivedOperations"><span class="id" title="module">CategoricalToKleisli.DecoratedTraversableFunctor.DerivedOperations</span></a>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="Tealeaves.Adapters.CategoricalToKleisli.DecoratedTraversableFunctor.html#DerivedInstances"><span class="id" title="module">CategoricalToKleisli.DecoratedTraversableFunctor.DerivedInstances</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">local</span>] <span class="id" title="var">Existing</span> <span class="id" title="keyword">Instance</span> <span class="id" title="var">Theory.DecoratedTraversableFunctor.ToCtxset_Mapdt</span>.<br/>
+#[<span class="id" title="var">local</span>] <span class="id" title="var">Existing</span> <span class="id" title="keyword">Instance</span> <span class="id" title="var">Theory.TraversableFunctor.ToSubset_Traverse</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Example</span> <a id="term0" class="idref" href="#term0"><span class="id" title="definition">term0</span></a> := (<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">λ</span></a> 0<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">,</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a>0).<br/>
+<span class="id" title="keyword">Example</span> <a id="term1" class="idref" href="#term1"><span class="id" title="definition">term1</span></a> := (<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">λ</span></a> 1<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">,</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a>1 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#70726fe20b2422d7937a6e76b88868d7"><span class="id" title="notation">·</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a>2).<br/>
+<span class="id" title="keyword">Example</span> <a id="term2" class="idref" href="#term2"><span class="id" title="definition">term2</span></a> := (<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">λ</span></a> 0<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">,</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a>1 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#70726fe20b2422d7937a6e76b88868d7"><span class="id" title="notation">·</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a>0).<br/>
+<span class="id" title="keyword">Example</span> <a id="term3" class="idref" href="#term3"><span class="id" title="definition">term3</span></a> := (<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">λ</span></a> 2<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">,</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a>1 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#70726fe20b2422d7937a6e76b88868d7"><span class="id" title="notation">·</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a>0).<br/>
+<span class="id" title="keyword">Example</span> <a id="term4" class="idref" href="#term4"><span class="id" title="definition">term4</span></a> := (<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">λ</span></a> 2<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">,</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a>1 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#70726fe20b2422d7937a6e76b88868d7"><span class="id" title="notation">·</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a>2).<br/>
+<span class="id" title="keyword">Example</span> <a id="term5" class="idref" href="#term5"><span class="id" title="definition">term5</span></a> := (<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">λ</span></a> 2<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">,</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a>10 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#70726fe20b2422d7937a6e76b88868d7"><span class="id" title="notation">·</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a>2).<br/>
+
+<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV"><span class="id" title="definition">FV</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term0"><span class="id" title="definition">term0</span></a>.<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV"><span class="id" title="definition">FV</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term1"><span class="id" title="definition">term1</span></a>.<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV"><span class="id" title="definition">FV</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term2"><span class="id" title="definition">term2</span></a>.<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV"><span class="id" title="definition">FV</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term3"><span class="id" title="definition">term3</span></a>.<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV"><span class="id" title="definition">FV</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term4"><span class="id" title="definition">term4</span></a>.<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.FV.html#FV"><span class="id" title="definition">FV</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term5"><span class="id" title="definition">term5</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst"><span class="id" title="definition">subst</span></a> 0 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term0"><span class="id" title="definition">term0</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term0"><span class="id" title="definition">term0</span></a>. <span class="comment">(*&nbsp;(λ)&nbsp;1&nbsp;`1&nbsp;*)</span><br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst"><span class="id" title="definition">subst</span></a> 0 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term1"><span class="id" title="definition">term1</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term0"><span class="id" title="definition">term0</span></a>. <span class="comment">(*&nbsp;(λ)&nbsp;1&nbsp;`1&nbsp;*)</span><br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst"><span class="id" title="definition">subst</span></a> 0 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term2"><span class="id" title="definition">term2</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term0"><span class="id" title="definition">term0</span></a>. <span class="comment">(*&nbsp;(λ)&nbsp;2&nbsp;`2&nbsp;*)</span><br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst"><span class="id" title="definition">subst</span></a> 0 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term3"><span class="id" title="definition">term3</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term0"><span class="id" title="definition">term0</span></a>. <span class="comment">(*&nbsp;(λ)&nbsp;2&nbsp;`2&nbsp;*)</span><br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst"><span class="id" title="definition">subst</span></a> 0 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term4"><span class="id" title="definition">term4</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term0"><span class="id" title="definition">term0</span></a>. <span class="comment">(*&nbsp;(λ)&nbsp;2&nbsp;`2&nbsp;*)</span><br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst"><span class="id" title="definition">subst</span></a> 0 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term5"><span class="id" title="definition">term5</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term0"><span class="id" title="definition">term0</span></a>. <span class="comment">(*&nbsp;(λ)&nbsp;1&nbsp;`1&nbsp;*)</span><br/>
+
+<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst"><span class="id" title="definition">subst</span></a> 0 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term0"><span class="id" title="definition">term0</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term1"><span class="id" title="definition">term1</span></a>.<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst"><span class="id" title="definition">subst</span></a> 0 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term1"><span class="id" title="definition">term1</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term1"><span class="id" title="definition">term1</span></a>.<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst"><span class="id" title="definition">subst</span></a> 0 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term2"><span class="id" title="definition">term2</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term1"><span class="id" title="definition">term1</span></a>.<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst"><span class="id" title="definition">subst</span></a> 0 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term4"><span class="id" title="definition">term4</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term1"><span class="id" title="definition">term1</span></a>.<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst"><span class="id" title="definition">subst</span></a> 0 <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term5"><span class="id" title="definition">term5</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term1"><span class="id" title="definition">term1</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Adapters.NominalToLN.html#term_nominal_to_ln"><span class="id" title="definition">term_nominal_to_ln</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#term"><span class="id" title="inductive">term</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term0"><span class="id" title="definition">term0</span></a>.<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Adapters.NominalToLN.html#term_nominal_to_ln"><span class="id" title="definition">term_nominal_to_ln</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#term"><span class="id" title="inductive">term</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term1"><span class="id" title="definition">term1</span></a>.<br/>
+<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Adapters.NominalToLN.html#term_nominal_to_ln"><span class="id" title="definition">term_nominal_to_ln</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#term"><span class="id" title="inductive">term</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#term5"><span class="id" title="definition">term5</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Section</span> <a id="freshening_demo" class="idref" href="#freshening_demo"><span class="id" title="section">freshening_demo</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Notation</span> <a id="freshening_demo.:::'x'" class="idref" href="#freshening_demo.:::'x'"><span class="id" title="notation">&quot;</span></a>'x'" := 0.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Notation</span> <a id="freshening_demo.:::'y'" class="idref" href="#freshening_demo.:::'y'"><span class="id" title="notation">&quot;</span></a>'y'" := 1.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Notation</span> <a id="freshening_demo.:::'z'" class="idref" href="#freshening_demo.:::'z'"><span class="id" title="notation">&quot;</span></a>'z'" := 2.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Notation</span> <a id="freshening_demo.:::'v'" class="idref" href="#freshening_demo.:::'v'"><span class="id" title="notation">&quot;</span></a>'v'" := 3.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Example</span> <a id="idfn" class="idref" href="#idfn"><span class="id" title="definition">idfn</span></a> := (<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">λ</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#freshening_demo.:::'v'"><span class="id" title="notation">v</span></a><a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">,</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a><a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#freshening_demo.:::'v'"><span class="id" title="notation">v</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Example</span> <a id="input" class="idref" href="#input"><span class="id" title="definition">input</span></a> := (<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">λ</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#freshening_demo.:::'x'"><span class="id" title="notation">x</span></a><a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">,</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">λ</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#freshening_demo.:::'x'"><span class="id" title="notation">x</span></a><a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">,</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a><a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#freshening_demo.:::'z'"><span class="id" title="notation">z</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#70726fe20b2422d7937a6e76b88868d7"><span class="id" title="notation">·</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a><a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#freshening_demo.:::'x'"><span class="id" title="notation">x</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Example</span> <a id="output" class="idref" href="#output"><span class="id" title="definition">output</span></a> := <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst"><span class="id" title="definition">subst</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#freshening_demo.:::'y'"><span class="id" title="notation">y</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#idfn"><span class="id" title="definition">idfn</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#input"><span class="id" title="definition">input</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Example</span> <a id="expected_output" class="idref" href="#expected_output"><span class="id" title="definition">expected_output</span></a> := (<a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">λ</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#freshening_demo.:::'x'"><span class="id" title="notation">x</span></a><a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">,</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">λ</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#freshening_demo.:::'y'"><span class="id" title="notation">y</span></a><a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#38c390bf3957ef1ea14a7bc31e005db2"><span class="id" title="notation">,</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a><a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#freshening_demo.:::'z'"><span class="id" title="notation">z</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#70726fe20b2422d7937a6e76b88868d7"><span class="id" title="notation">·</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Syntax.html#ca96ff90e311e7ca5655fa05dbf4cc93"><span class="id" title="notation">`</span></a><a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#freshening_demo.:::'y'"><span class="id" title="notation">y</span></a>).<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Compute</span> <a class="idref" href="Tealeaves.Backends.Nominal.Barendregt.html#subst"><span class="id" title="definition">subst</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#freshening_demo.:::'y'"><span class="id" title="notation">y</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#idfn"><span class="id" title="definition">idfn</span></a> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#input"><span class="id" title="definition">input</span></a>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Goal</span> <a id="Unnamed_thm" class="idref" href="#Unnamed_thm"><span class="id" title="definition">output</span></a> <a id="Unnamed_thm" class="idref" href="#Unnamed_thm"><span class="id" title="definition">=</span></a> <a id="Unnamed_thm" class="idref" href="#Unnamed_thm"><span class="id" title="definition">expected_output</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Examples.LambdaNominal.Demo.html#freshening_demo"><span class="id" title="section">freshening_demo</span></a>.<br/>
+</div>
+</div>
+<div id="footer">
+  Generated by <a href="http://coq.inria.fr/">coqdoc</a> and improved with <a href="https://github.com/tebbi/coqdocjs">CoqdocJS</a>
+</div>
+</div>
+</body>
+
+</html>

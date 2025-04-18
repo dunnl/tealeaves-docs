@@ -41,11 +41,11 @@
 </div>
 
 <div class="doc">
-<a id="lab1697"></a><h1 class="section">Simplification tests for derived operations</h1>
+<a id="lab1712"></a><h1 class="section">Simplification tests for derived operations</h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab1698"></a><h2 class="section">Rewriting lemmas for <code>mapdReduce</code></h2>
+<a id="lab1713"></a><h2 class="section">Rewriting lemmas for <code>mapdReduce</code></h2>
 
 </div>
 <div class="code">
@@ -82,7 +82,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1699"></a><h2 class="section">Rewriting lemmas for <code>∈d</code></h2>
+<a id="lab1714"></a><h2 class="section">Rewriting lemmas for <code>∈d</code></h2>
 
 </div>
 <div class="code">
@@ -126,6 +126,9 @@
 &nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_LN</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;TODO&nbsp;Investigate&nbsp;why&nbsp;const&nbsp;wasn't&nbsp;unfolded.&nbsp;*)</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#const"><span class="id" title="definition">const</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">simplify_monoid_disjunction</span>.<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">conclude</span>.<br/>
 &nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
 
@@ -136,7 +139,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1700"></a><h2 class="section">Rewriting lemmas for <code>mapReduce</code></h2>
+<a id="lab1715"></a><h2 class="section">Rewriting lemmas for <code>mapReduce</code></h2>
 
 </div>
 <div class="code">
@@ -179,7 +182,7 @@
 </div>
 
 <div class="doc">
-<a id="lab1701"></a><h2 class="section">Rewriting lemmas for <code>tolist</code>, <code>toset</code>, <code>∈</code></h2>
+<a id="lab1716"></a><h2 class="section">Rewriting lemmas for <code>tolist</code>, <code>toset</code>, <code>∈</code></h2>
 
 </div>
 <div class="code">

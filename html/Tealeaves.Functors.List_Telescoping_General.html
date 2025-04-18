@@ -54,11 +54,11 @@
 </div>
 
 <div class="doc">
-<a id="lab920"></a><h1 class="section">Prefix Decoration Operation for the <span class="inlinecode"><span class="id" title="library">List</span></span> Functor</h1>
+<a id="lab924"></a><h1 class="section">Prefix Decoration Operation for the <span class="inlinecode"><span class="id" title="library">List</span></span> Functor</h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab921"></a><h2 class="section">Accumulator-Based Specification</h2>
+<a id="lab925"></a><h2 class="section">Accumulator-Based Specification</h2>
 
 </div>
 <div class="code">
@@ -70,7 +70,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">match</span> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#l:3"><span class="id" title="variable">l</span></a> <span class="id" title="keyword">with</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;| <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#nil"><span class="id" title="constructor">nil</span></a> ⇒ <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#nil"><span class="id" title="constructor">nil</span></a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">x</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#::list_scope:x_'::'_x"><span class="id" title="notation">::</span></a> <span class="id" title="var">xs</span> ⇒<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;(ctx,&nbsp;x)&nbsp;::&nbsp;decorate_prefix_list_rec&nbsp;(x&nbsp;::&nbsp;ctx)&nbsp;xs&nbsp;*)</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">(</span></a><a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#ctx:2"><span class="id" title="variable">ctx</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">,</span></a> <span class="id" title="var">x</span><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#::list_scope:x_'::'_x"><span class="id" title="notation">::</span></a> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list_rec:4"><span class="id" title="definition">decorate_prefix_list_rec</span></a> (<a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#ctx:2"><span class="id" title="variable">ctx</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#bc347c51eaf667706ae54503b26d52c6"><span class="id" title="notation">++</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ddd65c2f7ee73ecec433744948d846bb"><span class="id" title="notation">[</span></a><span class="id" title="var">x</span><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ddd65c2f7ee73ecec433744948d846bb"><span class="id" title="notation">]</span></a>) <span class="id" title="var">xs</span><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
 
@@ -85,7 +84,7 @@
 </div>
 
 <div class="doc">
-<a id="lab922"></a><h2 class="section">Map-Based Specification</h2>
+<a id="lab926"></a><h2 class="section">Map-Based Specification</h2>
 
 </div>
 <div class="code">
@@ -101,7 +100,7 @@
 </div>
 
 <div class="doc">
-<a id="lab923"></a><h2 class="section">Equivalence</h2>
+<a id="lab927"></a><h2 class="section">Equivalence</h2>
 
 </div>
 <div class="code">
@@ -143,7 +142,7 @@
 </div>
 
 <div class="doc">
-<a id="lab924"></a><h2 class="section">Examples</h2>
+<a id="lab928"></a><h2 class="section">Examples</h2>
 
 </div>
 <div class="code">
@@ -164,7 +163,7 @@
 </div>
 
 <div class="doc">
-<a id="lab925"></a><h2 class="section">Rewriting Laws</h2>
+<a id="lab929"></a><h2 class="section">Rewriting Laws</h2>
 
 </div>
 <div class="code">
@@ -228,7 +227,7 @@
 </div>
 
 <div class="doc">
-<a id="lab926"></a><h1 class="section">The <code>Z</code> Comonad (Categorical)</h1>
+<a id="lab930"></a><h1 class="section">The <code>Z</code> Comonad (Categorical)</h1>
 
 </div>
 <div class="code">
@@ -241,7 +240,7 @@
 </div>
 
 <div class="doc">
-<a id="lab927"></a><h2 class="section">Tactical Support: Folding/Unfolding</h2>
+<a id="lab931"></a><h2 class="section">Tactical Support: Folding/Unfolding</h2>
 
 </div>
 <div class="code">
@@ -272,7 +271,7 @@
 </div>
 
 <div class="doc">
-<a id="lab928"></a><h2 class="section">Functor Instance</h2>
+<a id="lab932"></a><h2 class="section">Functor Instance</h2>
 
 </div>
 <div class="code">
@@ -297,7 +296,7 @@
 </div>
 
 <div class="doc">
-<a id="lab929"></a><h3 class="section">Naturality of <code>decorated_prefix_list</code></h3>
+<a id="lab933"></a><h3 class="section">Naturality of <code>decorated_prefix_list</code></h3>
 
 </div>
 <div class="code">
@@ -333,7 +332,7 @@
 </div>
 
 <div class="doc">
-<a id="lab930"></a><h2 class="section">Operations <code>cojoin_Z</code> and <code>extract_Z</code></h2>
+<a id="lab934"></a><h2 class="section">Operations <code>cojoin_Z</code> and <code>extract_Z</code></h2>
 
 </div>
 <div class="code">
@@ -348,7 +347,7 @@
 </div>
 
 <div class="doc">
-<a id="lab931"></a><h2 class="section">Rewriting Laws</h2>
+<a id="lab935"></a><h2 class="section">Rewriting Laws</h2>
 
 </div>
 <div class="code">
@@ -443,7 +442,7 @@
 </div>
 
 <div class="doc">
-<a id="lab932"></a><h2 class="section">Naturality</h2>
+<a id="lab936"></a><h2 class="section">Naturality</h2>
 
 </div>
 <div class="code">
@@ -470,7 +469,7 @@
 </div>
 
 <div class="doc">
-<a id="lab933"></a><h2 class="section">Comonad Laws</h2>
+<a id="lab937"></a><h2 class="section">Comonad Laws</h2>
 
 </div>
 <div class="code">
@@ -543,7 +542,7 @@
 </div>
 
 <div class="doc">
-<a id="lab934"></a><h2 class="section">Typeclass Instance</h2>
+<a id="lab938"></a><h2 class="section">Typeclass Instance</h2>
 
 </div>
 <div class="code">
@@ -574,45 +573,51 @@
 </div>
 
 <div class="doc">
-<a id="lab935"></a><h2 class="section"><span class="inlinecode"><a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list"><span class="id" title="definition">decorate_prefix_list</span></a></span> as a Right Coaction</h2>
+<a id="lab939"></a><h2 class="section"><span class="inlinecode"><a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list"><span class="id" title="definition">decorate_prefix_list</span></a></span> as a Right Coaction</h2>
 
 </div>
 <div class="code">
-<span class="id" title="keyword">Lemma</span> <a id="decorate_prefix_list_extract" class="idref" href="#decorate_prefix_list_extract"><span class="id" title="lemma">decorate_prefix_list_extract</span></a>: <span class="id" title="keyword">∀</span> (<a id="A:55" class="idref" href="#A:55"><span class="id" title="binder">A</span></a>: <span class="id" title="keyword">Type</span>),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Functor.html#map"><span class="id" title="definition">map</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.Comonad.html#extract"><span class="id" title="definition">extract</span></a> <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list"><span class="id" title="definition">decorate_prefix_list</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> @<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#id"><span class="id" title="definition">id</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#A:55"><span class="id" title="variable">A</span></a>).<br/>
-<span class="id" title="keyword">Proof</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">intros</span>. <span class="id" title="var">ext</span> <span class="id" title="var">l</span>. <span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">l</span>.<br/>
-&nbsp;&nbsp;- <span class="id" title="tactic">reflexivity</span>.<br/>
-&nbsp;&nbsp;- <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list_rw_cons"><span class="id" title="lemma">decorate_prefix_list_rw_cons</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Early.List.html#map_list_cons"><span class="id" title="lemma">map_list_cons</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> (<a class="idref" href="Tealeaves.Classes.Categorical.Comonad.html#extract"><span class="id" title="definition">extract</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ae9a5e1034e143b218b09d8e454472bd"><span class="id" title="notation">[]</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">,</span></a> <span class="id" title="var">a</span><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">)</span></a>) <span class="id" title="keyword">with</span> <span class="id" title="var">a</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">compose</span> <span class="id" title="var">near</span> (<a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list"><span class="id" title="definition">decorate_prefix_list</span></a> <span class="id" title="var">l</span>).<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Functor.html#fun_map_map"><span class="id" title="method">fun_map_map</span></a>).<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#extract_Z_incr"><span class="id" title="lemma">extract_Z_incr</span></a>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">fold_Z_all</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">IHl</span>.<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
-<span class="id" title="keyword">Qed</span>.<br/>
+<span class="id" title="keyword">Section</span> <a id="Z_coaction_on_list" class="idref" href="#Z_coaction_on_list"><span class="id" title="section">Z_coaction_on_list</span></a>.<br/>
 
 <br/>
-<span class="id" title="keyword">Lemma</span> <a id="decorate_prefix_list_cojoin" class="idref" href="#decorate_prefix_list_cojoin"><span class="id" title="lemma">decorate_prefix_list_cojoin</span></a>: <span class="id" title="keyword">∀</span> (<a id="A:56" class="idref" href="#A:56"><span class="id" title="binder">A</span></a>: <span class="id" title="keyword">Type</span>),<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Functor.html#map"><span class="id" title="definition">map</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.Comonad.html#cojoin"><span class="id" title="definition">cojoin</span></a> <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list"><span class="id" title="definition">decorate_prefix_list</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list"><span class="id" title="definition">decorate_prefix_list</span></a> <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list"><span class="id" title="definition">decorate_prefix_list</span></a> (<span class="id" title="var">A</span> := <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#A:56"><span class="id" title="variable">A</span></a>).<br/>
-<span class="id" title="keyword">Proof</span>.<br/>
-&nbsp;&nbsp;<span class="id" title="tactic">intros</span>. <span class="id" title="var">ext</span> <span class="id" title="var">l</span>. <span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>.<br/>
-&nbsp;&nbsp;<span class="id" title="var">now</span> <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#cojoin_assoc_lemma"><span class="id" title="lemma">cojoin_assoc_lemma</span></a>.<br/>
-<span class="id" title="keyword">Qed</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="decorate_prefix_list_extract" class="idref" href="#decorate_prefix_list_extract"><span class="id" title="lemma">decorate_prefix_list_extract</span></a>: <span class="id" title="keyword">∀</span> (<a id="A:55" class="idref" href="#A:55"><span class="id" title="binder">A</span></a>: <span class="id" title="keyword">Type</span>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Functor.html#map"><span class="id" title="definition">map</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.Comonad.html#extract"><span class="id" title="definition">extract</span></a> <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list"><span class="id" title="definition">decorate_prefix_list</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> @<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#id"><span class="id" title="definition">id</span></a> (<a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#list"><span class="id" title="inductive">list</span></a> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#A:55"><span class="id" title="variable">A</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>. <span class="id" title="var">ext</span> <span class="id" title="var">l</span>. <span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">induction</span> <span class="id" title="var">l</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;- <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list_rw_cons"><span class="id" title="lemma">decorate_prefix_list_rw_cons</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.Early.List.html#map_list_cons"><span class="id" title="lemma">map_list_cons</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> (<a class="idref" href="Tealeaves.Classes.Categorical.Comonad.html#extract"><span class="id" title="definition">extract</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Lists.List.html#ae9a5e1034e143b218b09d8e454472bd"><span class="id" title="notation">[]</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">,</span></a> <span class="id" title="var">a</span><a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Datatypes.html#e6756e10c36f149b18b4a8741ed83079"><span class="id" title="notation">)</span></a>) <span class="id" title="keyword">with</span> <span class="id" title="var">a</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">compose</span> <span class="id" title="var">near</span> (<a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list"><span class="id" title="definition">decorate_prefix_list</span></a> <span class="id" title="var">l</span>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> (<a class="idref" href="Tealeaves.Classes.Functor.html#fun_map_map"><span class="id" title="method">fun_map_map</span></a>).<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#extract_Z_incr"><span class="id" title="lemma">extract_Z_incr</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">fold_Z_all</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">rewrite</span> <span class="id" title="var">IHl</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">reflexivity</span>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Lemma</span> <a id="decorate_prefix_list_cojoin" class="idref" href="#decorate_prefix_list_cojoin"><span class="id" title="lemma">decorate_prefix_list_cojoin</span></a>: <span class="id" title="keyword">∀</span> (<a id="A:56" class="idref" href="#A:56"><span class="id" title="binder">A</span></a>: <span class="id" title="keyword">Type</span>),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Classes.Functor.html#map"><span class="id" title="definition">map</span></a> <a class="idref" href="Tealeaves.Classes.Categorical.Comonad.html#cojoin"><span class="id" title="definition">cojoin</span></a> <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list"><span class="id" title="definition">decorate_prefix_list</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list"><span class="id" title="definition">decorate_prefix_list</span></a> <a class="idref" href="Tealeaves.Tactics.Prelude.html#c90061783c20674b3a3a6b46d343da03"><span class="id" title="notation">∘</span></a> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#decorate_prefix_list"><span class="id" title="definition">decorate_prefix_list</span></a> (<span class="id" title="var">A</span> := <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#A:56"><span class="id" title="variable">A</span></a>).<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Proof</span>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">intros</span>. <span class="id" title="var">ext</span> <span class="id" title="var">l</span>. <span class="id" title="tactic">unfold</span> <a class="idref" href="Tealeaves.Tactics.Prelude.html#compose"><span class="id" title="definition">compose</span></a>.<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">now</span> <span class="id" title="tactic">rewrite</span> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#cojoin_assoc_lemma"><span class="id" title="lemma">cojoin_assoc_lemma</span></a>.<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Qed</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Tealeaves.Functors.List_Telescoping_General.html#Z_coaction_on_list"><span class="id" title="section">Z_coaction_on_list</span></a>.<br/>
 
 <br/>
 </div>
 
 <div class="doc">
-<a id="lab936"></a><h1 class="section">Traversable Functor Instance (Kleisli)</h1>
+<a id="lab940"></a><h1 class="section">Traversable Functor Instance (Kleisli)</h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab937"></a><h2 class="section">Operation <code>traverse_Z</code></h2>
+<a id="lab941"></a><h2 class="section">Operation <code>traverse_Z</code></h2>
 
 </div>
 <div class="code">
@@ -628,7 +633,7 @@
 </div>
 
 <div class="doc">
-<a id="lab938"></a><h3 class="section">Compatibility with <code>map</code></h3>
+<a id="lab942"></a><h3 class="section">Compatibility with <code>map</code></h3>
 
 </div>
 <div class="code">
@@ -645,7 +650,7 @@
 </div>
 
 <div class="doc">
-<a id="lab939"></a><h2 class="section">Specification for <code>traverse_Z</code></h2>
+<a id="lab943"></a><h2 class="section">Specification for <code>traverse_Z</code></h2>
 
 </div>
 <div class="code">
@@ -682,7 +687,7 @@
 </div>
 
 <div class="doc">
-<a id="lab940"></a><h2 class="section">Naturality</h2>
+<a id="lab944"></a><h2 class="section">Naturality</h2>
 
 </div>
 <div class="code">
@@ -730,7 +735,7 @@
 </div>
 
 <div class="doc">
-<a id="lab941"></a><h2 class="section">Interaction with <code>incr</code> and <code>⦿</code></h2>
+<a id="lab945"></a><h2 class="section">Interaction with <code>incr</code> and <code>⦿</code></h2>
 
 </div>
 <div class="code">
@@ -746,7 +751,7 @@
 </div>
 
 <div class="doc">
-<a id="lab942"></a><h3 class="section"><code>g: Z A -&gt; G B</code></h3>
+<a id="lab946"></a><h3 class="section"><code>g: Z A -&gt; G B</code></h3>
 
 </div>
 <div class="code">
@@ -841,7 +846,7 @@
 </div>
 
 <div class="doc">
-<a id="lab943"></a><h3 class="section"><code>f: A -&gt; G B</code></h3>
+<a id="lab947"></a><h3 class="section"><code>f: A -&gt; G B</code></h3>
 
 </div>
 <div class="code">
@@ -934,7 +939,7 @@
 </div>
 
 <div class="doc">
-<a id="lab944"></a><h2 class="section">Typeclass Instance</h2>
+<a id="lab948"></a><h2 class="section">Typeclass Instance</h2>
 
 </div>
 <div class="code">
@@ -974,7 +979,7 @@
 </div>
 
 <div class="doc">
-<a id="lab945"></a><h1 class="section">Decoration Commutes with Traversals</h1>
+<a id="lab949"></a><h1 class="section">Decoration Commutes with Traversals</h1>
 
 </div>
 <div class="code">
@@ -1443,11 +1448,11 @@
 </div>
 
 <div class="doc">
-<a id="lab946"></a><h1 class="section">Mapdt for <code>list</code> and <code>Z</code></h1>
+<a id="lab950"></a><h1 class="section">Mapdt for <code>list</code> and <code>Z</code></h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab947"></a><h2 class="section">Recursive inlined version</h2>
+<a id="lab951"></a><h2 class="section">Recursive inlined version</h2>
 
 </div>
 <div class="code">
@@ -1466,7 +1471,7 @@
 </div>
 
 <div class="doc">
-<a id="lab948"></a><h2 class="section">Decomposed Version</h2>
+<a id="lab952"></a><h2 class="section">Decomposed Version</h2>
 
 </div>
 <div class="code">
@@ -1507,7 +1512,7 @@
 </div>
 
 <div class="doc">
-<a id="lab949"></a><h2 class="section">Equivalence of the Definitions</h2>
+<a id="lab953"></a><h2 class="section">Equivalence of the Definitions</h2>
 
 </div>
 <div class="code">
@@ -1532,7 +1537,7 @@
 </div>
 
 <div class="doc">
-<a id="lab950"></a><h2 class="section">Rewriting Laws</h2>
+<a id="lab954"></a><h2 class="section">Rewriting Laws</h2>
 
 </div>
 <div class="code">
@@ -1609,7 +1614,7 @@
 </div>
 
 <div class="doc">
-<a id="lab951"></a><h2 class="section">Rewriting Laws for <code>Z</code></h2>
+<a id="lab955"></a><h2 class="section">Rewriting Laws for <code>Z</code></h2>
 
 </div>
 <div class="code">
@@ -1691,7 +1696,7 @@
 </div>
 
 <div class="doc">
-<a id="lab952"></a><h2 class="section">Kleisli composition</h2>
+<a id="lab956"></a><h2 class="section">Kleisli composition</h2>
 
 </div>
 <div class="code">
@@ -1707,7 +1712,7 @@
 </div>
 
 <div class="doc">
-<a id="lab953"></a><h3 class="section">Inlined version</h3>
+<a id="lab957"></a><h3 class="section">Inlined version</h3>
 
 </div>
 <div class="code">
@@ -1725,7 +1730,7 @@
 </div>
 
 <div class="doc">
-<a id="lab954"></a><h3 class="section">Another version</h3>
+<a id="lab958"></a><h3 class="section">Another version</h3>
 
 </div>
 <div class="code">
@@ -1741,7 +1746,7 @@
 </div>
 
 <div class="doc">
-<a id="lab955"></a><h3 class="section">Equivalence</h3>
+<a id="lab959"></a><h3 class="section">Equivalence</h3>
 
 </div>
 <div class="code">
@@ -1774,7 +1779,7 @@
 </div>
 
 <div class="doc">
-<a id="lab956"></a><h3 class="section">Preincrement (2025 VERSION!)</h3>
+<a id="lab960"></a><h3 class="section">Preincrement (2025 VERSION!)</h3>
 
 </div>
 <div class="code">
@@ -1876,7 +1881,7 @@
 </div>
 
 <div class="doc">
-<a id="lab957"></a><h3 class="section">Kleisli composition with preincrement</h3>
+<a id="lab961"></a><h3 class="section">Kleisli composition with preincrement</h3>
 
 </div>
 <div class="code">
@@ -1961,11 +1966,11 @@
 </div>
 
 <div class="doc">
-<a id="lab958"></a><h1 class="section">Decorate traversable functor instance</h1>
+<a id="lab962"></a><h1 class="section">Decorate traversable functor instance</h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab959"></a><h2 class="section">Unit law</h2>
+<a id="lab963"></a><h2 class="section">Unit law</h2>
 
 </div>
 <div class="code">
@@ -1984,7 +1989,7 @@
 </div>
 
 <div class="doc">
-<a id="lab960"></a><h2 class="section">Composition law (Indirect proof)</h2>
+<a id="lab964"></a><h2 class="section">Composition law (Indirect proof)</h2>
 
 </div>
 <div class="code">
@@ -2305,7 +2310,7 @@ Qed.<br/>
 </div>
 
 <div class="doc">
-<a id="lab961"></a><h2 class="section">Homomorphism law</h2>
+<a id="lab965"></a><h2 class="section">Homomorphism law</h2>
 
 </div>
 <div class="code">
@@ -2340,7 +2345,7 @@ Qed.<br/>
 </div>
 
 <div class="doc">
-<a id="lab962"></a><h2 class="section">Typeclass Instance</h2>
+<a id="lab966"></a><h2 class="section">Typeclass Instance</h2>
 
 </div>
 <div class="code">
@@ -2461,11 +2466,11 @@ Qed.<br/>
 </div>
 
 <div class="doc">
-<a id="lab963"></a><h1 class="section">Mapd for <code>list</code></h1>
+<a id="lab967"></a><h1 class="section">Mapd for <code>list</code></h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab964"></a><h2 class="section">Recursive inlined version</h2>
+<a id="lab968"></a><h2 class="section">Recursive inlined version</h2>
 
 </div>
 <div class="code">
@@ -2480,7 +2485,7 @@ Qed.<br/>
 </div>
 
 <div class="doc">
-<a id="lab965"></a><h2 class="section">Decomposed Version</h2>
+<a id="lab969"></a><h2 class="section">Decomposed Version</h2>
 
 </div>
 <div class="code">
@@ -2537,7 +2542,7 @@ Qed.<br/>
 </div>
 
 <div class="doc">
-<a id="lab966"></a><h2 class="section">Rewriting Laws</h2>
+<a id="lab970"></a><h2 class="section">Rewriting Laws</h2>
 
 </div>
 <div class="code">
@@ -2584,11 +2589,11 @@ Qed.<br/>
 </div>
 
 <div class="doc">
-<a id="lab967"></a><h1 class="section">Mapd for <code>Z</code></h1>
+<a id="lab971"></a><h1 class="section">Mapd for <code>Z</code></h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab968"></a><h2 class="section">Recursive inlined version</h2>
+<a id="lab972"></a><h2 class="section">Recursive inlined version</h2>
 
 </div>
 <div class="code">
@@ -2603,7 +2608,7 @@ Qed.<br/>
 </div>
 
 <div class="doc">
-<a id="lab969"></a><h2 class="section">Decomposed Version</h2>
+<a id="lab973"></a><h2 class="section">Decomposed Version</h2>
 
 </div>
 <div class="code">
@@ -2651,7 +2656,7 @@ Qed.<br/>
 </div>
 
 <div class="doc">
-<a id="lab970"></a><h2 class="section">Rewriting Laws</h2>
+<a id="lab974"></a><h2 class="section">Rewriting Laws</h2>
 
 </div>
 <div class="code">
@@ -2677,11 +2682,11 @@ Qed.<br/>
 </div>
 
 <div class="doc">
-<a id="lab971"></a><h1 class="section">Decorated Functor Instance for List</h1>
+<a id="lab975"></a><h1 class="section">Decorated Functor Instance for List</h1>
 
 <div class="paragraph"> </div>
 
-<a id="lab972"></a><h2 class="section">Unit law</h2>
+<a id="lab976"></a><h2 class="section">Unit law</h2>
 
 </div>
 <div class="code">
@@ -2700,7 +2705,7 @@ Qed.<br/>
 </div>
 
 <div class="doc">
-<a id="lab973"></a><h2 class="section">Composition law</h2>
+<a id="lab977"></a><h2 class="section">Composition law</h2>
 
 </div>
 <div class="code">
@@ -2733,7 +2738,7 @@ Qed.<br/>
 </div>
 
 <div class="doc">
-<a id="lab974"></a><h1 class="section">Comonad instance on <code>Z</code></h1>
+<a id="lab978"></a><h1 class="section">Comonad instance on <code>Z</code></h1>
 
 </div>
 <div class="code">
@@ -2763,7 +2768,7 @@ Qed.<br/>
 </div>
 
 <div class="doc">
-<a id="lab975"></a><h1 class="section"><code>Dist</code> instance on <code>Z</code></h1>
+<a id="lab979"></a><h1 class="section"><code>Dist</code> instance on <code>Z</code></h1>
 
 </div>
 <div class="code">
